@@ -64,10 +64,10 @@
 {
     //NSData *data=[[NSUserDefaults standardUserDefaults]objectForKey:@"lastsession"];
    // Session *object = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    dispatch_async(dispatch_get_main_queue(), ^{
+   // dispatch_async(dispatch_get_main_queue(), ^{
         NSString  *username=[[NSUserDefaults standardUserDefaults]valueForKey:@"currentusername"];
         NSMutableDictionary  *dict=[[NSUserDefaults standardUserDefaults]objectForKey:username];
-        
+       NSMutableDictionary *mutableDict = [dict mutableCopy];
         NSNumber  *usersBestDuration=[dict valueForKey:@"bestduration"];
         NSNumber  *usersBestStrength=[dict valueForKey:@"beststrength"];
         
@@ -79,17 +79,17 @@
         }
         
         if ([session.sessionDuration floatValue]>[usersBestDuration floatValue]) {
-            [dict setObject:session.sessionDuration forKey:@"bestduration"];
+            [mutableDict setObject:session.sessionDuration forKey:@"bestduration"];
         }
         if ([session.sessionStrength floatValue]>[usersBestStrength floatValue]) {
-            [dict setObject:session.sessionStrength forKey:@"beststrength"];
+            [mutableDict setObject:session.sessionStrength forKey:@"beststrength"];
             
         }
         
-        [[NSUserDefaults standardUserDefaults]setValue:dict forKey:username];
+        [[NSUserDefaults standardUserDefaults]setValue:mutableDict forKey:username];
         [[NSUserDefaults standardUserDefaults]synchronize];
 
-    });
+  //  });
    
     
     [self writeStatsToLabels];

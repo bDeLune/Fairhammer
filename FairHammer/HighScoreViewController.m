@@ -53,7 +53,7 @@
             [[NSNotificationCenter defaultCenter]postNotificationName:NEW_HIGH_SCORE_NOTIFICATION object:nil userInfo:nil];
         }
     }
-    
+ //
 }
 -(BOOL)compareSessionToHighScore:(Session*)session highscore:(HighScoreObject*)highscore
 {

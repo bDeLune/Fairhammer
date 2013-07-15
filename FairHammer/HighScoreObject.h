@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+//
 @interface HighScoreObject : NSObject<NSCoding>
 @property(nonatomic,strong)NSNumber  *strength;
 @property(nonatomic,strong)NSNumber  *duration;

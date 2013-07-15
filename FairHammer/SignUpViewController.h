@@ -14,7 +14,7 @@
 -(void)userSignedIn:(NSDictionary*)dict;
 
 @end
-
+//
 @interface SignUpViewController : UIViewController
 @property(nonatomic,strong)IBOutlet  UIButton  *loginButton;
 @property(nonatomic,strong)IBOutlet  UIButton   *signupButton;

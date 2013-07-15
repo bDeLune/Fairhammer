@@ -107,7 +107,7 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
     [_delegate userCreated:dictionary];
 }
-
+//
 -(void)loginUser
 {
     NSString  *username=self.usernameTextField.text;

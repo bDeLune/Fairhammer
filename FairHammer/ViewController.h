@@ -12,6 +12,7 @@
 #import "HighScoreViewController.h"
 #import  "MidiController.h"
 #import "Gauge.h"
+#import "LogoViewController.h"
 #define SEND_MSG_TO_LOG_NOTIFY  @"com.rocudo.logmessage"
 
 //VELOCITY

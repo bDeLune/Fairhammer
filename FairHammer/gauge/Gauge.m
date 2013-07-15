@@ -54,14 +54,14 @@
         
         start=[NSDate date];
         
-        animationObject=[[UIView alloc]initWithFrame:CGRectMake(0,0, GAUGE_WIDTH, 0)];
-        [animationObject setBackgroundColor:[UIColor greenColor]];
-        animationObject.layer.cornerRadius=8;
+        animationObject=[[UIView alloc]initWithFrame:self.bounds];
+        [animationObject setBackgroundColor:[UIColor blueColor]];
+        animationObject.layer.cornerRadius=16;
         [self addSubview:animationObject];
         
         isaccelerating=false;
-        self.backgroundColor=[UIColor blueColor];
-        self.layer.cornerRadius=8;
+        self.backgroundColor=[UIColor clearColor];
+        self.layer.cornerRadius=16;
        /** if (!animationRunning)
         {
             [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
@@ -129,8 +129,13 @@
       if (distance<GUAGE_HEIGHT) {
         CGRect frame=animationObject.frame;
         frame.origin.y=self.bounds.size.height-distance;
-        
         frame.size.height=distance;
+          
+          
+          CGRect frame2=_arrow.frame;
+          frame2.origin.y=frame.origin.y-40;
+          [_arrow setFrame:frame2];
+          
         [animationObject setFrame:frame];
     }else
     {
@@ -157,6 +162,7 @@
 
 -(void)start
 {
+  //  [self stop];
     [self setDefaults];
     if (!_animationRunning)
     {
@@ -181,8 +187,11 @@
                      animations:^{
                          CGRect frame=animationObject.frame;
                          frame.origin.y=self.bounds.size.height-1;
-                         
                          animationObject.frame=frame;
+                         
+                         CGRect frame2=_arrow.frame;
+                         frame2.origin.y=self.bounds.size.height-1;
+                         [_arrow setFrame:frame2];
                      }
                      completion:^(BOOL finished){
                          

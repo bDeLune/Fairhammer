@@ -32,7 +32,7 @@ void MyMIDINotifyProc (const MIDINotification  *message, void *refCon);
     BOOL  ispaused;
     int oncount;
     int offcount;
-    Controller_State  currentstate;
+    //Controller_State  currentstate;
 }
 
 @end
@@ -41,15 +41,15 @@ void MyMIDINotifyProc (const MIDINotification  *message, void *refCon);
 -(void)setup
 {
 
+    _date=[NSDate date];
+
     _midiinhale=61;
     _midiexhale=73;
     _velocity=0;
     //_zerocount=0;
     _midiIsOn=false;
-    currentstate=MIDI_STOPPED;
-    oncount=0;
-    offcount=0;
-    [self pause];
+    //currentstate=MIDI_STOPPED;
+      //  [self pause];
     [self setupMIDI];
     
     
@@ -95,8 +95,11 @@ void MyMIDINotifyProc (const MIDINotification  *message, void *refCon);
 -(void)midiNoteBegan:(int)direction vel:(int)pvelocity
 
 {
-   /** if (ispaused) {
+    [_delegate sendLogToOutput:[NSString stringWithFormat:@"is paysed  at began%i",ispaused]];
+
+   if (ispaused) {
         return;
+
     }
     inorout=direction;
     
@@ -109,7 +112,7 @@ void MyMIDINotifyProc (const MIDINotification  *message, void *refCon);
     
         }
     }
-    _velocity=pvelocity;**/
+    _velocity=pvelocity;
 
     _date=[NSDate date];
     [_delegate midiNoteBegan:self];
@@ -121,38 +124,17 @@ void MyMIDINotifyProc (const MIDINotification  *message, void *refCon);
 -(void)continueMidiNote:(int)pvelocity
 {
     
+    
     if (ispaused) {
+        [_delegate sendLogToOutput:[NSString stringWithFormat:@"is paysed %i",ispaused]];
+
         return;
     }
-
-    if (currentstate==MIDI_STOPPED)
-    {
-        if (pvelocity>0) {
-            oncount++;
-            self.velocity=pvelocity;
-
-            if (oncount>=Midi_ONOff_Count_Limit) {
-                oncount=0;
-                currentstate=MIDI_RUNNING;
-                [_delegate midiNoteContinuing:self];
-
-            }
-        }
-    }
     
-    
-    if (currentstate==MIDI_RUNNING) {
-        if (pvelocity==0||pvelocity==127)
-        {
-            offcount++;
-            if (offcount>=Midi_ONOff_Count_Limit) {
-                self.velocity=0.1;
-                offcount=0;
-                currentstate=MIDI_STOPPED;
-                [_delegate midiNoteStopped:self];
-            }
-        }
-    }
+    self.velocity=pvelocity;
+
+    [_delegate midiNoteContinuing:self];
+
     
     
     
@@ -163,16 +145,22 @@ void MyMIDINotifyProc (const MIDINotification  *message, void *refCon);
 -(void)stopMidiNote
 {
     
-   /** if (ispaused) {
+    if (_midiIsOn) {
+        
+    
+    [_delegate sendLogToOutput:[NSString stringWithFormat:@"is paysed  at stop%i",ispaused]];
+
+    if (ispaused) {
         return;
+
     }
     _midiIsOn=NO;
 
-   // self.velocity=0.1;**/
+    self.velocity=0.1;
     
     [_delegate midiNoteStopped:self];
 
-
+}
 }
 
 #pragma mark MIDI Output
@@ -234,35 +222,30 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
     if (midiCommand == 0x09) {
         vc.midiIsOn=YES;
         
-
-       // [vc midiNoteBegan:note vel:veolocity];
+        
+        [vc.delegate sendLogToOutput:[NSString stringWithFormat:
+                                      @"Command =%d ,Note=%d, Velocity=%d",midiCommand, note, veolocity]];
+        [vc midiNoteBegan:note vel:veolocity];
     }
     
     if (midiCommand==11) {
         
         if (note==2) {
             
-            if (veolocity==0) {
-              //  [vc stopMidiNote];
-
-            }else
-            {
+           
                 [vc continueMidiNote:veolocity];
 
-            }
-
-
-       
-         
+            
                         
         }else
         {
             //ended
             
 
-           // [vc stopMidiNote];
+            [vc stopMidiNote];
            
-            
+            [vc.delegate sendLogToOutput:[NSString stringWithFormat:
+                                             @"Command =%d ,Note=%d, Velocity=%d",midiCommand, note, veolocity]];
         }
     }
     

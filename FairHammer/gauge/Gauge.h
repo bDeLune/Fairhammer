@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #define GAUGE_WIDTH  100
 
-#define GUAGE_HEIGHT 600
+#define GUAGE_HEIGHT 670
 @protocol GaugeProtocol <NSObject>
 -(void)maxDistanceReached;
 
@@ -19,6 +19,7 @@
 
 @property(nonatomic,unsafe_unretained)id<GaugeProtocol>gaugedelegate;
 @property BOOL animationRunning;
+@property(nonatomic,weak)UIImageView  *arrow;
 
 -(void)start;
 -(void)stop;

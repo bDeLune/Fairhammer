@@ -14,7 +14,12 @@
 @end
 
 @implementation HighScoreViewController
-
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.view.backgroundColor=[UIColor clearColor];
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

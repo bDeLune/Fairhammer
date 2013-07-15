@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B10E887179421370040A5FC /* BreathDirection_NORMAL.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E87A179421370040A5FC /* BreathDirection_NORMAL.png */; };
+		0B10E888179421370040A5FC /* BreathDirection_REVERSE.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E87B179421370040A5FC /* BreathDirection_REVERSE.png */; };
+		0B10E889179421370040A5FC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E87C179421370040A5FC /* Default.png */; };
+		0B10E88A179421370040A5FC /* LoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E87D179421370040A5FC /* LoginButton.png */; };
+		0B10E88B179421370040A5FC /* Logo-Bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E87E179421370040A5FC /* Logo-Bottom.png */; };
+		0B10E88C179421370040A5FC /* Logo-Full.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E87F179421370040A5FC /* Logo-Full.png */; };
+		0B10E88D179421370040A5FC /* Logo-Middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E880179421370040A5FC /* Logo-Middle.png */; };
+		0B10E88E179421370040A5FC /* Logo-Top.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E881179421370040A5FC /* Logo-Top.png */; };
+		0B10E88F179421370040A5FC /* MainBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E882179421370040A5FC /* MainBackground.png */; };
+		0B10E890179421370040A5FC /* Mercury-Vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E883179421370040A5FC /* Mercury-Vertical.png */; };
+		0B10E891179421370040A5FC /* PeakHoldArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E884179421370040A5FC /* PeakHoldArrow.png */; };
+		0B10E892179421370040A5FC /* StatsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E885179421370040A5FC /* StatsButton.png */; };
+		0B10E893179421370040A5FC /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E886179421370040A5FC /* Thumbs.db */; };
 		0B1B800D178BFDCF00526074 /* Gauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B800C178BFDCF00526074 /* Gauge.m */; };
 		0B1B8012178BFF1D00526074 /* LoginViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B8010178BFF1D00526074 /* LoginViewViewController.m */; };
 		0B1B8013178BFF1D00526074 /* LoginViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B1B8011178BFF1D00526074 /* LoginViewViewController.xib */; };
@@ -46,9 +59,24 @@
 		0BCA9543178AFDBC006547C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA9542178AFDBC006547C3 /* ViewController.m */; };
 		0BCA9546178AFDBC006547C3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA9544178AFDBC006547C3 /* ViewController.xib */; };
 		0BCA9552178B07B9006547C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCA9551178B07B9006547C3 /* QuartzCore.framework */; };
+		0BDA77641794391400CB69CA /* LogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA77621794391400CB69CA /* LogoViewController.m */; };
+		0BDA77651794391400CB69CA /* LogoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BDA77631794391400CB69CA /* LogoViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B10E87A179421370040A5FC /* BreathDirection_NORMAL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BreathDirection_NORMAL.png; sourceTree = "<group>"; };
+		0B10E87B179421370040A5FC /* BreathDirection_REVERSE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BreathDirection_REVERSE.png; sourceTree = "<group>"; };
+		0B10E87C179421370040A5FC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		0B10E87D179421370040A5FC /* LoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginButton.png; sourceTree = "<group>"; };
+		0B10E87E179421370040A5FC /* Logo-Bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo-Bottom.png"; sourceTree = "<group>"; };
+		0B10E87F179421370040A5FC /* Logo-Full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo-Full.png"; sourceTree = "<group>"; };
+		0B10E880179421370040A5FC /* Logo-Middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo-Middle.png"; sourceTree = "<group>"; };
+		0B10E881179421370040A5FC /* Logo-Top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo-Top.png"; sourceTree = "<group>"; };
+		0B10E882179421370040A5FC /* MainBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainBackground.png; sourceTree = "<group>"; };
+		0B10E883179421370040A5FC /* Mercury-Vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mercury-Vertical.png"; sourceTree = "<group>"; };
+		0B10E884179421370040A5FC /* PeakHoldArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PeakHoldArrow.png; sourceTree = "<group>"; };
+		0B10E885179421370040A5FC /* StatsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatsButton.png; sourceTree = "<group>"; };
+		0B10E886179421370040A5FC /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
 		0B1B800B178BFDCF00526074 /* Gauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gauge.h; path = gauge/Gauge.h; sourceTree = "<group>"; };
 		0B1B800C178BFDCF00526074 /* Gauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Gauge.m; path = gauge/Gauge.m; sourceTree = "<group>"; };
 		0B1B800F178BFF1D00526074 /* LoginViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewViewController.h; path = login/LoginViewViewController.h; sourceTree = "<group>"; };
@@ -105,6 +133,9 @@
 		0BCA9542178AFDBC006547C3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0BCA9545178AFDBC006547C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		0BCA9551178B07B9006547C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0BDA77611794391400CB69CA /* LogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoViewController.h; sourceTree = "<group>"; };
+		0BDA77621794391400CB69CA /* LogoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoViewController.m; sourceTree = "<group>"; };
+		0BDA77631794391400CB69CA /* LogoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogoViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +158,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B10E879179421370040A5FC /* App UI Files */ = {
+			isa = PBXGroup;
+			children = (
+				0B10E87A179421370040A5FC /* BreathDirection_NORMAL.png */,
+				0B10E87B179421370040A5FC /* BreathDirection_REVERSE.png */,
+				0B10E87C179421370040A5FC /* Default.png */,
+				0B10E87D179421370040A5FC /* LoginButton.png */,
+				0B10E87E179421370040A5FC /* Logo-Bottom.png */,
+				0B10E87F179421370040A5FC /* Logo-Full.png */,
+				0B10E880179421370040A5FC /* Logo-Middle.png */,
+				0B10E881179421370040A5FC /* Logo-Top.png */,
+				0B10E882179421370040A5FC /* MainBackground.png */,
+				0B10E883179421370040A5FC /* Mercury-Vertical.png */,
+				0B10E884179421370040A5FC /* PeakHoldArrow.png */,
+				0B10E885179421370040A5FC /* StatsButton.png */,
+				0B10E886179421370040A5FC /* Thumbs.db */,
+			);
+			path = "App UI Files";
+			sourceTree = "<group>";
+		};
 		0B1B800A178BFDA700526074 /* gauge */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +297,7 @@
 		0BCA952F178AFDBC006547C3 /* FairHammer */ = {
 			isa = PBXGroup;
 			children = (
+				0BDA77601794390200CB69CA /* logo */,
 				0BB0C8F31790348F00A056E5 /* UIEffectDesignerView */,
 				0BB0C8EB179014DB00A056E5 /* stats */,
 				0B7F92D9178EF9130061E9A1 /* highscore */,
@@ -269,6 +321,7 @@
 		0BCA9530178AFDBC006547C3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0B10E879179421370040A5FC /* App UI Files */,
 				0BB70CAC1790402F00B91CE8 /* bell.mp3 */,
 				0BB70CAE1790530F00B91CE8 /* bell_1.png */,
 				0BB70CAF1790530F00B91CE8 /* bell_2.png */,
@@ -283,6 +336,16 @@
 				0BCA953F178AFDBC006547C3 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0BDA77601794390200CB69CA /* logo */ = {
+			isa = PBXGroup;
+			children = (
+				0BDA77611794391400CB69CA /* LogoViewController.h */,
+				0BDA77621794391400CB69CA /* LogoViewController.m */,
+				0BDA77631794391400CB69CA /* LogoViewController.xib */,
+			);
+			name = logo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +414,20 @@
 				0BB70CB11790530F00B91CE8 /* bell_1.png in Resources */,
 				0BB70CB21790530F00B91CE8 /* bell_2.png in Resources */,
 				0BB70CB31790530F00B91CE8 /* bell_3.png in Resources */,
+				0B10E887179421370040A5FC /* BreathDirection_NORMAL.png in Resources */,
+				0B10E888179421370040A5FC /* BreathDirection_REVERSE.png in Resources */,
+				0B10E889179421370040A5FC /* Default.png in Resources */,
+				0B10E88A179421370040A5FC /* LoginButton.png in Resources */,
+				0B10E88B179421370040A5FC /* Logo-Bottom.png in Resources */,
+				0B10E88C179421370040A5FC /* Logo-Full.png in Resources */,
+				0B10E88D179421370040A5FC /* Logo-Middle.png in Resources */,
+				0B10E88E179421370040A5FC /* Logo-Top.png in Resources */,
+				0B10E88F179421370040A5FC /* MainBackground.png in Resources */,
+				0B10E890179421370040A5FC /* Mercury-Vertical.png in Resources */,
+				0B10E891179421370040A5FC /* PeakHoldArrow.png in Resources */,
+				0B10E892179421370040A5FC /* StatsButton.png in Resources */,
+				0B10E893179421370040A5FC /* Thumbs.db in Resources */,
+				0BDA77651794391400CB69CA /* LogoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +453,7 @@
 				0BB0C8EF1790152000A056E5 /* UserStatsViewController.m in Sources */,
 				0BB0C8F81790348F00A056E5 /* NSData+Base64.m in Sources */,
 				0BB0C8F91790348F00A056E5 /* UIEffectDesignerView.m in Sources */,
+				0BDA77641794391400CB69CA /* LogoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

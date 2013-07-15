@@ -33,8 +33,10 @@
 {
     [super viewDidLoad];
     userStatsViewController=[[UserStatsViewController alloc]init];
-
+    self.view.backgroundColor=[UIColor clearColor];
     self.navigationItem.title=@"Login";
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+
     
     
 }

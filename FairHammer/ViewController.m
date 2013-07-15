@@ -31,6 +31,10 @@ typedef void(^RunTimer)(void);
     
     NSTimer  *effecttimer;
     UIImageView  *bellImageView;
+    UIImageView  *bg;
+    UIImageView  *peakholdImageView;
+    
+    LogoViewController  *logoviewcontroller;
 }
 
 @end
@@ -41,6 +45,9 @@ typedef void(^RunTimer)(void);
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    bg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainBackground.png"]];
+    [self.view insertSubview:bg atIndex:0];
       // drawDuration = 3.0;
 	// Do any additional setup after loading the view, typically from a nib.
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(updateLogNotification:) name:SEND_MSG_TO_LOG_NOTIFY object:nil];
@@ -66,7 +73,7 @@ typedef void(^RunTimer)(void);
     loginViewController=[[LoginViewViewController alloc]init];
     loginViewController.delegate=self;
     navcontroller=[[UINavigationController alloc]initWithRootViewController:loginViewController];
-    navcontroller.view.frame = CGRectMake(10, 10, 300, 200);  // Move and resize the UINavigator Controller
+    navcontroller.view.frame = CGRectMake(30, 35, 210, 200);  // Move and resize the UINavigator Controller
     [self.view addSubview:navcontroller.view];
     
     highScoreViewController=[[HighScoreViewController alloc]init];
@@ -74,17 +81,19 @@ typedef void(^RunTimer)(void);
     [highScoreViewController setup];
     [self.view addSubview:highScoreViewController.view];
     
-    gaugeView=[[Gauge alloc]initWithFrame:CGRectMake(self.view.bounds.size.width/2-(GAUGE_WIDTH/2),
+  /**  gaugeView=[[Gauge alloc]initWithFrame:CGRectMake(self.view.bounds.size.width/2-(GAUGE_WIDTH/2),
                                                      self.view.bounds.size.height-GUAGE_HEIGHT,
                                                      GAUGE_WIDTH,
-                                                     GUAGE_HEIGHT)];
+                                                     GUAGE_HEIGHT)];**/
+    
+    gaugeView=[[Gauge alloc]initWithFrame:CGRectMake(353, 300, 40, GUAGE_HEIGHT)];
     gaugeView.gaugedelegate=self;
     
     scoreViewController=[[ScoreDisplayViewController alloc]init];
     scoreViewController.view.frame=CGRectMake(self.view.bounds.size.width-200,
-                                              self.view.bounds.size.height-200,
+                                              self.view.bounds.size.height-400,
                                               200,
-                                              200);
+                                              300);
     
     [self.view addSubview:scoreViewController.view];
     [self.view addSubview:gaugeView];
@@ -105,9 +114,20 @@ typedef void(^RunTimer)(void);
     bellImageView.animationDuration = 0.7;
     
     [self.view addSubview:bellImageView];
+    peakholdImageView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"PeakHoldArrow.png"]];
+    CGRect peakframe=peakholdImageView.frame;
+    peakframe.origin.x=-100;
+    peakframe.origin.y=GUAGE_HEIGHT-40;
+    [peakholdImageView setFrame:peakframe];
+    [gaugeView addSubview:peakholdImageView];
+    gaugeView.arrow=peakholdImageView;
    // [bellImageView startAnimating];
     
-   
+    
+    logoviewcontroller=[[LogoViewController alloc]init];
+    [logoviewcontroller.view setFrame:CGRectMake(gaugeView.frame.origin.x-50,20,174,174)];
+    
+    [self.view addSubview:logoviewcontroller.view];
     
 }
 
@@ -198,11 +218,11 @@ typedef void(^RunTimer)(void);
     
     double  duration=[date timeIntervalSinceDate:midiController.date];
     currentSession.sessionDuration=[NSNumber numberWithDouble:duration];
-    NSString  *durationtext=[NSString stringWithFormat:@"%f",duration];
+    NSString  *durationtext=[NSString stringWithFormat:@"%0.0f",duration];
     dispatch_async(dispatch_get_main_queue(), ^{
         scoreViewController.durationValueLabel.text=durationtext;
         [scoreViewController setStrength:vel];
-
+       // [self sendLogToOutput:@"conti"];
     });
 
 }
@@ -259,7 +279,8 @@ typedef void(^RunTimer)(void);
     effecttimer=[NSTimer timerWithTimeInterval:8 target:self selector:@selector(killSparks) userInfo:nil repeats:NO];
     [[NSRunLoop mainRunLoop] addTimer:effecttimer forMode:NSDefaultRunLoopMode];
     [self playSound];
-[bellImageView startAnimating];
+//[bellImageView startAnimating];
+    [logoviewcontroller startAnimating];
 }
 
 -(void)killSparks
@@ -271,7 +292,9 @@ typedef void(^RunTimer)(void);
     [particleEffect removeFromSuperview];
     particleEffect=nil;
     [gaugeView start];
-    [bellImageView stopAnimating];
+    //[bellImageView stopAnimating];
+    [logoviewcontroller stopAnimating];
+
 }
 -(void) playSound {
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"bell" ofType:@"mp3"];

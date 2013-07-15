@@ -235,7 +235,7 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
         vc.midiIsOn=YES;
         
 
-        [vc midiNoteBegan:note vel:veolocity];
+       // [vc midiNoteBegan:note vel:veolocity];
     }
     
     if (midiCommand==11) {
@@ -260,7 +260,7 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
             //ended
             
 
-            [vc stopMidiNote];
+           // [vc stopMidiNote];
            
             
         }

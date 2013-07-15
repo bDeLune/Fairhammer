@@ -7,6 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1B800D178BFDCF00526074 /* Gauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B800C178BFDCF00526074 /* Gauge.m */; };
+		0B1B8012178BFF1D00526074 /* LoginViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B8010178BFF1D00526074 /* LoginViewViewController.m */; };
+		0B1B8013178BFF1D00526074 /* LoginViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B1B8011178BFF1D00526074 /* LoginViewViewController.xib */; };
+		0B1B8040178C069C00526074 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B803E178C069C00526074 /* SignUpViewController.m */; };
+		0B1B8041178C069C00526074 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B1B803F178C069C00526074 /* SignUpViewController.xib */; };
+		0B1B804A178C0A4400526074 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B8049178C0A4400526074 /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0B1B8057178C196500526074 /* HighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B8055178C196500526074 /* HighScoreViewController.m */; };
+		0B1B8058178C196500526074 /* HighScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B1B8056178C196500526074 /* HighScoreViewController.xib */; };
+		0B1B805C178C2A9400526074 /* MidiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B805B178C2A9400526074 /* MidiController.m */; };
+		0B1B805E178C2AAD00526074 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1B805D178C2AAD00526074 /* CoreMedia.framework */; };
+		0B1B8060178C2AB700526074 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1B805F178C2AB700526074 /* AudioToolbox.framework */; };
+		0B1B8062178C2ABE00526074 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1B8061178C2ABE00526074 /* CoreMIDI.framework */; };
+		0B1B8064178C2AC500526074 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1B8063178C2AC500526074 /* AVFoundation.framework */; };
+		0B1B8066178C2ACE00526074 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1B8065178C2ACE00526074 /* OpenAL.framework */; };
+		0B7F92D2178EDDC20061E9A1 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F92D1178EDDC20061E9A1 /* Session.m */; };
+		0B7F92D7178EE3570061E9A1 /* ScoreDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F92D5178EE3570061E9A1 /* ScoreDisplayViewController.m */; };
+		0B7F92D8178EE3570061E9A1 /* ScoreDisplayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B7F92D6178EE3570061E9A1 /* ScoreDisplayViewController.xib */; };
+		0B7F92DC178EF93F0061E9A1 /* HighScoreObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F92DB178EF93F0061E9A1 /* HighScoreObject.m */; };
+		0BB0C8EF1790152000A056E5 /* UserStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB0C8ED1790152000A056E5 /* UserStatsViewController.m */; };
+		0BB0C8F01790152000A056E5 /* UserStatsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BB0C8EE1790152000A056E5 /* UserStatsViewController.xib */; };
+		0BB0C8F81790348F00A056E5 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB0C8F51790348F00A056E5 /* NSData+Base64.m */; };
+		0BB0C8F91790348F00A056E5 /* UIEffectDesignerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB0C8F71790348F00A056E5 /* UIEffectDesignerView.m */; };
+		0BB0C8FB1790379300A056E5 /* sparks.ped in Resources */ = {isa = PBXBuildFile; fileRef = 0BB0C8FA1790379300A056E5 /* sparks.ped */; };
+		0BB70CAD1790402F00B91CE8 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BB70CAC1790402F00B91CE8 /* bell.mp3 */; };
+		0BB70CB11790530F00B91CE8 /* bell_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BB70CAE1790530F00B91CE8 /* bell_1.png */; };
+		0BB70CB21790530F00B91CE8 /* bell_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BB70CAF1790530F00B91CE8 /* bell_2.png */; };
+		0BB70CB31790530F00B91CE8 /* bell_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BB70CB01790530F00B91CE8 /* bell_3.png */; };
 		0BCA952A178AFDBC006547C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCA9529178AFDBC006547C3 /* UIKit.framework */; };
 		0BCA952C178AFDBC006547C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCA952B178AFDBC006547C3 /* Foundation.framework */; };
 		0BCA952E178AFDBC006547C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCA952D178AFDBC006547C3 /* CoreGraphics.framework */; };
@@ -18,9 +45,49 @@
 		0BCA9540178AFDBC006547C3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA953F178AFDBC006547C3 /* Default-568h@2x.png */; };
 		0BCA9543178AFDBC006547C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA9542178AFDBC006547C3 /* ViewController.m */; };
 		0BCA9546178AFDBC006547C3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA9544178AFDBC006547C3 /* ViewController.xib */; };
+		0BCA9552178B07B9006547C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCA9551178B07B9006547C3 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B1B800B178BFDCF00526074 /* Gauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gauge.h; path = gauge/Gauge.h; sourceTree = "<group>"; };
+		0B1B800C178BFDCF00526074 /* Gauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Gauge.m; path = gauge/Gauge.m; sourceTree = "<group>"; };
+		0B1B800F178BFF1D00526074 /* LoginViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewViewController.h; path = login/LoginViewViewController.h; sourceTree = "<group>"; };
+		0B1B8010178BFF1D00526074 /* LoginViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewViewController.m; path = login/LoginViewViewController.m; sourceTree = "<group>"; };
+		0B1B8011178BFF1D00526074 /* LoginViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewViewController.xib; path = login/LoginViewViewController.xib; sourceTree = "<group>"; };
+		0B1B803D178C069C00526074 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		0B1B803E178C069C00526074 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		0B1B803F178C069C00526074 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		0B1B8048178C0A4400526074 /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
+		0B1B8049178C0A4400526074 /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
+		0B1B8054178C196500526074 /* HighScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreViewController.h; sourceTree = "<group>"; };
+		0B1B8055178C196500526074 /* HighScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreViewController.m; sourceTree = "<group>"; };
+		0B1B8056178C196500526074 /* HighScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HighScoreViewController.xib; sourceTree = "<group>"; };
+		0B1B805A178C2A9400526074 /* MidiController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MidiController.h; path = midi/MidiController.h; sourceTree = "<group>"; };
+		0B1B805B178C2A9400526074 /* MidiController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MidiController.m; path = midi/MidiController.m; sourceTree = "<group>"; };
+		0B1B805D178C2AAD00526074 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		0B1B805F178C2AB700526074 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		0B1B8061178C2ABE00526074 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		0B1B8063178C2AC500526074 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0B1B8065178C2ACE00526074 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		0B7F92D0178EDDC20061E9A1 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Session.h; path = session/Session.h; sourceTree = "<group>"; };
+		0B7F92D1178EDDC20061E9A1 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Session.m; path = session/Session.m; sourceTree = "<group>"; };
+		0B7F92D4178EE3570061E9A1 /* ScoreDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreDisplayViewController.h; path = "scroe display/ScoreDisplayViewController.h"; sourceTree = "<group>"; };
+		0B7F92D5178EE3570061E9A1 /* ScoreDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScoreDisplayViewController.m; path = "scroe display/ScoreDisplayViewController.m"; sourceTree = "<group>"; };
+		0B7F92D6178EE3570061E9A1 /* ScoreDisplayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScoreDisplayViewController.xib; path = "scroe display/ScoreDisplayViewController.xib"; sourceTree = "<group>"; };
+		0B7F92DA178EF93F0061E9A1 /* HighScoreObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreObject.h; sourceTree = "<group>"; };
+		0B7F92DB178EF93F0061E9A1 /* HighScoreObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreObject.m; sourceTree = "<group>"; };
+		0BB0C8EC1790152000A056E5 /* UserStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserStatsViewController.h; path = "user stats/UserStatsViewController.h"; sourceTree = "<group>"; };
+		0BB0C8ED1790152000A056E5 /* UserStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserStatsViewController.m; path = "user stats/UserStatsViewController.m"; sourceTree = "<group>"; };
+		0BB0C8EE1790152000A056E5 /* UserStatsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserStatsViewController.xib; path = "user stats/UserStatsViewController.xib"; sourceTree = "<group>"; };
+		0BB0C8F41790348F00A056E5 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		0BB0C8F51790348F00A056E5 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		0BB0C8F61790348F00A056E5 /* UIEffectDesignerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEffectDesignerView.h; sourceTree = "<group>"; };
+		0BB0C8F71790348F00A056E5 /* UIEffectDesignerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEffectDesignerView.m; sourceTree = "<group>"; };
+		0BB0C8FA1790379300A056E5 /* sparks.ped */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sparks.ped; sourceTree = "<group>"; };
+		0BB70CAC1790402F00B91CE8 /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
+		0BB70CAE1790530F00B91CE8 /* bell_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell_1.png; sourceTree = "<group>"; };
+		0BB70CAF1790530F00B91CE8 /* bell_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell_2.png; sourceTree = "<group>"; };
+		0BB70CB01790530F00B91CE8 /* bell_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell_3.png; sourceTree = "<group>"; };
 		0BCA9526178AFDBC006547C3 /* FairHammer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FairHammer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BCA9529178AFDBC006547C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0BCA952B178AFDBC006547C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -37,6 +104,7 @@
 		0BCA9541178AFDBC006547C3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0BCA9542178AFDBC006547C3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0BCA9545178AFDBC006547C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		0BCA9551178B07B9006547C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +112,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1B8066178C2ACE00526074 /* OpenAL.framework in Frameworks */,
+				0B1B8064178C2AC500526074 /* AVFoundation.framework in Frameworks */,
+				0B1B8062178C2ABE00526074 /* CoreMIDI.framework in Frameworks */,
+				0B1B8060178C2AB700526074 /* AudioToolbox.framework in Frameworks */,
+				0B1B805E178C2AAD00526074 /* CoreMedia.framework in Frameworks */,
+				0BCA9552178B07B9006547C3 /* QuartzCore.framework in Frameworks */,
 				0BCA952A178AFDBC006547C3 /* UIKit.framework in Frameworks */,
 				0BCA952C178AFDBC006547C3 /* Foundation.framework in Frameworks */,
 				0BCA952E178AFDBC006547C3 /* CoreGraphics.framework in Frameworks */,
@@ -53,6 +127,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B1B800A178BFDA700526074 /* gauge */ = {
+			isa = PBXGroup;
+			children = (
+				0B1B800B178BFDCF00526074 /* Gauge.h */,
+				0B1B800C178BFDCF00526074 /* Gauge.m */,
+			);
+			name = gauge;
+			sourceTree = "<group>";
+		};
+		0B1B800E178BFEFB00526074 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0B1B800F178BFF1D00526074 /* LoginViewViewController.h */,
+				0B1B8010178BFF1D00526074 /* LoginViewViewController.m */,
+				0B1B8011178BFF1D00526074 /* LoginViewViewController.xib */,
+				0B1B803D178C069C00526074 /* SignUpViewController.h */,
+				0B1B803E178C069C00526074 /* SignUpViewController.m */,
+				0B1B803F178C069C00526074 /* SignUpViewController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		0B1B8047178C0A4400526074 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				0B1B8048178C0A4400526074 /* Toast+UIView.h */,
+				0B1B8049178C0A4400526074 /* Toast+UIView.m */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		0B1B8059178C2A7700526074 /* midi */ = {
+			isa = PBXGroup;
+			children = (
+				0B1B805A178C2A9400526074 /* MidiController.h */,
+				0B1B805B178C2A9400526074 /* MidiController.m */,
+			);
+			name = midi;
+			sourceTree = "<group>";
+		};
+		0B7F92D3178EE2FD0061E9A1 /* score display */ = {
+			isa = PBXGroup;
+			children = (
+				0B7F92D4178EE3570061E9A1 /* ScoreDisplayViewController.h */,
+				0B7F92D5178EE3570061E9A1 /* ScoreDisplayViewController.m */,
+				0B7F92D6178EE3570061E9A1 /* ScoreDisplayViewController.xib */,
+			);
+			name = "score display";
+			sourceTree = "<group>";
+		};
+		0B7F92D9178EF9130061E9A1 /* highscore */ = {
+			isa = PBXGroup;
+			children = (
+				0B1B8054178C196500526074 /* HighScoreViewController.h */,
+				0B1B8055178C196500526074 /* HighScoreViewController.m */,
+				0B1B8056178C196500526074 /* HighScoreViewController.xib */,
+				0B7F92DA178EF93F0061E9A1 /* HighScoreObject.h */,
+				0B7F92DB178EF93F0061E9A1 /* HighScoreObject.m */,
+			);
+			name = highscore;
+			sourceTree = "<group>";
+		};
+		0BB0C8EB179014DB00A056E5 /* stats */ = {
+			isa = PBXGroup;
+			children = (
+				0BB0C8EC1790152000A056E5 /* UserStatsViewController.h */,
+				0BB0C8ED1790152000A056E5 /* UserStatsViewController.m */,
+				0BB0C8EE1790152000A056E5 /* UserStatsViewController.xib */,
+			);
+			name = stats;
+			sourceTree = "<group>";
+		};
+		0BB0C8F31790348F00A056E5 /* UIEffectDesignerView */ = {
+			isa = PBXGroup;
+			children = (
+				0BB0C8F41790348F00A056E5 /* NSData+Base64.h */,
+				0BB0C8F51790348F00A056E5 /* NSData+Base64.m */,
+				0BB0C8F61790348F00A056E5 /* UIEffectDesignerView.h */,
+				0BB0C8F71790348F00A056E5 /* UIEffectDesignerView.m */,
+			);
+			path = UIEffectDesignerView;
+			sourceTree = "<group>";
+		};
 		0BCA951D178AFDBC006547C3 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +230,12 @@
 		0BCA9528178AFDBC006547C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0B1B8065178C2ACE00526074 /* OpenAL.framework */,
+				0B1B8063178C2AC500526074 /* AVFoundation.framework */,
+				0B1B8061178C2ABE00526074 /* CoreMIDI.framework */,
+				0B1B805F178C2AB700526074 /* AudioToolbox.framework */,
+				0B1B805D178C2AAD00526074 /* CoreMedia.framework */,
+				0BCA9551178B07B9006547C3 /* QuartzCore.framework */,
 				0BCA9529178AFDBC006547C3 /* UIKit.framework */,
 				0BCA952B178AFDBC006547C3 /* Foundation.framework */,
 				0BCA952D178AFDBC006547C3 /* CoreGraphics.framework */,
@@ -83,12 +246,22 @@
 		0BCA952F178AFDBC006547C3 /* FairHammer */ = {
 			isa = PBXGroup;
 			children = (
+				0BB0C8F31790348F00A056E5 /* UIEffectDesignerView */,
+				0BB0C8EB179014DB00A056E5 /* stats */,
+				0B7F92D9178EF9130061E9A1 /* highscore */,
+				0B7F92D3178EE2FD0061E9A1 /* score display */,
+				0B1B8059178C2A7700526074 /* midi */,
+				0B1B8047178C0A4400526074 /* Toast */,
+				0B1B800E178BFEFB00526074 /* Login */,
+				0B1B800A178BFDA700526074 /* gauge */,
 				0BCA9538178AFDBC006547C3 /* AppDelegate.h */,
 				0BCA9539178AFDBC006547C3 /* AppDelegate.m */,
 				0BCA9541178AFDBC006547C3 /* ViewController.h */,
 				0BCA9542178AFDBC006547C3 /* ViewController.m */,
 				0BCA9544178AFDBC006547C3 /* ViewController.xib */,
 				0BCA9530178AFDBC006547C3 /* Supporting Files */,
+				0B7F92D0178EDDC20061E9A1 /* Session.h */,
+				0B7F92D1178EDDC20061E9A1 /* Session.m */,
 			);
 			path = FairHammer;
 			sourceTree = "<group>";
@@ -96,7 +269,12 @@
 		0BCA9530178AFDBC006547C3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0BB70CAC1790402F00B91CE8 /* bell.mp3 */,
+				0BB70CAE1790530F00B91CE8 /* bell_1.png */,
+				0BB70CAF1790530F00B91CE8 /* bell_2.png */,
+				0BB70CB01790530F00B91CE8 /* bell_3.png */,
 				0BCA9531178AFDBC006547C3 /* FairHammer-Info.plist */,
+				0BB0C8FA1790379300A056E5 /* sparks.ped */,
 				0BCA9532178AFDBC006547C3 /* InfoPlist.strings */,
 				0BCA9535178AFDBC006547C3 /* main.m */,
 				0BCA9537178AFDBC006547C3 /* FairHammer-Prefix.pch */,
@@ -163,6 +341,16 @@
 				0BCA953E178AFDBC006547C3 /* Default@2x.png in Resources */,
 				0BCA9540178AFDBC006547C3 /* Default-568h@2x.png in Resources */,
 				0BCA9546178AFDBC006547C3 /* ViewController.xib in Resources */,
+				0B1B8013178BFF1D00526074 /* LoginViewViewController.xib in Resources */,
+				0B1B8041178C069C00526074 /* SignUpViewController.xib in Resources */,
+				0B1B8058178C196500526074 /* HighScoreViewController.xib in Resources */,
+				0B7F92D8178EE3570061E9A1 /* ScoreDisplayViewController.xib in Resources */,
+				0BB0C8F01790152000A056E5 /* UserStatsViewController.xib in Resources */,
+				0BB0C8FB1790379300A056E5 /* sparks.ped in Resources */,
+				0BB70CAD1790402F00B91CE8 /* bell.mp3 in Resources */,
+				0BB70CB11790530F00B91CE8 /* bell_1.png in Resources */,
+				0BB70CB21790530F00B91CE8 /* bell_2.png in Resources */,
+				0BB70CB31790530F00B91CE8 /* bell_3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +364,18 @@
 				0BCA9536178AFDBC006547C3 /* main.m in Sources */,
 				0BCA953A178AFDBC006547C3 /* AppDelegate.m in Sources */,
 				0BCA9543178AFDBC006547C3 /* ViewController.m in Sources */,
+				0B1B800D178BFDCF00526074 /* Gauge.m in Sources */,
+				0B1B8012178BFF1D00526074 /* LoginViewViewController.m in Sources */,
+				0B1B8040178C069C00526074 /* SignUpViewController.m in Sources */,
+				0B1B804A178C0A4400526074 /* Toast+UIView.m in Sources */,
+				0B1B8057178C196500526074 /* HighScoreViewController.m in Sources */,
+				0B1B805C178C2A9400526074 /* MidiController.m in Sources */,
+				0B7F92D2178EDDC20061E9A1 /* Session.m in Sources */,
+				0B7F92D7178EE3570061E9A1 /* ScoreDisplayViewController.m in Sources */,
+				0B7F92DC178EF93F0061E9A1 /* HighScoreObject.m in Sources */,
+				0BB0C8EF1790152000A056E5 /* UserStatsViewController.m in Sources */,
+				0BB0C8F81790348F00A056E5 /* NSData+Base64.m in Sources */,
+				0BB0C8F91790348F00A056E5 /* UIEffectDesignerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +426,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -251,7 +451,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -300,6 +500,7 @@
 				0BCA954B178AFDBC006547C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -171,9 +171,16 @@ void MyMIDINotifyProc (const MIDINotification  *message, void *refCon);
 }
 -(void)sendValue:(int)note onoff:(int)onoff
 {
+    /**const UInt8 noteOn[]  = { 0x90, note, 127 };
+     const UInt8 noteOff[] = { 0x80, note, 0   };
+    [_delegate sendLogToOutput:@"got this 127"];
+    [self sendBytes:noteOn size:sizeof(noteOn)];
+    [NSThread sleepForTimeInterval:0.1];
+     [self sendBytes:noteOff size:sizeof(noteOff)];**/
+    
     const UInt8 noteOn[]  = { 0x90, note, 127 };
     // const UInt8 noteOff[] = { 0x80, note, 0   };
-    [_delegate sendLogToOutput:@"got this 127"];
+    
     [self sendBytes:noteOn size:sizeof(noteOn)];
     [NSThread sleepForTimeInterval:0.1];
     // [self sendBytes:noteOff size:sizeof(noteOff)];
@@ -255,9 +262,12 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 	
 }
 void MyMIDINotifyProc (const MIDINotification  *message, void *refCon) {
-	/**ViewController *vc = (__bridge ViewController*) refCon;
-     [vc appendToTextView:[NSString stringWithFormat:
+	MidiController *vc = (__bridge MidiController*) refCon;
+    /** [vc appendToTextView:[NSString stringWithFormat:
      @"MIDI Notify, messageId=%ld,", message->messageID]];**/
+    
+    [vc.delegate sendLogToOutput:[NSString stringWithFormat:
+                                  @"MIDI Notify, messageId=%ld,", message->messageID]];
 	
 }
 @end

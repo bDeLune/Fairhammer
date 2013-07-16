@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #define GAUGE_WIDTH  100
 
-#define GUAGE_HEIGHT 670
+#define GUAGE_HEIGHT 575
 @protocol GaugeProtocol <NSObject>
 -(void)maxDistanceReached;
 
@@ -27,4 +27,5 @@
 -(void)blowingBegan;
 -(void)blowingEnded;
 -(void)setArrowPos:(float)pforce;
+-(void)setMass:(float)value;
 @end

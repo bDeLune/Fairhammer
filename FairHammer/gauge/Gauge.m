@@ -42,7 +42,10 @@
 
 @end
 @implementation Gauge
-
+-(void)setMass:(float)value
+{
+    mass=value;
+}
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

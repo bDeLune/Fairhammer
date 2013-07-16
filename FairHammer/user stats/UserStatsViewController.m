@@ -46,7 +46,11 @@
     dispatch_async(dispatch_get_main_queue(), ^{
     
         NSString  *username=[[NSUserDefaults standardUserDefaults]valueForKey:@"currentusername"];
-        NSMutableDictionary  *dict=[[NSUserDefaults standardUserDefaults]objectForKey:username];
+        
+        NSDictionary  *userdict=[[NSUserDefaults standardUserDefaults]objectForKey:@"users"];
+        NSMutableDictionary  *mDict=[userdict mutableCopy];
+        
+        NSMutableDictionary  *dict=[mDict objectForKey:username];
         
         NSNumber  *usersBestDuration=[dict valueForKey:@"bestduration"];
         NSNumber  *usersBestStrength=[dict valueForKey:@"beststrength"];
@@ -63,11 +67,14 @@
 }
 -(void)updateUserStats:(Session*)session
 {
-    //NSData *data=[[NSUserDefaults standardUserDefaults]objectForKey:@"lastsession"];
-   // Session *object = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-   // dispatch_async(dispatch_get_main_queue(), ^{
+    
+    
+    NSDictionary  *userdict=[[NSUserDefaults standardUserDefaults]objectForKey:@"users"];
+    NSMutableDictionary  *mDict=[userdict mutableCopy];
+    
+
         NSString  *username=[[NSUserDefaults standardUserDefaults]valueForKey:@"currentusername"];
-        NSMutableDictionary  *dict=[[NSUserDefaults standardUserDefaults]objectForKey:username];
+        NSMutableDictionary  *dict=[mDict objectForKey:username];
        NSMutableDictionary *mutableDict = [dict mutableCopy];
         NSNumber  *usersBestDuration=[dict valueForKey:@"bestduration"];
         NSNumber  *usersBestStrength=[dict valueForKey:@"beststrength"];
@@ -86,8 +93,10 @@
             [mutableDict setObject:session.sessionStrength forKey:@"beststrength"];
             
         }
+    
+    [mDict setValue:mutableDict forKey:username];
         
-        [[NSUserDefaults standardUserDefaults]setValue:mutableDict forKey:username];
+        [[NSUserDefaults standardUserDefaults]setValue:mDict forKey:@"users"];
         [[NSUserDefaults standardUserDefaults]synchronize];
 
   //  });

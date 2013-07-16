@@ -89,7 +89,9 @@
     NSString  *username=self.usernameTextField.text;
     NSString  *password=self.passwordTextField.text;
     
-    NSDictionary  *dictionarycheck=[[NSUserDefaults standardUserDefaults]valueForKey:username];
+    NSDictionary  *dict=[[NSUserDefaults standardUserDefaults]objectForKey:@"users"];
+    NSMutableDictionary  *mDict=[dict mutableCopy];
+    NSDictionary  *dictionarycheck=[mDict valueForKey:username];
     
     if (dictionarycheck) {
         [self.view makeToast:@"That Username is already in use"];
@@ -98,12 +100,19 @@
     }
     
     NSMutableDictionary  *dictionary=[[NSMutableDictionary alloc]init];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    NSDate  *date=[NSDate date];
+    [dateFormat setDateFormat:@"MM/dd/yyyy hh:mma"];
+    NSString *dateString = [dateFormat stringFromDate:date];
     [dictionary setValue:password forKey:@"password"];
     [dictionary setValue:username forKey:@"username"];
     [dictionary setValue:[NSNumber numberWithFloat:0.0] forKey:@"bestduration"];
     [dictionary setValue:[NSNumber numberWithFloat:0.0] forKey:@"beststrength"];
+    [dictionary setValue:dateString forKey:@"lastlogin"];
 
-    [[NSUserDefaults standardUserDefaults]setValue:dictionary forKey:username];
+   
+    [mDict setValue:dictionary forKey:username];
+    [[NSUserDefaults standardUserDefaults]setValue:mDict forKey:@"users"];
     [[NSUserDefaults standardUserDefaults]synchronize];
     [self.navigationController popToRootViewControllerAnimated:YES];
     [_delegate userCreated:dictionary];
@@ -113,7 +122,13 @@
 {
     NSString  *username=self.usernameTextField.text;
     NSString  *password=self.passwordTextField.text;
-    NSDictionary  *dictionarycheck=[[NSUserDefaults standardUserDefaults]valueForKey:username];
+    
+    
+    NSDictionary  *dict=[[NSUserDefaults standardUserDefaults]objectForKey:@"users"];
+    NSMutableDictionary  *mDict=[dict mutableCopy];
+
+    
+    NSDictionary  *dictionarycheck=[mDict valueForKey:username];
     
     if (!dictionarycheck) {
         [self.view makeToast:@"That User Doesnt Exist"];
@@ -127,6 +142,19 @@
         return;
 
     }
+    
+    NSMutableDictionary   *addDateDictionary=[dict mutableCopy];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    NSDate  *date=[NSDate date];
+    [dateFormat setDateFormat:@"MM/dd/yyyy hh:mma"];
+    NSString *dateString = [dateFormat stringFromDate:date];
+    
+    NSLog(@"date: %@", dateString);
+    
+    [addDateDictionary setValue:dateString forKey:@"lastlogin"];
+    
+    
+    [mDict setValue:addDateDictionary forKey:username];
     [self.navigationController popToRootViewControllerAnimated:YES];
 
     [_delegate userSignedIn:dictionarycheck];

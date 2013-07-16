@@ -84,13 +84,17 @@
     currentUserData=dict;
      self.navigationItem.title=[currentUserData valueForKey:@"username"];
     [[NSUserDefaults standardUserDefaults]setObject:[currentUserData valueForKey:@"username"] forKey:@"currentusername"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
     [_delegate loginSuccess];
 }
 -(void)userSignedIn:(NSDictionary*)dict
 {
+   
+
     currentUserData=dict;
     self.navigationItem.title=[currentUserData valueForKey:@"username"];
     [[NSUserDefaults standardUserDefaults]setObject:[currentUserData valueForKey:@"username"] forKey:@"currentusername"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
 
     [_delegate loginSuccess];
 
@@ -100,6 +104,7 @@
 
 -(void)updateUserStats:(Session*)asession
 {
+    
    // NSString  *username=[[NSUserDefaults standardUserDefaults]valueForKey:@"currentusername"];
    // NSMutableDictionary  *dict=[[NSUserDefaults standardUserDefaults]objectForKey:username];
     

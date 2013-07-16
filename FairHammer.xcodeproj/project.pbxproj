@@ -10,15 +10,12 @@
 		0B10E887179421370040A5FC /* BreathDirection_NORMAL.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E87A179421370040A5FC /* BreathDirection_NORMAL.png */; };
 		0B10E888179421370040A5FC /* BreathDirection_REVERSE.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E87B179421370040A5FC /* BreathDirection_REVERSE.png */; };
 		0B10E889179421370040A5FC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E87C179421370040A5FC /* Default.png */; };
-		0B10E88A179421370040A5FC /* LoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E87D179421370040A5FC /* LoginButton.png */; };
 		0B10E88B179421370040A5FC /* Logo-Bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E87E179421370040A5FC /* Logo-Bottom.png */; };
 		0B10E88C179421370040A5FC /* Logo-Full.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E87F179421370040A5FC /* Logo-Full.png */; };
 		0B10E88D179421370040A5FC /* Logo-Middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E880179421370040A5FC /* Logo-Middle.png */; };
 		0B10E88E179421370040A5FC /* Logo-Top.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E881179421370040A5FC /* Logo-Top.png */; };
-		0B10E88F179421370040A5FC /* MainBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E882179421370040A5FC /* MainBackground.png */; };
 		0B10E890179421370040A5FC /* Mercury-Vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E883179421370040A5FC /* Mercury-Vertical.png */; };
 		0B10E891179421370040A5FC /* PeakHoldArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E884179421370040A5FC /* PeakHoldArrow.png */; };
-		0B10E892179421370040A5FC /* StatsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E885179421370040A5FC /* StatsButton.png */; };
 		0B10E893179421370040A5FC /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E886179421370040A5FC /* Thumbs.db */; };
 		0B1B800D178BFDCF00526074 /* Gauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B800C178BFDCF00526074 /* Gauge.m */; };
 		0B1B8012178BFF1D00526074 /* LoginViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B8010178BFF1D00526074 /* LoginViewViewController.m */; };
@@ -61,21 +58,37 @@
 		0BCA9552178B07B9006547C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCA9551178B07B9006547C3 /* QuartzCore.framework */; };
 		0BDA77641794391400CB69CA /* LogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA77621794391400CB69CA /* LogoViewController.m */; };
 		0BDA77651794391400CB69CA /* LogoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BDA77631794391400CB69CA /* LogoViewController.xib */; };
+		0BE8B7791795518D007AA2B0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE8B7781795518D007AA2B0 /* SecondViewController.m */; };
+		0BE8B77C17955351007AA2B0 /* SecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B77A17955351007AA2B0 /* SecondViewController_iPhone.xib */; };
+		0BE8B77D17955351007AA2B0 /* SecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B77B17955351007AA2B0 /* SecondViewController_iPad.xib */; };
+		0BE8B78217955471007AA2B0 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B77E17955471007AA2B0 /* first.png */; };
+		0BE8B78317955471007AA2B0 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B77F17955471007AA2B0 /* first@2x.png */; };
+		0BE8B78417955471007AA2B0 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B78017955471007AA2B0 /* second.png */; };
+		0BE8B78517955471007AA2B0 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B78117955471007AA2B0 /* second@2x.png */; };
+		0BE8B78917955B3D007AA2B0 /* AllUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE8B78717955B3D007AA2B0 /* AllUsersViewController.m */; };
+		0BE8B78D17956032007AA2B0 /* SettingsScreenBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B78B17956032007AA2B0 /* SettingsScreenBackground.png */; };
+		0BE8B78E17956032007AA2B0 /* UsersScreenBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B78C17956032007AA2B0 /* UsersScreenBackground.png */; };
+		0BE8B79017956135007AA2B0 /* AllUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B78F17956135007AA2B0 /* AllUsersViewController.xib */; };
+		0BE8B79617958633007AA2B0 /* LoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B79117958633007AA2B0 /* LoginButton.png */; };
+		0BE8B79717958633007AA2B0 /* MainBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B79217958633007AA2B0 /* MainBackground.png */; };
+		0BE8B79817958633007AA2B0 /* SignInButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B79317958633007AA2B0 /* SignInButton.png */; };
+		0BE8B79917958633007AA2B0 /* SignUpButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B79417958633007AA2B0 /* SignUpButton.png */; };
+		0BE8B79A17958633007AA2B0 /* StatsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B79517958633007AA2B0 /* StatsButton.png */; };
+		0BE8B79E17958DF1007AA2B0 /* Menu-Main.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B79B17958DF1007AA2B0 /* Menu-Main.png */; };
+		0BE8B79F17958DF1007AA2B0 /* Menu-Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B79C17958DF1007AA2B0 /* Menu-Settings.png */; };
+		0BE8B7A017958DF1007AA2B0 /* Menu-Users.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B79D17958DF1007AA2B0 /* Menu-Users.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B10E87A179421370040A5FC /* BreathDirection_NORMAL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BreathDirection_NORMAL.png; sourceTree = "<group>"; };
 		0B10E87B179421370040A5FC /* BreathDirection_REVERSE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BreathDirection_REVERSE.png; sourceTree = "<group>"; };
 		0B10E87C179421370040A5FC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		0B10E87D179421370040A5FC /* LoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginButton.png; sourceTree = "<group>"; };
 		0B10E87E179421370040A5FC /* Logo-Bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo-Bottom.png"; sourceTree = "<group>"; };
 		0B10E87F179421370040A5FC /* Logo-Full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo-Full.png"; sourceTree = "<group>"; };
 		0B10E880179421370040A5FC /* Logo-Middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo-Middle.png"; sourceTree = "<group>"; };
 		0B10E881179421370040A5FC /* Logo-Top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo-Top.png"; sourceTree = "<group>"; };
-		0B10E882179421370040A5FC /* MainBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainBackground.png; sourceTree = "<group>"; };
 		0B10E883179421370040A5FC /* Mercury-Vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mercury-Vertical.png"; sourceTree = "<group>"; };
 		0B10E884179421370040A5FC /* PeakHoldArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PeakHoldArrow.png; sourceTree = "<group>"; };
-		0B10E885179421370040A5FC /* StatsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatsButton.png; sourceTree = "<group>"; };
 		0B10E886179421370040A5FC /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
 		0B1B800B178BFDCF00526074 /* Gauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gauge.h; path = gauge/Gauge.h; sourceTree = "<group>"; };
 		0B1B800C178BFDCF00526074 /* Gauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Gauge.m; path = gauge/Gauge.m; sourceTree = "<group>"; };
@@ -136,6 +149,27 @@
 		0BDA77611794391400CB69CA /* LogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoViewController.h; sourceTree = "<group>"; };
 		0BDA77621794391400CB69CA /* LogoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoViewController.m; sourceTree = "<group>"; };
 		0BDA77631794391400CB69CA /* LogoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogoViewController.xib; sourceTree = "<group>"; };
+		0BE8B7771795518D007AA2B0 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		0BE8B7781795518D007AA2B0 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		0BE8B77A17955351007AA2B0 /* SecondViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController_iPhone.xib; sourceTree = "<group>"; };
+		0BE8B77B17955351007AA2B0 /* SecondViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController_iPad.xib; sourceTree = "<group>"; };
+		0BE8B77E17955471007AA2B0 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		0BE8B77F17955471007AA2B0 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		0BE8B78017955471007AA2B0 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		0BE8B78117955471007AA2B0 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		0BE8B78617955B3D007AA2B0 /* AllUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AllUsersViewController.h; path = "user stats/AllUsersViewController.h"; sourceTree = "<group>"; };
+		0BE8B78717955B3D007AA2B0 /* AllUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AllUsersViewController.m; path = "user stats/AllUsersViewController.m"; sourceTree = "<group>"; };
+		0BE8B78B17956032007AA2B0 /* SettingsScreenBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsScreenBackground.png; sourceTree = "<group>"; };
+		0BE8B78C17956032007AA2B0 /* UsersScreenBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UsersScreenBackground.png; sourceTree = "<group>"; };
+		0BE8B78F17956135007AA2B0 /* AllUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllUsersViewController.xib; sourceTree = "<group>"; };
+		0BE8B79117958633007AA2B0 /* LoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginButton.png; sourceTree = "<group>"; };
+		0BE8B79217958633007AA2B0 /* MainBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainBackground.png; sourceTree = "<group>"; };
+		0BE8B79317958633007AA2B0 /* SignInButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignInButton.png; sourceTree = "<group>"; };
+		0BE8B79417958633007AA2B0 /* SignUpButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUpButton.png; sourceTree = "<group>"; };
+		0BE8B79517958633007AA2B0 /* StatsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatsButton.png; sourceTree = "<group>"; };
+		0BE8B79B17958DF1007AA2B0 /* Menu-Main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-Main.png"; sourceTree = "<group>"; };
+		0BE8B79C17958DF1007AA2B0 /* Menu-Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-Settings.png"; sourceTree = "<group>"; };
+		0BE8B79D17958DF1007AA2B0 /* Menu-Users.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-Users.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,18 +195,23 @@
 		0B10E879179421370040A5FC /* App UI Files */ = {
 			isa = PBXGroup;
 			children = (
+				0BE8B79B17958DF1007AA2B0 /* Menu-Main.png */,
+				0BE8B79C17958DF1007AA2B0 /* Menu-Settings.png */,
+				0BE8B79D17958DF1007AA2B0 /* Menu-Users.png */,
+				0BE8B79117958633007AA2B0 /* LoginButton.png */,
+				0BE8B79217958633007AA2B0 /* MainBackground.png */,
+				0BE8B79317958633007AA2B0 /* SignInButton.png */,
+				0BE8B79417958633007AA2B0 /* SignUpButton.png */,
+				0BE8B79517958633007AA2B0 /* StatsButton.png */,
 				0B10E87A179421370040A5FC /* BreathDirection_NORMAL.png */,
 				0B10E87B179421370040A5FC /* BreathDirection_REVERSE.png */,
 				0B10E87C179421370040A5FC /* Default.png */,
-				0B10E87D179421370040A5FC /* LoginButton.png */,
 				0B10E87E179421370040A5FC /* Logo-Bottom.png */,
 				0B10E87F179421370040A5FC /* Logo-Full.png */,
 				0B10E880179421370040A5FC /* Logo-Middle.png */,
 				0B10E881179421370040A5FC /* Logo-Top.png */,
-				0B10E882179421370040A5FC /* MainBackground.png */,
 				0B10E883179421370040A5FC /* Mercury-Vertical.png */,
 				0B10E884179421370040A5FC /* PeakHoldArrow.png */,
-				0B10E885179421370040A5FC /* StatsButton.png */,
 				0B10E886179421370040A5FC /* Thumbs.db */,
 			);
 			path = "App UI Files";
@@ -246,6 +285,9 @@
 				0BB0C8EC1790152000A056E5 /* UserStatsViewController.h */,
 				0BB0C8ED1790152000A056E5 /* UserStatsViewController.m */,
 				0BB0C8EE1790152000A056E5 /* UserStatsViewController.xib */,
+				0BE8B78617955B3D007AA2B0 /* AllUsersViewController.h */,
+				0BE8B78717955B3D007AA2B0 /* AllUsersViewController.m */,
+				0BE8B78F17956135007AA2B0 /* AllUsersViewController.xib */,
 			);
 			name = stats;
 			sourceTree = "<group>";
@@ -297,6 +339,7 @@
 		0BCA952F178AFDBC006547C3 /* FairHammer */ = {
 			isa = PBXGroup;
 			children = (
+				0BE8B7761795517D007AA2B0 /* Settings */,
 				0BDA77601794390200CB69CA /* logo */,
 				0BB0C8F31790348F00A056E5 /* UIEffectDesignerView */,
 				0BB0C8EB179014DB00A056E5 /* stats */,
@@ -321,6 +364,12 @@
 		0BCA9530178AFDBC006547C3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0BE8B78B17956032007AA2B0 /* SettingsScreenBackground.png */,
+				0BE8B78C17956032007AA2B0 /* UsersScreenBackground.png */,
+				0BE8B77E17955471007AA2B0 /* first.png */,
+				0BE8B77F17955471007AA2B0 /* first@2x.png */,
+				0BE8B78017955471007AA2B0 /* second.png */,
+				0BE8B78117955471007AA2B0 /* second@2x.png */,
 				0B10E879179421370040A5FC /* App UI Files */,
 				0BB70CAC1790402F00B91CE8 /* bell.mp3 */,
 				0BB70CAE1790530F00B91CE8 /* bell_1.png */,
@@ -346,6 +395,17 @@
 				0BDA77631794391400CB69CA /* LogoViewController.xib */,
 			);
 			name = logo;
+			sourceTree = "<group>";
+		};
+		0BE8B7761795517D007AA2B0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0BE8B7771795518D007AA2B0 /* SecondViewController.h */,
+				0BE8B77A17955351007AA2B0 /* SecondViewController_iPhone.xib */,
+				0BE8B77B17955351007AA2B0 /* SecondViewController_iPad.xib */,
+				0BE8B7781795518D007AA2B0 /* SecondViewController.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,17 +477,31 @@
 				0B10E887179421370040A5FC /* BreathDirection_NORMAL.png in Resources */,
 				0B10E888179421370040A5FC /* BreathDirection_REVERSE.png in Resources */,
 				0B10E889179421370040A5FC /* Default.png in Resources */,
-				0B10E88A179421370040A5FC /* LoginButton.png in Resources */,
 				0B10E88B179421370040A5FC /* Logo-Bottom.png in Resources */,
 				0B10E88C179421370040A5FC /* Logo-Full.png in Resources */,
 				0B10E88D179421370040A5FC /* Logo-Middle.png in Resources */,
 				0B10E88E179421370040A5FC /* Logo-Top.png in Resources */,
-				0B10E88F179421370040A5FC /* MainBackground.png in Resources */,
 				0B10E890179421370040A5FC /* Mercury-Vertical.png in Resources */,
 				0B10E891179421370040A5FC /* PeakHoldArrow.png in Resources */,
-				0B10E892179421370040A5FC /* StatsButton.png in Resources */,
 				0B10E893179421370040A5FC /* Thumbs.db in Resources */,
 				0BDA77651794391400CB69CA /* LogoViewController.xib in Resources */,
+				0BE8B77C17955351007AA2B0 /* SecondViewController_iPhone.xib in Resources */,
+				0BE8B77D17955351007AA2B0 /* SecondViewController_iPad.xib in Resources */,
+				0BE8B78217955471007AA2B0 /* first.png in Resources */,
+				0BE8B78317955471007AA2B0 /* first@2x.png in Resources */,
+				0BE8B78417955471007AA2B0 /* second.png in Resources */,
+				0BE8B78517955471007AA2B0 /* second@2x.png in Resources */,
+				0BE8B78D17956032007AA2B0 /* SettingsScreenBackground.png in Resources */,
+				0BE8B78E17956032007AA2B0 /* UsersScreenBackground.png in Resources */,
+				0BE8B79017956135007AA2B0 /* AllUsersViewController.xib in Resources */,
+				0BE8B79617958633007AA2B0 /* LoginButton.png in Resources */,
+				0BE8B79717958633007AA2B0 /* MainBackground.png in Resources */,
+				0BE8B79817958633007AA2B0 /* SignInButton.png in Resources */,
+				0BE8B79917958633007AA2B0 /* SignUpButton.png in Resources */,
+				0BE8B79A17958633007AA2B0 /* StatsButton.png in Resources */,
+				0BE8B79E17958DF1007AA2B0 /* Menu-Main.png in Resources */,
+				0BE8B79F17958DF1007AA2B0 /* Menu-Settings.png in Resources */,
+				0BE8B7A017958DF1007AA2B0 /* Menu-Users.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +528,8 @@
 				0BB0C8F81790348F00A056E5 /* NSData+Base64.m in Sources */,
 				0BB0C8F91790348F00A056E5 /* UIEffectDesignerView.m in Sources */,
 				0BDA77641794391400CB69CA /* LogoViewController.m in Sources */,
+				0BE8B7791795518D007AA2B0 /* SecondViewController.m in Sources */,
+				0BE8B78917955B3D007AA2B0 /* AllUsersViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

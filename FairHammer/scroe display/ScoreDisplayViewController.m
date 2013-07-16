@@ -29,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    maxStrength=30;
+    maxStrength=70;
     _strenthProgress.progress=0;
     self.view.backgroundColor=[UIColor clearColor];
     // Do any additional setup after loading the view from its nib.

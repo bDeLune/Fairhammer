@@ -46,4 +46,5 @@
 -(void)stopMidiNote;
 -(void)midiNoteBegan:(int)direction vel:(int)pvelocity;
 -(void)setup;
+-(void)sendValue:(int)note onoff:(int)onoff;
 @end

@@ -35,19 +35,65 @@ typedef void(^RunTimer)(void);
     UIImageView  *peakholdImageView;
     
     LogoViewController  *logoviewcontroller;
+    int threshold;
 }
 
 @end
 
 @implementation ViewController
+-(void)setResitance:(int)pvalue
+{
+    switch (pvalue) {
+        case 0:
+            [gaugeView setMass:1];
+            break;
+            
+        case 1:
+            [gaugeView setMass:2];
+            
+            break;
+        case 2:
+            [gaugeView setMass:3];
+            
+            break;
+            
+        default:
+            break;
 
+    }
+}
+-(void)setThreshold:(int)pvalue
+{
+    switch (pvalue) {
+        case 0:
+            threshold=3;
+            break;
+            
+        case 1:
+            threshold=10;
+
+            break;
+        case 2:
+            threshold=20;
+
+            break;
+            
+        default:
+            break;
+    }
+
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    bg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainBackground.png"]];
+    bg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainBackground"]];
     [self.view insertSubview:bg atIndex:0];
+    self.tabBarItem.image = [UIImage imageNamed:@"Menu-Main"];
+    self.title = @"Main";
+
+    threshold=3;
       // drawDuration = 3.0;
 	// Do any additional setup after loading the view, typically from a nib.
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(updateLogNotification:) name:SEND_MSG_TO_LOG_NOTIFY object:nil];
@@ -77,16 +123,12 @@ typedef void(^RunTimer)(void);
     [self.view addSubview:navcontroller.view];
     
     highScoreViewController=[[HighScoreViewController alloc]init];
-    highScoreViewController.view.frame=CGRectMake(self.view.bounds.size.width-200, 10, 200, 200);
+    highScoreViewController.view.frame=CGRectMake(self.view.bounds.size.width-215, 15, 200, 200);
     [highScoreViewController setup];
     [self.view addSubview:highScoreViewController.view];
     
-  /**  gaugeView=[[Gauge alloc]initWithFrame:CGRectMake(self.view.bounds.size.width/2-(GAUGE_WIDTH/2),
-                                                     self.view.bounds.size.height-GUAGE_HEIGHT,
-                                                     GAUGE_WIDTH,
-                                                     GUAGE_HEIGHT)];**/
-    
-    gaugeView=[[Gauge alloc]initWithFrame:CGRectMake(353, 300, 40, GUAGE_HEIGHT)];
+      
+    gaugeView=[[Gauge alloc]initWithFrame:CGRectMake(370, 365, 40, GUAGE_HEIGHT)];
     gaugeView.gaugedelegate=self;
     
     scoreViewController=[[ScoreDisplayViewController alloc]init];
@@ -125,7 +167,7 @@ typedef void(^RunTimer)(void);
     
     
     logoviewcontroller=[[LogoViewController alloc]init];
-    [logoviewcontroller.view setFrame:CGRectMake(gaugeView.frame.origin.x-50,20,174,174)];
+    [logoviewcontroller.view setFrame:CGRectMake(gaugeView.frame.origin.x-90,20,174,174)];
     
     [self.view addSubview:logoviewcontroller.view];
     
@@ -203,7 +245,13 @@ typedef void(^RunTimer)(void);
 -(void)midiNoteContinuing:(MidiController*)midi
 {
 
+    
+    
     float  vel=midiController.velocity;
+    
+    if (vel<threshold) {
+        return;
+    }
     if (vel==127) {
         return;
     }
@@ -315,5 +363,23 @@ typedef void(^RunTimer)(void);
     AudioServicesPlaySystemSound (soundID);
     //[soundPath release];
    // NSLog(@"soundpath retain count: %d", [soundPath retainCount]);
+}
+
+-(void)setRate:(float)value
+{
+   // self.animationrate=value;
+}
+
+-(void)sendValue:(int)note onoff:(int)onoff
+{
+   /** const UInt8 noteOn[]  = { 0x90, note, 127 };
+    // const UInt8 noteOff[] = { 0x80, note, 0   };
+    [_delegate sendLogToOutput:@"got this 127"];
+    [self sendBytes:noteOn size:sizeof(noteOn)];
+    [NSThread sleepForTimeInterval:0.1];**/
+    // [self sendBytes:noteOff size:sizeof(noteOff)];
+    [midiController sendValue:note onoff:onoff];
+    
+    
 }
 @end

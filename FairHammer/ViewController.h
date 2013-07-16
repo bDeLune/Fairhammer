@@ -31,8 +31,17 @@
 
 //Distance
 //s(t) = 1/2*a*t2  
+@protocol SETTINGS_DELEGATE
 
-@interface ViewController : UIViewController<LoginViewControllerDelegate,MidiControllerProtocol,GaugeProtocol>
+-(void)sendValue:(int)note onoff:(int)onoff;
+-(void)setResitance:(int)pvalue;
+-(void)setThreshold:(int)pvalue;
+
+//-(void)setFilter:(int)index;
+//-(void)setRate:(float)value;
+@end
+
+@interface ViewController : UIViewController<LoginViewControllerDelegate,MidiControllerProtocol,GaugeProtocol,SETTINGS_DELEGATE>
 @property(nonatomic,strong)IBOutlet UIButton   *accelerateButton;
 @property(nonatomic,strong)IBOutlet UITextView  *debugTextField;
 @property(nonatomic,strong)IBOutlet UITextField  *inputtext;

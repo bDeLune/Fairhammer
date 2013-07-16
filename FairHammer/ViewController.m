@@ -214,6 +214,7 @@ typedef void(^RunTimer)(void);
     
     if (vel>[currentSession.sessionStrength floatValue]) {
         currentSession.sessionStrength=[NSNumber numberWithFloat:vel];
+       // [gaugeView setArrowPos:0];
     }
     
     double  duration=[date timeIntervalSinceDate:midiController.date];
@@ -256,7 +257,8 @@ typedef void(^RunTimer)(void);
     if (sessionRunning) {
         sessionRunning=NO;
     }
-    
+    scoreViewController.durationValueLabel.text=@"";
+    scoreViewController.strengthValueLabel.text=@"";
     [loginViewController updateUserStats:currentSession];
    
     
@@ -270,6 +272,12 @@ typedef void(^RunTimer)(void);
 -(void)maxDistanceReached
 {
     [midiController pause];
+    if (particleEffect) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [particleEffect removeFromSuperview];
+            particleEffect=nil;
+        });
+    }
     particleEffect = [UIEffectDesignerView effectWithFile:@"sparks.ped"];
     CGRect frame=particleEffect.frame;
     frame.origin.x=(self.view.bounds.size.width/2)-50;
@@ -285,12 +293,16 @@ typedef void(^RunTimer)(void);
 
 -(void)killSparks
 {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [particleEffect removeFromSuperview];
+        particleEffect=nil;
+    });
     [midiController resume];
     [self midiNoteStopped:midiController];
     [effecttimer invalidate];
     effecttimer=nil;
-    [particleEffect removeFromSuperview];
-    particleEffect=nil;
+    
+   
     [gaugeView start];
     //[bellImageView stopAnimating];
     [logoviewcontroller stopAnimating];

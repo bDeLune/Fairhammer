@@ -26,4 +26,5 @@
 -(void)setForce:(float)pforce;
 -(void)blowingBegan;
 -(void)blowingEnded;
+-(void)setArrowPos:(float)pforce;
 @end

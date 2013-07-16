@@ -35,6 +35,7 @@
     float anim;
     float anim_delay;
     float weight;
+    float bestDistance;
     
 
 }
@@ -53,7 +54,6 @@
                                                   selector:@selector(animate)];
         
         start=[NSDate date];
-        
         animationObject=[[UIView alloc]initWithFrame:self.bounds];
         [animationObject setBackgroundColor:[UIColor blueColor]];
         animationObject.layer.cornerRadius=16;
@@ -73,7 +73,7 @@
 }
 -(void)setDefaults
 {
-    velocity=0.1;
+    velocity=0.0;
     distance=0.1;
     time=0.1;
     acceleration=0.1;
@@ -83,7 +83,8 @@
     h=0;
     hm=0;
     anim_delay=0;
-    weight=2.0;
+    bestDistance=0;
+    isaccelerating=NO;
 
 }
 -(void)setForce:(float)pforce
@@ -126,16 +127,22 @@
     time = distance / velocity;
     
     distance= ceilf((0.5)* (acceleration * powf(time, 2)));
+    
+    
       if (distance<GUAGE_HEIGHT) {
         CGRect frame=animationObject.frame;
         frame.origin.y=self.bounds.size.height-distance;
         frame.size.height=distance;
           
-          
-          CGRect frame2=_arrow.frame;
-          frame2.origin.y=frame.origin.y-40;
-          [_arrow setFrame:frame2];
-          
+          if (distance>bestDistance) {
+              
+                CGRect frame2=_arrow.frame;
+               frame2.origin.y=frame.origin.y-40;
+               [_arrow setFrame:frame2];
+              bestDistance=distance;
+
+          }
+                  
         [animationObject setFrame:frame];
     }else
     {
@@ -151,7 +158,27 @@
     
     //1/2*a*t2
 }
+-(void)setArrowPos:(float)pforce
+{
+    force=(pforce/mass);
+    
+    
+   // acceleration= acceleration +( force/mass);
+   // velocity = distance / time;
+    
+   // time = distance / velocity;
+   // distance= ceilf((0.5)* (acceleration * powf(time, 2)));
+    CGRect frame=animationObject.frame;
+    frame.origin.y=self.bounds.size.height-distance;
+    CGRect frame2=_arrow.frame;
+    frame2.origin.y=frame.origin.y-40;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_arrow setFrame:frame2];
 
+    });
+    
+}
 -(void)stop
 {
     if (_animationRunning) {
@@ -186,8 +213,9 @@
     [UIView animateWithDuration:0.5
                      animations:^{
                          CGRect frame=animationObject.frame;
-                         frame.origin.y=self.bounds.size.height-1;
-                         animationObject.frame=frame;
+                         frame.origin.y=self.bounds.size.height-GUAGE_HEIGHT;
+                         frame.size.height=distance;
+
                          
                          CGRect frame2=_arrow.frame;
                          frame2.origin.y=self.bounds.size.height-1;
@@ -195,6 +223,7 @@
                      }
                      completion:^(BOOL finished){
                          
-                         
+                         [self stop];
+
                      }];}
 @end

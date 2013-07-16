@@ -95,7 +95,7 @@ void MyMIDINotifyProc (const MIDINotification  *message, void *refCon);
 -(void)midiNoteBegan:(int)direction vel:(int)pvelocity
 
 {
-    [_delegate sendLogToOutput:[NSString stringWithFormat:@"is paysed  at began%i",ispaused]];
+   // [_delegate sendLogToOutput:[NSString stringWithFormat:@"is paysed  at began%i",ispaused]];
 
    if (ispaused) {
         return;
@@ -126,7 +126,7 @@ void MyMIDINotifyProc (const MIDINotification  *message, void *refCon);
     
     
     if (ispaused) {
-        [_delegate sendLogToOutput:[NSString stringWithFormat:@"is paysed %i",ispaused]];
+       // [_delegate sendLogToOutput:[NSString stringWithFormat:@"is paysed %i",ispaused]];
 
         return;
     }
@@ -145,23 +145,24 @@ void MyMIDINotifyProc (const MIDINotification  *message, void *refCon);
 -(void)stopMidiNote
 {
     
-    if (_midiIsOn) {
+   // if (_midiIsOn) {
         
     
     [_delegate sendLogToOutput:[NSString stringWithFormat:@"is paysed  at stop%i",ispaused]];
 
     if (ispaused) {
         return;
+       // [_delegate sendLogToOutput:[NSString stringWithFormat:@"paused%i",ispaused]];
 
     }
     _midiIsOn=NO;
 
-    self.velocity=0.1;
+    self.velocity=0.0;
     
     [_delegate midiNoteStopped:self];
 
 }
-}
+
 
 #pragma mark MIDI Output
 - (IBAction) sendMidiData
@@ -244,8 +245,7 @@ static void	MyMIDIReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 
             [vc stopMidiNote];
            
-            [vc.delegate sendLogToOutput:[NSString stringWithFormat:
-                                             @"Command =%d ,Note=%d, Velocity=%d",midiCommand, note, veolocity]];
+           
         }
     }
     

@@ -15,6 +15,8 @@
 @interface HighScoreViewController : UIViewController
 @property(nonatomic,strong)IBOutlet  UILabel  *durationValueLabel;
 @property(nonatomic,strong)IBOutlet UILabel  *strengthValueLabel;
+@property(nonatomic,strong)IBOutlet  UIButton  *resetButton;
+-(IBAction)reset:(id)sender;
 -(void)updateWithCurrentSession:(Session*)session;
 -(void)setup;
 @end

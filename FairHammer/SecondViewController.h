@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Culann Mac Cabe. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-#import "ViewController.h"
+#import "FirstViewController.h"
 
 @interface SecondViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 {

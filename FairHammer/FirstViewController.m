@@ -6,16 +6,18 @@
 //  Copyright (c) 2013 barry. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "FirstViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "Gauge.h"
 #import "ScoreDisplayViewController.h"
 #import "Session.h"
 #import "UIEffectDesignerView.h"
+#import <AVFoundation/AVFoundation.h>
+
 typedef void(^RunTimer)(void);
 
-@interface ViewController ()
+@interface FirstViewController ()
 {
     UINavigationController   *navcontroller;
     LoginViewViewController   *loginViewController;
@@ -36,11 +38,21 @@ typedef void(^RunTimer)(void);
     
     LogoViewController  *logoviewcontroller;
     int threshold;
-}
+    
+   AVAudioPlayer *audioPlayer;
+    
+    UIButton  *togglebutton;
+    BOOL   toggleIsON;
+    
+    int midiinhale;
+    int midiexhale;
+    int currentdirection;
+    int inorout;
 
+}
 @end
 
-@implementation ViewController
+@implementation FirstViewController
 -(void)setResitance:(int)pvalue
 {
     switch (pvalue) {
@@ -49,11 +61,16 @@ typedef void(^RunTimer)(void);
             break;
             
         case 1:
-            [gaugeView setMass:2];
+            [gaugeView setMass:3];
             
             break;
         case 2:
-            [gaugeView setMass:3];
+            [gaugeView setMass:6];
+            
+            break;
+            
+        case 3:
+            [gaugeView setMass:10];
             
             break;
             
@@ -66,16 +83,21 @@ typedef void(^RunTimer)(void);
 {
     switch (pvalue) {
         case 0:
-            threshold=3;
+            threshold=10;
             break;
             
         case 1:
-            threshold=10;
+            threshold=30;
 
             break;
         case 2:
-            threshold=20;
+            threshold=70;
 
+            break;
+            
+        case 3:
+            threshold=100;
+            
             break;
             
         default:
@@ -92,8 +114,9 @@ typedef void(^RunTimer)(void);
     [self.view insertSubview:bg atIndex:0];
     self.tabBarItem.image = [UIImage imageNamed:@"Menu-Main"];
     self.title = @"Main";
-
-    threshold=3;
+    midiinhale=61;
+    midiexhale=73;
+    threshold=10;
       // drawDuration = 3.0;
 	// Do any additional setup after loading the view, typically from a nib.
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(updateLogNotification:) name:SEND_MSG_TO_LOG_NOTIFY object:nil];
@@ -171,6 +194,41 @@ typedef void(^RunTimer)(void);
     
     [self.view addSubview:logoviewcontroller.view];
     
+    
+    togglebutton=[UIButton buttonWithType:UIButtonTypeCustom];
+    togglebutton.frame=CGRectMake(110, self.view.frame.size.height-120, 108, 58);
+    [togglebutton addTarget:self action:@selector(toggleDirection:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:togglebutton];
+    
+    [togglebutton setBackgroundImage:[UIImage imageNamed:@"BreathDirection_NORMAL.png"] forState:UIControlStateNormal];
+    toggleIsON=NO;
+
+    
+}
+- (IBAction)toggleDirection:(id)sender
+{
+    
+    switch (midiController.toggleIsON) {
+        case 0:
+            midiController.toggleIsON=YES;
+          //  midiController.currentdirection=midiinhale;
+            [togglebutton setBackgroundImage:[UIImage imageNamed:@"BreathDirection_REVERSE.png"] forState:UIControlStateNormal];
+            break;
+        case 1:
+            midiController.toggleIsON=NO;
+
+            [togglebutton setBackgroundImage:[UIImage imageNamed:@"BreathDirection_NORMAL.png"] forState:UIControlStateNormal];
+          //  midiController.currentdirection=midiexhale;
+
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+    
 }
 
 #pragma mark -
@@ -213,6 +271,8 @@ typedef void(^RunTimer)(void);
         [scoreViewController setStrength:vel];
         
     });
+
+
 }
 #pragma mark -
 #pragma mark - Midi Delegate
@@ -299,14 +359,34 @@ typedef void(^RunTimer)(void);
     }
 
 }
-
+-(void)endCurrentSessionTest
+{
+   /** if (sessionRunning) {
+        sessionRunning=NO;
+    }
+    currentSession=[[Session alloc]init];
+    currentSession.sessionDate=midiController.date;
+    currentSession.username=[[NSUserDefaults standardUserDefaults]valueForKey:@"currentusername"];
+    currentSession.sessionDuration=[NSNumber numberWithInt:1];
+    currentSession.sessionStrength=[NSNumber numberWithInt:1];
+    [loginViewController updateUserStats:currentSession];
+    
+    
+    
+    [highScoreViewController updateWithCurrentSession:currentSession];**/
+    
+}
 -(void)endCurrentSession
 {
     if (sessionRunning) {
         sessionRunning=NO;
     }
-    scoreViewController.durationValueLabel.text=@"";
-    scoreViewController.strengthValueLabel.text=@"";
+       // dispatch_async(dispatch_get_main_queue(), ^{
+          //  scoreViewController.durationValueLabel.text=@"";
+           // scoreViewController.strengthValueLabel.text=@"";
+        
+       // });
+
     [loginViewController updateUserStats:currentSession];
    
     
@@ -319,6 +399,7 @@ typedef void(^RunTimer)(void);
 
 -(void)maxDistanceReached
 {
+    [self endCurrentSession];
     [midiController pause];
     if (particleEffect) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -337,6 +418,10 @@ typedef void(^RunTimer)(void);
     [self playSound];
 //[bellImageView startAnimating];
     [logoviewcontroller startAnimating];
+   // [loginViewController updateUserStats:currentSession];
+    
+   //
+    [highScoreViewController updateWithCurrentSession:currentSession];
 }
 
 -(void)killSparks
@@ -357,10 +442,19 @@ typedef void(^RunTimer)(void);
 
 }
 -(void) playSound {
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"bell" ofType:@"mp3"];
-    SystemSoundID soundID;
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
-    AudioServicesPlaySystemSound (soundID);
+    
+  NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"bell" ofType:@"mp3"];
+    
+    
+    NSData *fileData = [NSData dataWithContentsOfFile:soundPath];
+    
+    NSError *error = nil;
+    
+    audioPlayer = [[AVAudioPlayer alloc] initWithData:fileData
+                                                    error:&error];
+    [audioPlayer prepareToPlay];
+    [audioPlayer play];
+
     //[soundPath release];
    // NSLog(@"soundpath retain count: %d", [soundPath retainCount]);
 }

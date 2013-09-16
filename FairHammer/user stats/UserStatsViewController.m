@@ -7,34 +7,15 @@
 //
 
 #import "UserStatsViewController.h"
-#import "ViewController.h"
+#import "FirstViewController.h"
+#import "SessionNoteViewController.h"
 @interface UserStatsViewController ()
 
 @end
 
 @implementation UserStatsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor clearColor]];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 -(void)viewWillAppear:(BOOL)animated
 {
     [self writeStatsToLabels];
@@ -58,6 +39,8 @@
         self.durationLabel.text=[NSString stringWithFormat:@"%0.1f",[usersBestDuration floatValue]];
         self.strengthLabel.text=[NSString stringWithFormat:@"%0.1f",[usersBestStrength floatValue]];
         
+        NSLog(@"%@",self.durationLabel.text);
+        NSLog(@"%@", self.strengthLabel.text);
 
     });
   
@@ -78,7 +61,24 @@
        NSMutableDictionary *mutableDict = [dict mutableCopy];
         NSNumber  *usersBestDuration=[dict valueForKey:@"bestduration"];
         NSNumber  *usersBestStrength=[dict valueForKey:@"beststrength"];
-        
+    
+    
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        NSDate  *date=[NSDate date];
+        [dateFormat setDateFormat:@"d MMM y H:m:s"];
+        NSString *attemptDateString = [dateFormat stringFromDate:date];
+    
+        NSDictionary  *allScoresDict=[dict valueForKey:@"allscores"];
+    NSMutableDictionary  *allScoresMutatable=[allScoresDict mutableCopy];
+        NSMutableDictionary   *durationAndStrenghtDict=[NSMutableDictionary  dictionaryWithObjectsAndKeys:
+                                             usersBestDuration,@"bestduration",
+                                             usersBestStrength,@"beststrength",session.sessionDuration,@"duration",session.sessionStrength,@"strength", nil];
+    
+    
+          [allScoresMutatable  setValue:durationAndStrenghtDict forKey:attemptDateString];
+          [mutableDict setObject:allScoresMutatable forKey:@"allscores"];
+    
+    
         if (!session) {
             return ;
         }
@@ -94,10 +94,13 @@
             
         }
     
-    [mDict setValue:mutableDict forKey:username];
+       [mDict setValue:mutableDict forKey:username];
         
         [[NSUserDefaults standardUserDefaults]setValue:mDict forKey:@"users"];
         [[NSUserDefaults standardUserDefaults]synchronize];
+    
+    
+        [[NSNotificationCenter  defaultCenter]postNotification:[NSNotification notificationWithName:SESSION_NOTE_ADDED_NOTIFY object:nil]];
 
   //  });
    

@@ -65,6 +65,9 @@
         isaccelerating=false;
         self.backgroundColor=[UIColor clearColor];
         self.layer.cornerRadius=16;
+        
+        mass=1;
+        force=15;
        /** if (!animationRunning)
         {
             [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
@@ -80,8 +83,8 @@
     distance=0.1;
     time=0.1;
     acceleration=0.1;
-    mass=1;
-    force=15;
+   // mass=1;
+//force=15;
     
     h=0;
     hm=0;

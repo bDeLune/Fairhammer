@@ -45,11 +45,13 @@ void MyMIDINotifyProc (const MIDINotification  *message, void *refCon);
 
     _midiinhale=61;
     _midiexhale=73;
+    _currentdirection=_midiexhale;
     _velocity=0;
     //_zerocount=0;
     _midiIsOn=false;
     //currentstate=MIDI_STOPPED;
       //  [self pause];
+    _toggleIsON=NO;
     [self setupMIDI];
     
     
@@ -91,17 +93,37 @@ void MyMIDINotifyProc (const MIDINotification  *message, void *refCon);
 {
 
 }
+-(BOOL)allowBreath
+{
+    if (_toggleIsON) {
+        if (_currentdirection!=_midiexhale) {
+            return NO;
+        }
+    }else if (!_toggleIsON)
+    {
+        
+        if (_currentdirection!=_midiinhale) {
+            return NO;
+        }
+    }
+    
+    return YES;
 
+}
 -(void)midiNoteBegan:(int)direction vel:(int)pvelocity
 
 {
-   // [_delegate sendLogToOutput:[NSString stringWithFormat:@"is paysed  at began%i",ispaused]];
-
+    _currentdirection=direction;
+  
+    if (![self allowBreath]) {
+        return;
+    }
+       
    if (ispaused) {
         return;
 
     }
-    inorout=direction;
+   /** inorout=direction;
     
     if (_toggleIsON==YES) {
         if (inorout==_midiinhale) {
@@ -112,7 +134,7 @@ void MyMIDINotifyProc (const MIDINotification  *message, void *refCon);
     
         }
     }
-    _velocity=pvelocity;
+    _velocity=pvelocity;**/
 
     _date=[NSDate date];
     [_delegate midiNoteBegan:self];
@@ -123,7 +145,9 @@ void MyMIDINotifyProc (const MIDINotification  *message, void *refCon);
 
 -(void)continueMidiNote:(int)pvelocity
 {
-    
+    if (![self allowBreath]) {
+        return;
+    }
     
     if (ispaused) {
        // [_delegate sendLogToOutput:[NSString stringWithFormat:@"is paysed %i",ispaused]];

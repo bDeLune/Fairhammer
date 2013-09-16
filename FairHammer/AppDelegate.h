@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class ViewController;
+@class FirstViewController;
 @class SecondViewController;
 @class AllUsersViewController;
 
@@ -16,7 +16,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong,nonatomic) ViewController *viewController;
+@property (strong,nonatomic) FirstViewController *viewController;
 @property (strong,nonatomic) SecondViewController*viewController2;
 @property (strong,nonatomic) AllUsersViewController*allusersViewController;
 

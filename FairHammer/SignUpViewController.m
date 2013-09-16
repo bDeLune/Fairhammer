@@ -102,13 +102,16 @@
     NSMutableDictionary  *dictionary=[[NSMutableDictionary alloc]init];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     NSDate  *date=[NSDate date];
-    [dateFormat setDateFormat:@"MM/dd/yyyy hh:mma"];
+    [dateFormat setDateFormat:@"d MMM y H:m:s"];
     NSString *dateString = [dateFormat stringFromDate:date];
     [dictionary setValue:password forKey:@"password"];
     [dictionary setValue:username forKey:@"username"];
     [dictionary setValue:[NSNumber numberWithFloat:0.0] forKey:@"bestduration"];
     [dictionary setValue:[NSNumber numberWithFloat:0.0] forKey:@"beststrength"];
+    
     [dictionary setValue:dateString forKey:@"lastlogin"];
+    NSMutableDictionary  *allscores=[[NSMutableDictionary alloc]init];
+    [dictionary setValue:allscores forKey:@"allscores"];
 
    
     [mDict setValue:dictionary forKey:username];
@@ -146,7 +149,7 @@
     NSMutableDictionary   *addDateDictionary=[dict mutableCopy];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     NSDate  *date=[NSDate date];
-    [dateFormat setDateFormat:@"MM/dd/yyyy hh:mma"];
+    [dateFormat setDateFormat:@"d MMM y H:m:s"];
     NSString *dateString = [dateFormat stringFromDate:date];
     
     NSLog(@"date: %@", dateString);

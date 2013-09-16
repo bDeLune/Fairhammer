@@ -36,7 +36,7 @@
     HighScoreObject *object = [NSKeyedUnarchiver unarchiveObjectWithData:data];
 
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.strengthValueLabel.text=[NSString stringWithFormat:@"%0.1f",[object.strength floatValue]];
+        self.strengthValueLabel.text=[NSString stringWithFormat:@"%0.0f",[object.strength floatValue]];
         self.durationValueLabel.text=[NSString stringWithFormat:@"%0.0f",[object.duration floatValue]];
         
     });
@@ -109,9 +109,22 @@
     
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.strengthValueLabel.text=[NSString stringWithFormat:@"%0.1f",[object.strength floatValue]];
+        self.strengthValueLabel.text=[NSString stringWithFormat:@"%0.0f",[object.strength floatValue]];
         self.durationValueLabel.text=[NSString stringWithFormat:@"%0.0f",[object.duration floatValue]];
         
     });
+}
+
+-(IBAction)reset:(id)sender
+{
+    HighScoreObject  *object=[[HighScoreObject alloc]init];
+    object.duration=0;
+    object.strength=0;
+    object.username=@"";
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:object];
+    [[NSUserDefaults standardUserDefaults]setObject:data forKey:@"highscore"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+[[NSNotificationCenter defaultCenter]postNotificationName:NEW_HIGH_SCORE_NOTIFICATION object:nil userInfo:nil];
+
 }
 @end

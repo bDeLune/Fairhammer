@@ -104,15 +104,6 @@
 
 -(void)updateUserStats:(Session*)asession
 {
-    
-   // NSString  *username=[[NSUserDefaults standardUserDefaults]valueForKey:@"currentusername"];
-   // NSMutableDictionary  *dict=[[NSUserDefaults standardUserDefaults]objectForKey:username];
-    
-    
-    //NSData *data = [[NSKeyedArchiver archivedDataWithRootObject:asession]mutableCopy];
-    ////[dict setObject:data forKey:@"lastsession"];
-   // [[NSUserDefaults standardUserDefaults]synchronize];
-    
-    [userStatsViewController updateUserStats:asession];
+       [userStatsViewController updateUserStats:asession];
 }
 @end

@@ -41,12 +41,13 @@
 //-(void)setRate:(float)value;
 @end
 
-@interface ViewController : UIViewController<LoginViewControllerDelegate,MidiControllerProtocol,GaugeProtocol,SETTINGS_DELEGATE>
+@interface FirstViewController : UIViewController<LoginViewControllerDelegate,MidiControllerProtocol,GaugeProtocol,SETTINGS_DELEGATE>
 @property(nonatomic,strong)IBOutlet UIButton   *accelerateButton;
 @property(nonatomic,strong)IBOutlet UITextView  *debugTextField;
 @property(nonatomic,strong)IBOutlet UITextField  *inputtext;
-@property  dispatch_source_t  aTimer;
 
+@property  dispatch_source_t  aTimer;
+-(IBAction)endCurrentSessionTest:(id)sender;
 -(IBAction)touchAccelerateUp:(id)sender;
 -(IBAction)touchAccelerateDown:(id)sender;
 @end

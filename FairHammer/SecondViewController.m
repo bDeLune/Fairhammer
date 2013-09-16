@@ -23,7 +23,7 @@
         self.title = @"Settings";
         self.tabBarItem.image = [UIImage imageNamed:@"Menu-Settings"];
         
-        arrayA=[NSMutableArray arrayWithObjects:@"Small",@"Normal",@"Big", nil];
+        arrayA=[NSMutableArray arrayWithObjects:@"Small",@"Normal",@"Big",@"Very Big", nil];
        arrayB=[NSMutableArray arrayWithObjects:@"Low",@"Normal",@"High",@"Very High", nil];
 
         arrayC=[NSMutableArray arrayWithObjects:@"10",@"50",@"100",@"200", nil];
@@ -31,7 +31,7 @@
         filterArray=[NSMutableArray arrayWithObjects:@"Bulge",@"Swirl",@"Blur", nil];
         
         arrayResistance=@[@"Low",@"Medium",@"High"];
-        arrayThreshold=@[@"Low",@"Medium",@"High"];
+        arrayThreshold=@[@"Low",@"Medium",@"High",@"Very High"];
 
       //  bgimage=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"SettingsScreenBackground"]];
        // [self.view insertSubview:bgimage atIndex:0];
@@ -181,6 +181,8 @@
     if (thePickerView==pickerThreshold) {
         NSLog(@"Selected : %@. Index of selected color: %i", [arrayThreshold objectAtIndex:row], row);
         [self.settinngsDelegate setThreshold:row];
+        [self.settinngsDelegate setResitance:row];
+
         
         
     }
@@ -295,92 +297,5 @@
 }
 
 
-
-/**
- 
- 
- void HandleNote(BYTE Note)
- {
- BOOL ToggleLed = TRUE;
- 
- if (NextNoteIsOutNote || NextNoteIsInNote) {
- if (NextNoteIsOutNote) {
- setNotes(Note);
- FLASH_SaveParameters();
- //FLASH_WriteUserBytes(,Note);
- } else {
- MIDI_InBreathNote = Note;
- }
- NextNoteIsOutNote = FALSE;
- NextNoteIsInNote = FALSE;
- return;
- }
- switch (Note)
- {
- case C1:
- //LED2_TOGGLE;
- BREATH_SetHysterisis(BREATH_DEAD_ZONE_SMALL);
- break;
- case D1:
- //LED2_TOGGLE;
- BREATH_SetHysterisis(BREATH_DEAD_ZONE_NORMAL);
- break;
- case E1:
- //LED2_TOGGLE;
- BREATH_SetHysterisis(BREATH_DEAD_ZONE_BIG);
- break;
- case C2:
- //LED2_TOGGLE;
- BREATH_SetSensitivity(BREATH_SENSITIVITY_LOW);
- break;
- case D2:
- //LED2_TOGGLE;
- BREATH_SetSensitivity(BREATH_SENSITIVITY_NORMAL);
- break;
- case E2:
- //LED2_TOGGLE;
- BREATH_SetSensitivity(BREATH_SENSITIVITY_HIGH);
- break;
- case F2:
- //LED2_TOGGLE;
- BREATH_SetSensitivity(BREATH_SENSITIVITY_VERY_HIGH);
- break;
- case C3:
- //LED2_TOGGLE;
- BREATH_SetAcceptanceTime(BREATH_ACCEPTANCE_10);
- break;
- case D3:
- //LED2_TOGGLE;
- BREATH_SetAcceptanceTime(BREATH_ACCEPTANCE_50);
- break;
- case E3:
- //LED2_TOGGLE;
- BREATH_SetAcceptanceTime(BREATH_ACCEPTANCE_100);
- break;
- case F3:
- //LED2_TOGGLE;
- BREATH_SetAcceptanceTime(BREATH_ACCEPTANCE_200);
- break;
- case C4:
- NextNoteIsOutNote = TRUE;
- //LED2_TOGGLE;
- break;
- //case D4:
- //NextNoteIsInNote = TRUE;
- //LED2_TOGGLE;
- //      break;
- case E4:
- //LED2_TOGGLE;
- break;
- default:
- ToggleLed = FALSE;
- break;
- }
- if (ToggleLed) {
- if ((Note != C4) && (Note != D4)) {FLASH_SaveParameters();}
- LED2_ON;
- }
- }
- **/
 
 @end

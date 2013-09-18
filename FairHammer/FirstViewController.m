@@ -61,16 +61,16 @@ typedef void(^RunTimer)(void);
             break;
             
         case 1:
-            [gaugeView setMass:3];
+            [gaugeView setMass:2];
             
             break;
         case 2:
-            [gaugeView setMass:6];
+            [gaugeView setMass:2.5];
             
             break;
             
         case 3:
-            [gaugeView setMass:10];
+            [gaugeView setMass:3];
             
             break;
             
@@ -87,16 +87,16 @@ typedef void(^RunTimer)(void);
             break;
             
         case 1:
-            threshold=30;
+            threshold=20;
 
             break;
         case 2:
-            threshold=70;
+            threshold=30;
 
             break;
             
         case 3:
-            threshold=100;
+            threshold=50;
             
             break;
             
@@ -200,7 +200,7 @@ typedef void(^RunTimer)(void);
     [togglebutton addTarget:self action:@selector(toggleDirection:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:togglebutton];
     
-    [togglebutton setBackgroundImage:[UIImage imageNamed:@"BreathDirection_NORMAL.png"] forState:UIControlStateNormal];
+    [togglebutton setBackgroundImage:[UIImage imageNamed:@"BreathDirection_EXHALE.png"] forState:UIControlStateNormal];
     toggleIsON=NO;
 
     
@@ -212,12 +212,12 @@ typedef void(^RunTimer)(void);
         case 0:
             midiController.toggleIsON=YES;
           //  midiController.currentdirection=midiinhale;
-            [togglebutton setBackgroundImage:[UIImage imageNamed:@"BreathDirection_REVERSE.png"] forState:UIControlStateNormal];
+            [togglebutton setBackgroundImage:[UIImage imageNamed:@"BreathDirection_INHALE.png"] forState:UIControlStateNormal];
             break;
         case 1:
             midiController.toggleIsON=NO;
 
-            [togglebutton setBackgroundImage:[UIImage imageNamed:@"BreathDirection_NORMAL.png"] forState:UIControlStateNormal];
+            [togglebutton setBackgroundImage:[UIImage imageNamed:@"BreathDirection_EXHALE.png"] forState:UIControlStateNormal];
           //  midiController.currentdirection=midiexhale;
 
             

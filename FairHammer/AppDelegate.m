@@ -11,7 +11,7 @@
 #import "FirstViewController.h"
 #import "SecondViewController.h"
 #import "AllUsersViewController.h"
-
+#import  "TestFlight.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -23,10 +23,10 @@
         [[NSUserDefaults standardUserDefaults]setObject:dictionary forKey:@"users"];
         [[NSUserDefaults standardUserDefaults]synchronize];
     }
-
+     [TestFlight takeOff:@"89b9cbf6-013d-4a6a-b675-bb29590b1abc"];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[FirstViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    self.viewController = [[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil];
    // self.window.rootViewController = self.viewController;
     self.viewController2=[[SecondViewController alloc] initWithNibName:@"SecondViewController_iPad" bundle:nil];
     [self.viewController2 setSettinngsDelegate:self.viewController];

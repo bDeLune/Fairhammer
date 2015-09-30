@@ -9,13 +9,23 @@
 /* Begin PBXBuildFile section */
 		0B10E887179421370040A5FC /* BreathDirection_NORMAL.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E87A179421370040A5FC /* BreathDirection_NORMAL.png */; };
 		0B10E888179421370040A5FC /* BreathDirection_REVERSE.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E87B179421370040A5FC /* BreathDirection_REVERSE.png */; };
-		0B10E88B179421370040A5FC /* Logo-Bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E87E179421370040A5FC /* Logo-Bottom.png */; };
-		0B10E88C179421370040A5FC /* Logo-Full.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E87F179421370040A5FC /* Logo-Full.png */; };
-		0B10E88D179421370040A5FC /* Logo-Middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E880179421370040A5FC /* Logo-Middle.png */; };
-		0B10E88E179421370040A5FC /* Logo-Top.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E881179421370040A5FC /* Logo-Top.png */; };
 		0B10E890179421370040A5FC /* Mercury-Vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E883179421370040A5FC /* Mercury-Vertical.png */; };
 		0B10E891179421370040A5FC /* PeakHoldArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E884179421370040A5FC /* PeakHoldArrow.png */; };
 		0B10E893179421370040A5FC /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E886179421370040A5FC /* Thumbs.db */; };
+		0B1156501862008E0079ECC1 /* FairHammerAppIcon100x100.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1156411862008E0079ECC1 /* FairHammerAppIcon100x100.png */; };
+		0B1156511862008E0079ECC1 /* FairHammerAppIcon114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1156421862008E0079ECC1 /* FairHammerAppIcon114x114.png */; };
+		0B1156521862008E0079ECC1 /* FairHammerAppIcon120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1156431862008E0079ECC1 /* FairHammerAppIcon120x120.png */; };
+		0B1156531862008E0079ECC1 /* FairHammerAppIcon144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1156441862008E0079ECC1 /* FairHammerAppIcon144x144.png */; };
+		0B1156541862008E0079ECC1 /* FairHammerAppIcon152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1156451862008E0079ECC1 /* FairHammerAppIcon152x152.png */; };
+		0B1156551862008E0079ECC1 /* FairHammerAppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1156461862008E0079ECC1 /* FairHammerAppIcon29x29.png */; };
+		0B1156561862008E0079ECC1 /* FairHammerAppIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1156471862008E0079ECC1 /* FairHammerAppIcon40x40.png */; };
+		0B1156571862008E0079ECC1 /* FairHammerAppIcon50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1156481862008E0079ECC1 /* FairHammerAppIcon50x50.png */; };
+		0B1156581862008E0079ECC1 /* FairHammerAppIcon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1156491862008E0079ECC1 /* FairHammerAppIcon57x57.png */; };
+		0B1156591862008E0079ECC1 /* FairHammerAppIcon58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B11564A1862008E0079ECC1 /* FairHammerAppIcon58x58.png */; };
+		0B11565A1862008E0079ECC1 /* FairHammerAppIcon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B11564B1862008E0079ECC1 /* FairHammerAppIcon72x72.png */; };
+		0B11565B1862008E0079ECC1 /* FairHammerAppIcon76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B11564C1862008E0079ECC1 /* FairHammerAppIcon76x76.png */; };
+		0B11565C1862008E0079ECC1 /* FairHammerAppIcon80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B11564D1862008E0079ECC1 /* FairHammerAppIcon80x80.png */; };
+		0B11565E1862008E0079ECC1 /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 0B11564F1862008E0079ECC1 /* Thumbs.db */; };
 		0B14B1A217E6F78600F3B749 /* BreathDirection_NORMAL.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14B1A117E6F78600F3B749 /* BreathDirection_NORMAL.png */; };
 		0B14B1A417E6F7BE00F3B749 /* BreathDirection_REVERSE.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14B1A317E6F7BE00F3B749 /* BreathDirection_REVERSE.png */; };
 		0B1B800D178BFDCF00526074 /* Gauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B800C178BFDCF00526074 /* Gauge.m */; };
@@ -32,21 +42,23 @@
 		0B1B8062178C2ABE00526074 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1B8061178C2ABE00526074 /* CoreMIDI.framework */; };
 		0B1B8064178C2AC500526074 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1B8063178C2AC500526074 /* AVFoundation.framework */; };
 		0B1B8066178C2ACE00526074 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1B8065178C2ACE00526074 /* OpenAL.framework */; };
+		0B2B4CB91952FE6A00000F4A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B2B4CB81952FE6A00000F4A /* Default.png */; };
+		0B2B4CBE1952FEC800000F4A /* Logo-Bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B2B4CBA1952FEC800000F4A /* Logo-Bottom.png */; };
+		0B2B4CBF1952FEC800000F4A /* Logo-Full.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B2B4CBB1952FEC800000F4A /* Logo-Full.png */; };
+		0B2B4CC01952FEC800000F4A /* Logo-Middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B2B4CBC1952FEC800000F4A /* Logo-Middle.png */; };
+		0B2B4CC11952FEC800000F4A /* Logo-Top.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B2B4CBD1952FEC800000F4A /* Logo-Top.png */; };
 		0B309FA0179593EB00C34FC0 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B309F9F179593EB00C34FC0 /* Icon-72.png */; };
 		0B45EE4417E1F6AF001E25FC /* SessionHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B45EE4217E1F6AF001E25FC /* SessionHeaderViewController.m */; };
 		0B45EE4517E1F6AF001E25FC /* SessionHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B45EE4317E1F6AF001E25FC /* SessionHeaderViewController.xib */; };
 		0B45EE4917E1F80B001E25FC /* SessionNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B45EE4717E1F80B001E25FC /* SessionNoteViewController.m */; };
 		0B45EE4A17E1F80B001E25FC /* SessionNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B45EE4817E1F80B001E25FC /* SessionNoteViewController.xib */; };
-		0B7963CC17E211A7004DE60E /* SettingsScreenBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B7963CB17E211A7004DE60E /* SettingsScreenBackground.png */; };
+		0B48DB9C19583B88006ED293 /* MainBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B48DB9B19583B88006ED293 /* MainBackground.png */; };
 		0B7F92D2178EDDC20061E9A1 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F92D1178EDDC20061E9A1 /* Session.m */; };
 		0B7F92D7178EE3570061E9A1 /* ScoreDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F92D5178EE3570061E9A1 /* ScoreDisplayViewController.m */; };
 		0B7F92D8178EE3570061E9A1 /* ScoreDisplayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B7F92D6178EE3570061E9A1 /* ScoreDisplayViewController.xib */; };
 		0B7F92DC178EF93F0061E9A1 /* HighScoreObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F92DB178EF93F0061E9A1 /* HighScoreObject.m */; };
+		0B99FC8E18CA1EF600FD4C20 /* bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0B99FC8D18CA1EF600FD4C20 /* bell.wav */; };
 		0BB046C517E74AEB0071B6E1 /* FairhammerSplash.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BB046C417E74AEB0071B6E1 /* FairhammerSplash.png */; };
-		0BB046C717E74B090071B6E1 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BB046C617E74B090071B6E1 /* Default-Portrait~ipad.png */; };
-		0BB046D217E9C03B0071B6E1 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB046CC17E9C03B0071B6E1 /* libTestFlight.a */; };
-		0BB046D317E9C03B0071B6E1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0BB046CD17E9C03B0071B6E1 /* README.md */; };
-		0BB046D417E9C03B0071B6E1 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 0BB046CE17E9C03B0071B6E1 /* release_notes.md */; };
 		0BB046D617E9C0B20071B6E1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB046D517E9C0B20071B6E1 /* libz.dylib */; };
 		0BB046DD17E9DDDB0071B6E1 /* BreathDirection_EXHALE.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BB046DB17E9DDDB0071B6E1 /* BreathDirection_EXHALE.png */; };
 		0BB046DE17E9DDDB0071B6E1 /* BreathDirection_INHALE.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BB046DC17E9DDDB0071B6E1 /* BreathDirection_INHALE.png */; };
@@ -68,8 +80,19 @@
 		0BCA9543178AFDBC006547C3 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA9542178AFDBC006547C3 /* FirstViewController.m */; };
 		0BCA9546178AFDBC006547C3 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA9544178AFDBC006547C3 /* FirstViewController.xib */; };
 		0BCA9552178B07B9006547C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCA9551178B07B9006547C3 /* QuartzCore.framework */; };
+		0BCCD1AF1BBABAEE006F4E08 /* bluetooth.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCCD1A91BBABAEE006F4E08 /* bluetooth.png */; settings = {ASSET_TAGS = (); }; };
+		0BCCD1B01BBABAEE006F4E08 /* bluetoothoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCCD1AA1BBABAEE006F4E08 /* bluetoothoff.png */; settings = {ASSET_TAGS = (); }; };
+		0BCCD1B11BBABAEE006F4E08 /* BTLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCD1AC1BBABAEE006F4E08 /* BTLEManager.m */; settings = {ASSET_TAGS = (); }; };
+		0BCCD1B21BBABAEE006F4E08 /* NSData+NSData_Conversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCD1AE1BBABAEE006F4E08 /* NSData+NSData_Conversion.m */; settings = {ASSET_TAGS = (); }; };
+		0BCCD1B81BBABB19006F4E08 /* libMelodySmart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCCD1B41BBABB19006F4E08 /* libMelodySmart.a */; settings = {ASSET_TAGS = (); }; };
+		0BCCD1BB1BBAC020006F4E08 /* Bluetooth-CONNECTED.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCCD1B91BBAC020006F4E08 /* Bluetooth-CONNECTED.png */; settings = {ASSET_TAGS = (); }; };
+		0BCCD1BC1BBAC020006F4E08 /* Bluetooth-DISCONNECTED.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCCD1BA1BBAC020006F4E08 /* Bluetooth-DISCONNECTED.png */; settings = {ASSET_TAGS = (); }; };
 		0BDA77641794391400CB69CA /* LogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA77621794391400CB69CA /* LogoViewController.m */; };
 		0BDA77651794391400CB69CA /* LogoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BDA77631794391400CB69CA /* LogoViewController.xib */; };
+		0BDFF37F18BDF88800CF1B1C /* AllTimesForDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDFF37D18BDF88800CF1B1C /* AllTimesForDateViewController.m */; };
+		0BDFF38018BDF88800CF1B1C /* AllTimesForDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BDFF37E18BDF88800CF1B1C /* AllTimesForDateViewController.xib */; };
+		0BDFF38418BE11C800CF1B1C /* Draggable.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDFF38318BE11C800CF1B1C /* Draggable.m */; };
+		0BDFF39218BE494C00CF1B1C /* SettingsScreenBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BDFF39118BE494C00CF1B1C /* SettingsScreenBackground.png */; };
 		0BE8B7791795518D007AA2B0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE8B7781795518D007AA2B0 /* SecondViewController.m */; };
 		0BE8B77C17955351007AA2B0 /* SecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B77A17955351007AA2B0 /* SecondViewController_iPhone.xib */; };
 		0BE8B77D17955351007AA2B0 /* SecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B77B17955351007AA2B0 /* SecondViewController_iPad.xib */; };
@@ -81,7 +104,6 @@
 		0BE8B78E17956032007AA2B0 /* UsersScreenBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B78C17956032007AA2B0 /* UsersScreenBackground.png */; };
 		0BE8B79017956135007AA2B0 /* AllUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B78F17956135007AA2B0 /* AllUsersViewController.xib */; };
 		0BE8B79617958633007AA2B0 /* LoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B79117958633007AA2B0 /* LoginButton.png */; };
-		0BE8B79717958633007AA2B0 /* MainBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B79217958633007AA2B0 /* MainBackground.png */; };
 		0BE8B79817958633007AA2B0 /* SignInButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B79317958633007AA2B0 /* SignInButton.png */; };
 		0BE8B79917958633007AA2B0 /* SignUpButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B79417958633007AA2B0 /* SignUpButton.png */; };
 		0BE8B79A17958633007AA2B0 /* StatsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B79517958633007AA2B0 /* StatsButton.png */; };
@@ -90,18 +112,29 @@
 		0BE8B7A017958DF1007AA2B0 /* Menu-Users.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE8B79D17958DF1007AA2B0 /* Menu-Users.png */; };
 		0BEE4C1F17E1D19D000BA8DE /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BEE4C1D17E1D19D000BA8DE /* UserDetailViewController.m */; };
 		0BEE4C2017E1D19D000BA8DE /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE4C1E17E1D19D000BA8DE /* UserDetailViewController.xib */; };
+		0BF241CE1B8B45CB00B743BA /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF241CD1B8B45CB00B743BA /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B10E87A179421370040A5FC /* BreathDirection_NORMAL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BreathDirection_NORMAL.png; sourceTree = "<group>"; };
 		0B10E87B179421370040A5FC /* BreathDirection_REVERSE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BreathDirection_REVERSE.png; sourceTree = "<group>"; };
-		0B10E87E179421370040A5FC /* Logo-Bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo-Bottom.png"; sourceTree = "<group>"; };
-		0B10E87F179421370040A5FC /* Logo-Full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo-Full.png"; sourceTree = "<group>"; };
-		0B10E880179421370040A5FC /* Logo-Middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo-Middle.png"; sourceTree = "<group>"; };
-		0B10E881179421370040A5FC /* Logo-Top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo-Top.png"; sourceTree = "<group>"; };
 		0B10E883179421370040A5FC /* Mercury-Vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mercury-Vertical.png"; sourceTree = "<group>"; };
 		0B10E884179421370040A5FC /* PeakHoldArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PeakHoldArrow.png; sourceTree = "<group>"; };
 		0B10E886179421370040A5FC /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
+		0B1156411862008E0079ECC1 /* FairHammerAppIcon100x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairHammerAppIcon100x100.png; sourceTree = "<group>"; };
+		0B1156421862008E0079ECC1 /* FairHammerAppIcon114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairHammerAppIcon114x114.png; sourceTree = "<group>"; };
+		0B1156431862008E0079ECC1 /* FairHammerAppIcon120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairHammerAppIcon120x120.png; sourceTree = "<group>"; };
+		0B1156441862008E0079ECC1 /* FairHammerAppIcon144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairHammerAppIcon144x144.png; sourceTree = "<group>"; };
+		0B1156451862008E0079ECC1 /* FairHammerAppIcon152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairHammerAppIcon152x152.png; sourceTree = "<group>"; };
+		0B1156461862008E0079ECC1 /* FairHammerAppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairHammerAppIcon29x29.png; sourceTree = "<group>"; };
+		0B1156471862008E0079ECC1 /* FairHammerAppIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairHammerAppIcon40x40.png; sourceTree = "<group>"; };
+		0B1156481862008E0079ECC1 /* FairHammerAppIcon50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairHammerAppIcon50x50.png; sourceTree = "<group>"; };
+		0B1156491862008E0079ECC1 /* FairHammerAppIcon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairHammerAppIcon57x57.png; sourceTree = "<group>"; };
+		0B11564A1862008E0079ECC1 /* FairHammerAppIcon58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairHammerAppIcon58x58.png; sourceTree = "<group>"; };
+		0B11564B1862008E0079ECC1 /* FairHammerAppIcon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairHammerAppIcon72x72.png; sourceTree = "<group>"; };
+		0B11564C1862008E0079ECC1 /* FairHammerAppIcon76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairHammerAppIcon76x76.png; sourceTree = "<group>"; };
+		0B11564D1862008E0079ECC1 /* FairHammerAppIcon80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairHammerAppIcon80x80.png; sourceTree = "<group>"; };
+		0B11564F1862008E0079ECC1 /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
 		0B14B1A117E6F78600F3B749 /* BreathDirection_NORMAL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BreathDirection_NORMAL.png; sourceTree = "<group>"; };
 		0B14B1A317E6F7BE00F3B749 /* BreathDirection_REVERSE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BreathDirection_REVERSE.png; sourceTree = "<group>"; };
 		0B1B800B178BFDCF00526074 /* Gauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gauge.h; path = gauge/Gauge.h; sourceTree = "<group>"; };
@@ -124,6 +157,11 @@
 		0B1B8061178C2ABE00526074 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		0B1B8063178C2AC500526074 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0B1B8065178C2ACE00526074 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		0B2B4CB81952FE6A00000F4A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		0B2B4CBA1952FEC800000F4A /* Logo-Bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo-Bottom.png"; sourceTree = "<group>"; };
+		0B2B4CBB1952FEC800000F4A /* Logo-Full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo-Full.png"; sourceTree = "<group>"; };
+		0B2B4CBC1952FEC800000F4A /* Logo-Middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo-Middle.png"; sourceTree = "<group>"; };
+		0B2B4CBD1952FEC800000F4A /* Logo-Top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo-Top.png"; sourceTree = "<group>"; };
 		0B309F9F179593EB00C34FC0 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		0B45EE4117E1F6AF001E25FC /* SessionHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionHeaderViewController.h; sourceTree = "<group>"; };
 		0B45EE4217E1F6AF001E25FC /* SessionHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionHeaderViewController.m; sourceTree = "<group>"; };
@@ -131,7 +169,7 @@
 		0B45EE4617E1F80B001E25FC /* SessionNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionNoteViewController.h; sourceTree = "<group>"; };
 		0B45EE4717E1F80B001E25FC /* SessionNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionNoteViewController.m; sourceTree = "<group>"; };
 		0B45EE4817E1F80B001E25FC /* SessionNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionNoteViewController.xib; sourceTree = "<group>"; };
-		0B7963CB17E211A7004DE60E /* SettingsScreenBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsScreenBackground.png; sourceTree = "<group>"; };
+		0B48DB9B19583B88006ED293 /* MainBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainBackground.png; sourceTree = "<group>"; };
 		0B7F92D0178EDDC20061E9A1 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Session.h; path = session/Session.h; sourceTree = "<group>"; };
 		0B7F92D1178EDDC20061E9A1 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Session.m; path = session/Session.m; sourceTree = "<group>"; };
 		0B7F92D4178EE3570061E9A1 /* ScoreDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreDisplayViewController.h; path = "scroe display/ScoreDisplayViewController.h"; sourceTree = "<group>"; };
@@ -139,14 +177,8 @@
 		0B7F92D6178EE3570061E9A1 /* ScoreDisplayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScoreDisplayViewController.xib; path = "scroe display/ScoreDisplayViewController.xib"; sourceTree = "<group>"; };
 		0B7F92DA178EF93F0061E9A1 /* HighScoreObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreObject.h; sourceTree = "<group>"; };
 		0B7F92DB178EF93F0061E9A1 /* HighScoreObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreObject.m; sourceTree = "<group>"; };
+		0B99FC8D18CA1EF600FD4C20 /* bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bell.wav; sourceTree = "<group>"; };
 		0BB046C417E74AEB0071B6E1 /* FairhammerSplash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairhammerSplash.png; sourceTree = "<group>"; };
-		0BB046C617E74B090071B6E1 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
-		0BB046CC17E9C03B0071B6E1 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
-		0BB046CD17E9C03B0071B6E1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		0BB046CE17E9C03B0071B6E1 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
-		0BB046CF17E9C03B0071B6E1 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
-		0BB046D017E9C03B0071B6E1 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
-		0BB046D117E9C03B0071B6E1 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		0BB046D517E9C0B20071B6E1 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		0BB046DB17E9DDDB0071B6E1 /* BreathDirection_EXHALE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BreathDirection_EXHALE.png; sourceTree = "<group>"; };
 		0BB046DC17E9DDDB0071B6E1 /* BreathDirection_INHALE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BreathDirection_INHALE.png; sourceTree = "<group>"; };
@@ -176,9 +208,27 @@
 		0BCA9542178AFDBC006547C3 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		0BCA9545178AFDBC006547C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController.xib; sourceTree = "<group>"; };
 		0BCA9551178B07B9006547C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0BCCD1A91BBABAEE006F4E08 /* bluetooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluetooth.png; sourceTree = "<group>"; };
+		0BCCD1AA1BBABAEE006F4E08 /* bluetoothoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluetoothoff.png; sourceTree = "<group>"; };
+		0BCCD1AB1BBABAEE006F4E08 /* BTLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLEManager.h; sourceTree = "<group>"; };
+		0BCCD1AC1BBABAEE006F4E08 /* BTLEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLEManager.m; sourceTree = "<group>"; };
+		0BCCD1AD1BBABAEE006F4E08 /* NSData+NSData_Conversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+NSData_Conversion.h"; sourceTree = "<group>"; };
+		0BCCD1AE1BBABAEE006F4E08 /* NSData+NSData_Conversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+NSData_Conversion.m"; sourceTree = "<group>"; };
+		0BCCD1B41BBABB19006F4E08 /* libMelodySmart.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMelodySmart.a; sourceTree = "<group>"; };
+		0BCCD1B51BBABB19006F4E08 /* MelodyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MelodyManager.h; sourceTree = "<group>"; };
+		0BCCD1B61BBABB19006F4E08 /* MelodySmart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MelodySmart.h; sourceTree = "<group>"; };
+		0BCCD1B71BBABB19006F4E08 /* OtaStructs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtaStructs.h; sourceTree = "<group>"; };
+		0BCCD1B91BBAC020006F4E08 /* Bluetooth-CONNECTED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bluetooth-CONNECTED.png"; sourceTree = "<group>"; };
+		0BCCD1BA1BBAC020006F4E08 /* Bluetooth-DISCONNECTED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bluetooth-DISCONNECTED.png"; sourceTree = "<group>"; };
 		0BDA77611794391400CB69CA /* LogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoViewController.h; sourceTree = "<group>"; };
 		0BDA77621794391400CB69CA /* LogoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoViewController.m; sourceTree = "<group>"; };
 		0BDA77631794391400CB69CA /* LogoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogoViewController.xib; sourceTree = "<group>"; };
+		0BDFF37C18BDF88800CF1B1C /* AllTimesForDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllTimesForDateViewController.h; sourceTree = "<group>"; };
+		0BDFF37D18BDF88800CF1B1C /* AllTimesForDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllTimesForDateViewController.m; sourceTree = "<group>"; };
+		0BDFF37E18BDF88800CF1B1C /* AllTimesForDateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllTimesForDateViewController.xib; sourceTree = "<group>"; };
+		0BDFF38218BE11C800CF1B1C /* Draggable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Draggable.h; sourceTree = "<group>"; };
+		0BDFF38318BE11C800CF1B1C /* Draggable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Draggable.m; sourceTree = "<group>"; };
+		0BDFF39118BE494C00CF1B1C /* SettingsScreenBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsScreenBackground.png; sourceTree = "<group>"; };
 		0BE8B7771795518D007AA2B0 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		0BE8B7781795518D007AA2B0 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		0BE8B77A17955351007AA2B0 /* SecondViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -192,7 +242,6 @@
 		0BE8B78C17956032007AA2B0 /* UsersScreenBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UsersScreenBackground.png; sourceTree = "<group>"; };
 		0BE8B78F17956135007AA2B0 /* AllUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllUsersViewController.xib; sourceTree = "<group>"; };
 		0BE8B79117958633007AA2B0 /* LoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginButton.png; sourceTree = "<group>"; };
-		0BE8B79217958633007AA2B0 /* MainBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainBackground.png; sourceTree = "<group>"; };
 		0BE8B79317958633007AA2B0 /* SignInButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignInButton.png; sourceTree = "<group>"; };
 		0BE8B79417958633007AA2B0 /* SignUpButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUpButton.png; sourceTree = "<group>"; };
 		0BE8B79517958633007AA2B0 /* StatsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatsButton.png; sourceTree = "<group>"; };
@@ -202,6 +251,7 @@
 		0BEE4C1C17E1D19D000BA8DE /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailViewController.h; sourceTree = "<group>"; };
 		0BEE4C1D17E1D19D000BA8DE /* UserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailViewController.m; sourceTree = "<group>"; };
 		0BEE4C1E17E1D19D000BA8DE /* UserDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
+		0BF241CD1B8B45CB00B743BA /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +259,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BF241CE1B8B45CB00B743BA /* CoreBluetooth.framework in Frameworks */,
 				0BB046D617E9C0B20071B6E1 /* libz.dylib in Frameworks */,
 				0B1B8066178C2ACE00526074 /* OpenAL.framework in Frameworks */,
 				0B1B8064178C2AC500526074 /* AVFoundation.framework in Frameworks */,
@@ -219,7 +270,7 @@
 				0BCA952A178AFDBC006547C3 /* UIKit.framework in Frameworks */,
 				0BCA952C178AFDBC006547C3 /* Foundation.framework in Frameworks */,
 				0BCA952E178AFDBC006547C3 /* CoreGraphics.framework in Frameworks */,
-				0BB046D217E9C03B0071B6E1 /* libTestFlight.a in Frameworks */,
+				0BCCD1B81BBABB19006F4E08 /* libMelodySmart.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,26 +280,47 @@
 		0B10E879179421370040A5FC /* App UI Files */ = {
 			isa = PBXGroup;
 			children = (
+				0B48DB9B19583B88006ED293 /* MainBackground.png */,
+				0B2B4CBA1952FEC800000F4A /* Logo-Bottom.png */,
+				0B2B4CBB1952FEC800000F4A /* Logo-Full.png */,
+				0B2B4CBC1952FEC800000F4A /* Logo-Middle.png */,
+				0B2B4CBD1952FEC800000F4A /* Logo-Top.png */,
 				0BB046C417E74AEB0071B6E1 /* FairhammerSplash.png */,
 				0BE8B79B17958DF1007AA2B0 /* Menu-Main.png */,
 				0BE8B79C17958DF1007AA2B0 /* Menu-Settings.png */,
 				0BE8B79D17958DF1007AA2B0 /* Menu-Users.png */,
 				0BE8B79117958633007AA2B0 /* LoginButton.png */,
-				0BE8B79217958633007AA2B0 /* MainBackground.png */,
 				0BE8B79317958633007AA2B0 /* SignInButton.png */,
 				0BE8B79417958633007AA2B0 /* SignUpButton.png */,
 				0BE8B79517958633007AA2B0 /* StatsButton.png */,
 				0B10E87A179421370040A5FC /* BreathDirection_NORMAL.png */,
 				0B10E87B179421370040A5FC /* BreathDirection_REVERSE.png */,
-				0B10E87E179421370040A5FC /* Logo-Bottom.png */,
-				0B10E87F179421370040A5FC /* Logo-Full.png */,
-				0B10E880179421370040A5FC /* Logo-Middle.png */,
-				0B10E881179421370040A5FC /* Logo-Top.png */,
 				0B10E883179421370040A5FC /* Mercury-Vertical.png */,
 				0B10E884179421370040A5FC /* PeakHoldArrow.png */,
 				0B10E886179421370040A5FC /* Thumbs.db */,
 			);
 			path = "App UI Files";
+			sourceTree = "<group>";
+		};
+		0B1156401862008E0079ECC1 /* FairHammer */ = {
+			isa = PBXGroup;
+			children = (
+				0B1156411862008E0079ECC1 /* FairHammerAppIcon100x100.png */,
+				0B1156421862008E0079ECC1 /* FairHammerAppIcon114x114.png */,
+				0B1156431862008E0079ECC1 /* FairHammerAppIcon120x120.png */,
+				0B1156441862008E0079ECC1 /* FairHammerAppIcon144x144.png */,
+				0B1156451862008E0079ECC1 /* FairHammerAppIcon152x152.png */,
+				0B1156461862008E0079ECC1 /* FairHammerAppIcon29x29.png */,
+				0B1156471862008E0079ECC1 /* FairHammerAppIcon40x40.png */,
+				0B1156481862008E0079ECC1 /* FairHammerAppIcon50x50.png */,
+				0B1156491862008E0079ECC1 /* FairHammerAppIcon57x57.png */,
+				0B11564A1862008E0079ECC1 /* FairHammerAppIcon58x58.png */,
+				0B11564B1862008E0079ECC1 /* FairHammerAppIcon72x72.png */,
+				0B11564C1862008E0079ECC1 /* FairHammerAppIcon76x76.png */,
+				0B11564D1862008E0079ECC1 /* FairHammerAppIcon80x80.png */,
+				0B11564F1862008E0079ECC1 /* Thumbs.db */,
+			);
+			path = FairHammer;
 			sourceTree = "<group>";
 		};
 		0B1B800A178BFDA700526074 /* gauge */ = {
@@ -316,12 +388,6 @@
 		0BB046CB17E9C03B0071B6E1 /* TestFlightSDK2.0.0 (1) */ = {
 			isa = PBXGroup;
 			children = (
-				0BB046CC17E9C03B0071B6E1 /* libTestFlight.a */,
-				0BB046CD17E9C03B0071B6E1 /* README.md */,
-				0BB046CE17E9C03B0071B6E1 /* release_notes.md */,
-				0BB046CF17E9C03B0071B6E1 /* TestFlight+AsyncLogging.h */,
-				0BB046D017E9C03B0071B6E1 /* TestFlight+ManualSessions.h */,
-				0BB046D117E9C03B0071B6E1 /* TestFlight.h */,
 			);
 			path = "TestFlightSDK2.0.0 (1)";
 			sourceTree = "<group>";
@@ -329,6 +395,7 @@
 		0BB0C8EB179014DB00A056E5 /* stats */ = {
 			isa = PBXGroup;
 			children = (
+				0BDFF37B18BDF84900CF1B1C /* new */,
 				0BB0C8EC1790152000A056E5 /* UserStatsViewController.h */,
 				0BB0C8ED1790152000A056E5 /* UserStatsViewController.m */,
 				0BB0C8EE1790152000A056E5 /* UserStatsViewController.xib */,
@@ -363,7 +430,6 @@
 			isa = PBXGroup;
 			children = (
 				0BB046D517E9C0B20071B6E1 /* libz.dylib */,
-				0BB046C617E74B090071B6E1 /* Default-Portrait~ipad.png */,
 				0BCA952F178AFDBC006547C3 /* FairHammer */,
 				0BCA9528178AFDBC006547C3 /* Frameworks */,
 				0BCA9527178AFDBC006547C3 /* Products */,
@@ -381,6 +447,7 @@
 		0BCA9528178AFDBC006547C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0BF241CD1B8B45CB00B743BA /* CoreBluetooth.framework */,
 				0B1B8065178C2ACE00526074 /* OpenAL.framework */,
 				0B1B8063178C2AC500526074 /* AVFoundation.framework */,
 				0B1B8061178C2ABE00526074 /* CoreMIDI.framework */,
@@ -397,6 +464,9 @@
 		0BCA952F178AFDBC006547C3 /* FairHammer */ = {
 			isa = PBXGroup;
 			children = (
+				0BCCD1B31BBABB19006F4E08 /* libMelodySmart */,
+				0BCCD1A81BBABAEE006F4E08 /* btlemanager */,
+				0BDFF38118BE11AE00CF1B1C /* draggable */,
 				0BB046CB17E9C03B0071B6E1 /* TestFlightSDK2.0.0 (1) */,
 				0BE8B7761795517D007AA2B0 /* Settings */,
 				0BDA77601794390200CB69CA /* logo */,
@@ -423,11 +493,14 @@
 		0BCA9530178AFDBC006547C3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0B2B4CB81952FE6A00000F4A /* Default.png */,
+				0B99FC8D18CA1EF600FD4C20 /* bell.wav */,
+				0BDFF39118BE494C00CF1B1C /* SettingsScreenBackground.png */,
+				0B1156401862008E0079ECC1 /* FairHammer */,
 				0BB046DB17E9DDDB0071B6E1 /* BreathDirection_EXHALE.png */,
 				0BB046DC17E9DDDB0071B6E1 /* BreathDirection_INHALE.png */,
 				0B14B1A317E6F7BE00F3B749 /* BreathDirection_REVERSE.png */,
 				0B14B1A117E6F78600F3B749 /* BreathDirection_NORMAL.png */,
-				0B7963CB17E211A7004DE60E /* SettingsScreenBackground.png */,
 				0B309F9F179593EB00C34FC0 /* Icon-72.png */,
 				0BE8B78C17956032007AA2B0 /* UsersScreenBackground.png */,
 				0BE8B77E17955471007AA2B0 /* first.png */,
@@ -448,6 +521,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0BCCD1A81BBABAEE006F4E08 /* btlemanager */ = {
+			isa = PBXGroup;
+			children = (
+				0BCCD1B91BBAC020006F4E08 /* Bluetooth-CONNECTED.png */,
+				0BCCD1BA1BBAC020006F4E08 /* Bluetooth-DISCONNECTED.png */,
+				0BCCD1A91BBABAEE006F4E08 /* bluetooth.png */,
+				0BCCD1AA1BBABAEE006F4E08 /* bluetoothoff.png */,
+				0BCCD1AB1BBABAEE006F4E08 /* BTLEManager.h */,
+				0BCCD1AC1BBABAEE006F4E08 /* BTLEManager.m */,
+				0BCCD1AD1BBABAEE006F4E08 /* NSData+NSData_Conversion.h */,
+				0BCCD1AE1BBABAEE006F4E08 /* NSData+NSData_Conversion.m */,
+			);
+			path = btlemanager;
+			sourceTree = "<group>";
+		};
+		0BCCD1B31BBABB19006F4E08 /* libMelodySmart */ = {
+			isa = PBXGroup;
+			children = (
+				0BCCD1B41BBABB19006F4E08 /* libMelodySmart.a */,
+				0BCCD1B51BBABB19006F4E08 /* MelodyManager.h */,
+				0BCCD1B61BBABB19006F4E08 /* MelodySmart.h */,
+				0BCCD1B71BBABB19006F4E08 /* OtaStructs.h */,
+			);
+			path = libMelodySmart;
+			sourceTree = "<group>";
+		};
 		0BDA77601794390200CB69CA /* logo */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,6 +555,25 @@
 				0BDA77631794391400CB69CA /* LogoViewController.xib */,
 			);
 			name = logo;
+			sourceTree = "<group>";
+		};
+		0BDFF37B18BDF84900CF1B1C /* new */ = {
+			isa = PBXGroup;
+			children = (
+				0BDFF37C18BDF88800CF1B1C /* AllTimesForDateViewController.h */,
+				0BDFF37D18BDF88800CF1B1C /* AllTimesForDateViewController.m */,
+				0BDFF37E18BDF88800CF1B1C /* AllTimesForDateViewController.xib */,
+			);
+			name = new;
+			sourceTree = "<group>";
+		};
+		0BDFF38118BE11AE00CF1B1C /* draggable */ = {
+			isa = PBXGroup;
+			children = (
+				0BDFF38218BE11C800CF1B1C /* Draggable.h */,
+				0BDFF38318BE11C800CF1B1C /* Draggable.m */,
+			);
+			name = draggable;
 			sourceTree = "<group>";
 		};
 		0BE8B7761795517D007AA2B0 /* Settings */ = {
@@ -522,8 +640,10 @@
 			files = (
 				0BCA9534178AFDBC006547C3 /* InfoPlist.strings in Resources */,
 				0BCA9546178AFDBC006547C3 /* FirstViewController.xib in Resources */,
+				0B1156531862008E0079ECC1 /* FairHammerAppIcon144x144.png in Resources */,
 				0B1B8013178BFF1D00526074 /* LoginViewViewController.xib in Resources */,
 				0B1B8041178C069C00526074 /* SignUpViewController.xib in Resources */,
+				0B1156511862008E0079ECC1 /* FairHammerAppIcon114x114.png in Resources */,
 				0B1B8058178C196500526074 /* HighScoreViewController.xib in Resources */,
 				0B7F92D8178EE3570061E9A1 /* ScoreDisplayViewController.xib in Resources */,
 				0BB0C8F01790152000A056E5 /* UserStatsViewController.xib in Resources */,
@@ -531,46 +651,62 @@
 				0BB70CAD1790402F00B91CE8 /* bell.mp3 in Resources */,
 				0BB70CB11790530F00B91CE8 /* bell_1.png in Resources */,
 				0BB70CB21790530F00B91CE8 /* bell_2.png in Resources */,
+				0BCCD1B01BBABAEE006F4E08 /* bluetoothoff.png in Resources */,
+				0B2B4CB91952FE6A00000F4A /* Default.png in Resources */,
+				0B1156501862008E0079ECC1 /* FairHammerAppIcon100x100.png in Resources */,
+				0B2B4CC01952FEC800000F4A /* Logo-Middle.png in Resources */,
+				0B99FC8E18CA1EF600FD4C20 /* bell.wav in Resources */,
 				0BB70CB31790530F00B91CE8 /* bell_3.png in Resources */,
 				0B10E887179421370040A5FC /* BreathDirection_NORMAL.png in Resources */,
+				0BCCD1BB1BBAC020006F4E08 /* Bluetooth-CONNECTED.png in Resources */,
+				0B1156551862008E0079ECC1 /* FairHammerAppIcon29x29.png in Resources */,
+				0B2B4CBE1952FEC800000F4A /* Logo-Bottom.png in Resources */,
+				0B1156571862008E0079ECC1 /* FairHammerAppIcon50x50.png in Resources */,
+				0B1156561862008E0079ECC1 /* FairHammerAppIcon40x40.png in Resources */,
 				0B10E888179421370040A5FC /* BreathDirection_REVERSE.png in Resources */,
-				0B10E88B179421370040A5FC /* Logo-Bottom.png in Resources */,
-				0B10E88C179421370040A5FC /* Logo-Full.png in Resources */,
-				0B10E88D179421370040A5FC /* Logo-Middle.png in Resources */,
-				0B10E88E179421370040A5FC /* Logo-Top.png in Resources */,
+				0B11565B1862008E0079ECC1 /* FairHammerAppIcon76x76.png in Resources */,
+				0B2B4CC11952FEC800000F4A /* Logo-Top.png in Resources */,
 				0B10E890179421370040A5FC /* Mercury-Vertical.png in Resources */,
 				0B10E891179421370040A5FC /* PeakHoldArrow.png in Resources */,
+				0B11565C1862008E0079ECC1 /* FairHammerAppIcon80x80.png in Resources */,
 				0B10E893179421370040A5FC /* Thumbs.db in Resources */,
+				0BCCD1BC1BBAC020006F4E08 /* Bluetooth-DISCONNECTED.png in Resources */,
+				0B1156581862008E0079ECC1 /* FairHammerAppIcon57x57.png in Resources */,
 				0BDA77651794391400CB69CA /* LogoViewController.xib in Resources */,
 				0BE8B77C17955351007AA2B0 /* SecondViewController_iPhone.xib in Resources */,
 				0BE8B77D17955351007AA2B0 /* SecondViewController_iPad.xib in Resources */,
 				0BE8B78217955471007AA2B0 /* first.png in Resources */,
 				0BE8B78317955471007AA2B0 /* first@2x.png in Resources */,
+				0BCCD1AF1BBABAEE006F4E08 /* bluetooth.png in Resources */,
 				0BE8B78417955471007AA2B0 /* second.png in Resources */,
 				0BE8B78517955471007AA2B0 /* second@2x.png in Resources */,
+				0B48DB9C19583B88006ED293 /* MainBackground.png in Resources */,
+				0B11565A1862008E0079ECC1 /* FairHammerAppIcon72x72.png in Resources */,
 				0BE8B78E17956032007AA2B0 /* UsersScreenBackground.png in Resources */,
 				0BE8B79017956135007AA2B0 /* AllUsersViewController.xib in Resources */,
 				0BE8B79617958633007AA2B0 /* LoginButton.png in Resources */,
-				0BE8B79717958633007AA2B0 /* MainBackground.png in Resources */,
 				0BE8B79817958633007AA2B0 /* SignInButton.png in Resources */,
 				0BE8B79917958633007AA2B0 /* SignUpButton.png in Resources */,
 				0BE8B79A17958633007AA2B0 /* StatsButton.png in Resources */,
 				0BE8B79E17958DF1007AA2B0 /* Menu-Main.png in Resources */,
 				0BE8B79F17958DF1007AA2B0 /* Menu-Settings.png in Resources */,
 				0BE8B7A017958DF1007AA2B0 /* Menu-Users.png in Resources */,
+				0B1156591862008E0079ECC1 /* FairHammerAppIcon58x58.png in Resources */,
+				0B2B4CBF1952FEC800000F4A /* Logo-Full.png in Resources */,
 				0B309FA0179593EB00C34FC0 /* Icon-72.png in Resources */,
 				0BEE4C2017E1D19D000BA8DE /* UserDetailViewController.xib in Resources */,
 				0B45EE4517E1F6AF001E25FC /* SessionHeaderViewController.xib in Resources */,
+				0BDFF39218BE494C00CF1B1C /* SettingsScreenBackground.png in Resources */,
 				0B45EE4A17E1F80B001E25FC /* SessionNoteViewController.xib in Resources */,
-				0B7963CC17E211A7004DE60E /* SettingsScreenBackground.png in Resources */,
+				0B11565E1862008E0079ECC1 /* Thumbs.db in Resources */,
 				0B14B1A217E6F78600F3B749 /* BreathDirection_NORMAL.png in Resources */,
 				0B14B1A417E6F7BE00F3B749 /* BreathDirection_REVERSE.png in Resources */,
 				0BB046C517E74AEB0071B6E1 /* FairhammerSplash.png in Resources */,
-				0BB046C717E74B090071B6E1 /* Default-Portrait~ipad.png in Resources */,
-				0BB046D317E9C03B0071B6E1 /* README.md in Resources */,
-				0BB046D417E9C03B0071B6E1 /* release_notes.md in Resources */,
+				0BDFF38018BDF88800CF1B1C /* AllTimesForDateViewController.xib in Resources */,
 				0BB046DD17E9DDDB0071B6E1 /* BreathDirection_EXHALE.png in Resources */,
+				0B1156541862008E0079ECC1 /* FairHammerAppIcon152x152.png in Resources */,
 				0BB046DE17E9DDDB0071B6E1 /* BreathDirection_INHALE.png in Resources */,
+				0B1156521862008E0079ECC1 /* FairHammerAppIcon120x120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +717,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BCCD1B21BBABAEE006F4E08 /* NSData+NSData_Conversion.m in Sources */,
+				0BDFF38418BE11C800CF1B1C /* Draggable.m in Sources */,
 				0BCA9536178AFDBC006547C3 /* main.m in Sources */,
 				0BCA953A178AFDBC006547C3 /* AppDelegate.m in Sources */,
 				0BCA9543178AFDBC006547C3 /* FirstViewController.m in Sources */,
@@ -590,6 +728,7 @@
 				0B1B804A178C0A4400526074 /* Toast+UIView.m in Sources */,
 				0B1B8057178C196500526074 /* HighScoreViewController.m in Sources */,
 				0B1B805C178C2A9400526074 /* MidiController.m in Sources */,
+				0BCCD1B11BBABAEE006F4E08 /* BTLEManager.m in Sources */,
 				0B7F92D2178EDDC20061E9A1 /* Session.m in Sources */,
 				0B7F92D7178EE3570061E9A1 /* ScoreDisplayViewController.m in Sources */,
 				0B7F92DC178EF93F0061E9A1 /* HighScoreObject.m in Sources */,
@@ -600,6 +739,7 @@
 				0BE8B7791795518D007AA2B0 /* SecondViewController.m in Sources */,
 				0BE8B78917955B3D007AA2B0 /* AllUsersViewController.m in Sources */,
 				0BEE4C1F17E1D19D000BA8DE /* UserDetailViewController.m in Sources */,
+				0BDFF37F18BDF88800CF1B1C /* AllTimesForDateViewController.m in Sources */,
 				0B45EE4417E1F6AF001E25FC /* SessionHeaderViewController.m in Sources */,
 				0B45EE4917E1F80B001E25FC /* SessionNoteViewController.m in Sources */,
 			);
@@ -652,8 +792,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "72ce54bf-3bed-43e8-86ae-7dc666a86765";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -677,8 +818,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "72ce54bf-3bed-43e8-86ae-7dc666a86765";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -694,8 +836,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FairHammer/TestFlightSDK2.0.0 (1)\"",
+					"$(PROJECT_DIR)/FairHammer/btlemanager/lib",
+					"$(PROJECT_DIR)/FairHammer/libMelodySmart",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FairHammer;
+				PROVISIONING_PROFILE = "94fc3f86-e215-4936-be84-908888c0ab39";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -711,9 +856,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FairHammer/TestFlightSDK2.0.0 (1)\"",
+					"$(PROJECT_DIR)/FairHammer/btlemanager/lib",
+					"$(PROJECT_DIR)/FairHammer/libMelodySmart",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = FairHammer;
+				PROVISIONING_PROFILE = "72ce54bf-3bed-43e8-86ae-7dc666a86765";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};

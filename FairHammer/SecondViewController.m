@@ -180,6 +180,9 @@
     
     if (thePickerView==pickerThreshold) {
         NSLog(@"Selected : %@. Index of selected color: %i", [arrayThreshold objectAtIndex:row], row);
+        NSString *difficulty= [arrayThreshold objectAtIndex:row];
+        [[NSUserDefaults standardUserDefaults]setObject:difficulty forKey:@"difficulty"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
         [self.settinngsDelegate setThreshold:row];
         [self.settinngsDelegate setResitance:row];
 

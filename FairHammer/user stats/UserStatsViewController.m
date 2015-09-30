@@ -70,9 +70,15 @@
     
         NSDictionary  *allScoresDict=[dict valueForKey:@"allscores"];
     NSMutableDictionary  *allScoresMutatable=[allScoresDict mutableCopy];
+    
+    NSString  *difficulty=[[NSUserDefaults standardUserDefaults]valueForKey:@"difficulty"];
+    
+    NSString  *direction=[[NSUserDefaults standardUserDefaults]objectForKey:@"direction"];
         NSMutableDictionary   *durationAndStrenghtDict=[NSMutableDictionary  dictionaryWithObjectsAndKeys:
                                              usersBestDuration,@"bestduration",
                                              usersBestStrength,@"beststrength",session.sessionDuration,@"duration",session.sessionStrength,@"strength", nil];
+    [durationAndStrenghtDict setObject:difficulty forKey:@"difficulty"];
+    [durationAndStrenghtDict setObject:direction forKey:@"direction"];
     
     
           [allScoresMutatable  setValue:durationAndStrenghtDict forKey:attemptDateString];

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #define GAUGE_WIDTH  100
-
+#import "Draggable.h"
 #define GUAGE_HEIGHT 575
 @protocol GaugeProtocol <NSObject>
 -(void)maxDistanceReached;
@@ -19,7 +19,7 @@
 
 @property(nonatomic,unsafe_unretained)id<GaugeProtocol>gaugedelegate;
 @property BOOL animationRunning;
-@property(nonatomic,weak)UIImageView  *arrow;
+@property(nonatomic,weak)Draggable  *arrow;
 
 -(void)start;
 -(void)stop;
@@ -28,4 +28,5 @@
 -(void)blowingEnded;
 -(void)setArrowPos:(float)pforce;
 -(void)setMass:(float)value;
+-(void)setBestDistanceWithY:(float)yValue;
 @end

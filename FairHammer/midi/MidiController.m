@@ -9,6 +9,7 @@
 #import "MidiController.h"
 #import <CoreMIDI/CoreMIDI.h>
 #import <AudioToolbox/AudioToolbox.h>
+
 #define Midi_ONOff_Count_Limit  6
 
 typedef enum {
@@ -34,7 +35,6 @@ void MyMIDINotifyProc (const MIDINotification  *message, void *refCon);
     int offcount;
     //Controller_State  currentstate;
 }
-
 @end
 @implementation MidiController
 
@@ -52,7 +52,8 @@ void MyMIDINotifyProc (const MIDINotification  *message, void *refCon);
     //currentstate=MIDI_STOPPED;
       //  [self pause];
     _toggleIsON=NO;
-    [self setupMIDI];
+    //[self setupMIDI];
+    
     
     
 

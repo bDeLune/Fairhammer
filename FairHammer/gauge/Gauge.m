@@ -20,11 +20,7 @@
     float mass;
     
     CADisplayLink *displayLink;
-    NSTimeInterval drawDuration;
-    CFTimeInterval lastTime;
-    CFTimeInterval starttime;
     
-    CGFloat drawProgress;
     NSDate *start;
     
     UIView  *animationObject;
@@ -93,6 +89,12 @@
     isaccelerating=NO;
 
 }
+-(void)setBestDistanceWithY:(float)yValue
+{
+    bestDistance= yValue;
+    
+    NSLog(@"new dist == %f",bestDistance);
+}
 -(void)setForce:(float)pforce
 {
     force=(pforce/mass);
@@ -144,7 +146,10 @@
               
                 CGRect frame2=_arrow.frame;
                frame2.origin.y=frame.origin.y-40;
-               [_arrow setFrame:frame2];
+              CGRect originInSuperview = [self convertRect:frame2 toView:self.superview];
+              originInSuperview.origin.x=250;
+
+               [_arrow setFrame:originInSuperview];
               bestDistance=distance;
 
           }
@@ -180,7 +185,11 @@
     frame2.origin.y=frame.origin.y-40;
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [_arrow setFrame:frame2];
+        
+        CGRect originInSuperview = [self convertRect:frame2 toView:self.superview];
+        originInSuperview.origin.x=250;
+        [_arrow setFrame:originInSuperview];
+       // [_arrow setFrame:frame2];
 
     });
     
@@ -208,14 +217,7 @@
 -(void)fallQuickly
 
 {
-/**
- CGRect frame=animationObject.frame;
- frame.origin.y=self.bounds.size.height-distance;
- 
- frame.size.height=distance;
- [animationObject setFrame:frame];
- */
-    
+
     [UIView animateWithDuration:0.5
                      animations:^{
                          CGRect frame=animationObject.frame;
@@ -224,7 +226,9 @@
 
                          
                          CGRect frame2=_arrow.frame;
-                         frame2.origin.y=self.bounds.size.height-1;
+                         frame2.origin.y=900;
+                         frame2.origin.x=250;
+                         
                          [_arrow setFrame:frame2];
                      }
                      completion:^(BOOL finished){

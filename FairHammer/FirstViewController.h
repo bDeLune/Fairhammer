@@ -14,7 +14,7 @@
 #import "Gauge.h"
 #import "LogoViewController.h"
 #define SEND_MSG_TO_LOG_NOTIFY  @"com.rocudo.logmessage"
-
+@class Draggable;
 //VELOCITY
 
 // velocity = distance / time
@@ -41,7 +41,7 @@
 //-(void)setRate:(float)value;
 @end
 
-@interface FirstViewController : UIViewController<LoginViewControllerDelegate,MidiControllerProtocol,GaugeProtocol,SETTINGS_DELEGATE>
+@interface FirstViewController : UIViewController<LoginViewControllerDelegate,MidiControllerProtocol,GaugeProtocol,SETTINGS_DELEGATE,DraggableDelegate>
 @property(nonatomic,strong)IBOutlet UIButton   *accelerateButton;
 @property(nonatomic,strong)IBOutlet UITextView  *debugTextField;
 @property(nonatomic,strong)IBOutlet UITextField  *inputtext;

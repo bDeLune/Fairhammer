@@ -166,10 +166,10 @@
     
         
         [allUsers removeAllObjects];
-        allUsers=[NSMutableArray arrayWithArray:[dict allKeys]];
+        allUsers=[NSMutableArray arrayWithArray:[mdict allKeys]];
         
         [allUsersDetails removeAllObjects];
-        allUsersDetails=[NSMutableArray arrayWithArray:[dict allValues]];
+        allUsersDetails=[NSMutableArray arrayWithArray:[mdict allValues]];
         
         [tableView reloadData];
     }

@@ -14,10 +14,13 @@
 #import "Session.h"
 #import "UIEffectDesignerView.h"
 #import <AVFoundation/AVFoundation.h>
+#import "Draggable.h"
+#import "BTLEManager.h"
+#import "BTLEManager.h"
 
 typedef void(^RunTimer)(void);
 
-@interface FirstViewController ()
+@interface FirstViewController ()<BTLEManagerDelegate>
 {
     UINavigationController   *navcontroller;
     LoginViewViewController   *loginViewController;
@@ -34,7 +37,7 @@ typedef void(^RunTimer)(void);
     NSTimer  *effecttimer;
     UIImageView  *bellImageView;
     UIImageView  *bg;
-    UIImageView  *peakholdImageView;
+    Draggable  *peakholdImageView;
     
     LogoViewController  *logoviewcontroller;
     int threshold;
@@ -48,11 +51,36 @@ typedef void(^RunTimer)(void);
     int midiexhale;
     int currentdirection;
     int inorout;
+    
 
 }
+@property(nonatomic,strong)UIImageView  *btOnOfImageView;
+
+@property(nonatomic,strong)BTLEManager  *btleManager;
+@property(nonatomic,strong)    NSDate  *date;
+
 @end
 
 @implementation FirstViewController
+-(void)btleManagerConnected:(BTLEManager *)manager
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.btOnOfImageView setImage:[UIImage imageNamed:@"Bluetooth-CONNECTED"]];
+        
+    });
+    
+}
+
+-(void)btleManagerDisconnected:(BTLEManager *)manager
+
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [self.btOnOfImageView setImage:[UIImage imageNamed:@"Bluetooth-DISCONNECTED"]];
+    });
+    
+}
+
 -(void)setResitance:(int)pvalue
 {
     switch (pvalue) {
@@ -121,9 +149,104 @@ typedef void(^RunTimer)(void);
 	// Do any additional setup after loading the view, typically from a nib.
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(updateLogNotification:) name:SEND_MSG_TO_LOG_NOTIFY object:nil];
     [self setupLogin];
-       
+    
+    self.btleManager =[BTLEManager new];
+    self.btleManager.delegate=self;
+    [self.btleManager startWithDeviceName:@"GroovTube" andPollInterval:0.01];
+    self.btOnOfImageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
+    [self.btOnOfImageView setImage:[UIImage imageNamed:@"Bluetooth-DISCONNECTED"]];
+    [self.view addSubview:self.btOnOfImageView];
+
+    
+}
+-(void)btleManagerBreathBegan:(BTLEManager*)manager{
+    self.date=[NSDate date];
+    [self midiNoteBegan:nil];
+}
+-(void)btleManagerBreathStopped:(BTLEManager*)manager{
+    [self midiNoteStopped:nil];
 }
 
+
+
+-(void)btleManager:(BTLEManager*)manager inhaleWithValue:(float)percentOfmax
+{
+
+
+    if (midiController.toggleIsON==NO) {
+        return;
+    }
+    
+    
+    
+    float  vel=127.0*percentOfmax;;
+    
+    if (vel<threshold) {
+        return;
+    }
+    if (vel==127) {
+        return;
+    }
+    float scale=50.0f;
+    float value=vel*scale;
+    [gaugeView setForce:(value)];
+    NSDate  *date=[NSDate date];
+    
+    if (vel>[currentSession.sessionStrength floatValue]) {
+        currentSession.sessionStrength=[NSNumber numberWithFloat:vel];
+        // [gaugeView setArrowPos:0];
+    }
+    
+    double  duration=[date timeIntervalSinceDate:self.date];
+    currentSession.sessionDuration=[NSNumber numberWithDouble:duration];
+    NSString  *durationtext=[NSString stringWithFormat:@"%0.0f",duration];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        scoreViewController.durationValueLabel.text=durationtext;
+        [scoreViewController setStrength:vel];
+        // [self sendLogToOutput:@"conti"];
+    });
+
+
+
+
+}
+
+
+
+-(void)btleManager:(BTLEManager*)manager exhaleWithValue:(float)percentOfmax{
+    
+    if (midiController.toggleIsON) {
+        return;
+    }
+
+    float  vel=127.0*percentOfmax;;
+    
+    if (vel<threshold) {
+        return;
+    }
+    if (vel==127) {
+        return;
+    }
+    float scale=50.0f;
+    float value=vel*scale;
+    [gaugeView setForce:(value)];
+    NSDate  *date=[NSDate date];
+    
+    if (vel>[currentSession.sessionStrength floatValue]) {
+        currentSession.sessionStrength=[NSNumber numberWithFloat:vel];
+        // [gaugeView setArrowPos:0];
+    }
+    
+    double  duration=[date timeIntervalSinceDate:self.date];
+    currentSession.sessionDuration=[NSNumber numberWithDouble:duration];
+    NSString  *durationtext=[NSString stringWithFormat:@"%0.0f",duration];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        scoreViewController.durationValueLabel.text=durationtext;
+        [scoreViewController setStrength:vel];
+        // [self sendLogToOutput:@"conti"];
+    });
+
+}
 -(void)updateLogNotification:(NSNotification*)notification
 {
 
@@ -162,9 +285,9 @@ typedef void(^RunTimer)(void);
     
     [self.view addSubview:scoreViewController.view];
     [self.view addSubview:gaugeView];
-    midiController=[[MidiController alloc]init];
-    midiController.delegate=self;
-    [midiController setup];
+   // midiController=[[MidiController alloc]init];
+  //  midiController.delegate=self;
+  //  [midiController setup];
     
     NSArray *imageNames = @[@"bell_1.png", @"bell_2.png", @"bell_3.png", @"bell_2.png",@"bell_1.png"];
     
@@ -179,13 +302,21 @@ typedef void(^RunTimer)(void);
     bellImageView.animationDuration = 0.7;
     
     [self.view addSubview:bellImageView];
-    peakholdImageView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"PeakHoldArrow.png"]];
+    peakholdImageView=[[Draggable alloc]initWithImage:[UIImage imageNamed:@"PeakHoldArrow.png"]];
     CGRect peakframe=peakholdImageView.frame;
-    peakframe.origin.x=-100;
-    peakframe.origin.y=GUAGE_HEIGHT-40;
+   // peakframe.origin.x=-100;
+    peakframe.origin.y=900;
+    peakframe.origin.x=251;
+
     [peakholdImageView setFrame:peakframe];
-    [gaugeView addSubview:peakholdImageView];
+    peakholdImageView.delegate=self;
+   // [gaugeView addSubview:peakholdImageView];
+  //  self.view.userInteractionEnabled=NO;
+    [self.view addSubview:peakholdImageView];
     gaugeView.arrow=peakholdImageView;
+   // [gaugeView addSubview:peakholdImageView];
+
+   // gaugeView.arrow.userInteractionEnabled=YES;
    // [bellImageView startAnimating];
     
     
@@ -202,7 +333,21 @@ typedef void(^RunTimer)(void);
     
     [togglebutton setBackgroundImage:[UIImage imageNamed:@"BreathDirection_EXHALE.png"] forState:UIControlStateNormal];
     toggleIsON=NO;
+    
+    [[NSUserDefaults standardUserDefaults]setObject:@"exhale" forKey:@"direction"];
+    
 
+    
+}
+-(void)draggable:(Draggable *)didDrag
+{
+    
+    //900-330
+    CGRect  frame=didDrag.frame;
+    
+    [gaugeView setBestDistanceWithY:900-frame.origin.y];
+    
+   // CGRect  newframe=[self.view convertRect:frame toView:gaugeView];
     
 }
 - (IBAction)toggleDirection:(id)sender
@@ -213,11 +358,15 @@ typedef void(^RunTimer)(void);
             midiController.toggleIsON=YES;
           //  midiController.currentdirection=midiinhale;
             [togglebutton setBackgroundImage:[UIImage imageNamed:@"BreathDirection_INHALE.png"] forState:UIControlStateNormal];
+            [[NSUserDefaults standardUserDefaults]setObject:@"inhale" forKey:@"direction"];
+
             break;
         case 1:
             midiController.toggleIsON=NO;
 
             [togglebutton setBackgroundImage:[UIImage imageNamed:@"BreathDirection_EXHALE.png"] forState:UIControlStateNormal];
+            [[NSUserDefaults standardUserDefaults]setObject:@"exhale" forKey:@"direction"];
+
           //  midiController.currentdirection=midiexhale;
 
             
@@ -263,7 +412,7 @@ typedef void(^RunTimer)(void);
         currentSession.sessionStrength=[NSNumber numberWithFloat:vel];
     }
     
-    double  duration=[date timeIntervalSinceDate:midiController.date];
+    double  duration=[date timeIntervalSinceDate:self.date];
     currentSession.sessionDuration=[NSNumber numberWithDouble:duration];
     NSString  *durationtext=[NSString stringWithFormat:@"%0.1f",duration];
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -325,7 +474,7 @@ typedef void(^RunTimer)(void);
        // [gaugeView setArrowPos:0];
     }
     
-    double  duration=[date timeIntervalSinceDate:midiController.date];
+    double  duration=[date timeIntervalSinceDate:self.date];
     currentSession.sessionDuration=[NSNumber numberWithDouble:duration];
     NSString  *durationtext=[NSString stringWithFormat:@"%0.0f",duration];
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -354,7 +503,8 @@ typedef void(^RunTimer)(void);
     if (!sessionRunning) {
         sessionRunning=YES;
         currentSession=[[Session alloc]init];
-        currentSession.sessionDate=midiController.date;
+        self.date=[NSDate date];
+        currentSession.sessionDate=self.date;
         currentSession.username=[[NSUserDefaults standardUserDefaults]valueForKey:@"currentusername"];
     }
 
@@ -413,7 +563,7 @@ typedef void(^RunTimer)(void);
     frame.origin.y=gaugeView.frame.origin.y-40;
     particleEffect.frame=frame;
     [self.view addSubview:particleEffect];
-    effecttimer=[NSTimer timerWithTimeInterval:8 target:self selector:@selector(killSparks) userInfo:nil repeats:NO];
+    effecttimer=[NSTimer timerWithTimeInterval:4 target:self selector:@selector(killSparks) userInfo:nil repeats:NO];
     [[NSRunLoop mainRunLoop] addTimer:effecttimer forMode:NSDefaultRunLoopMode];
     [self playSound];
 //[bellImageView startAnimating];
@@ -443,7 +593,7 @@ typedef void(^RunTimer)(void);
 }
 -(void) playSound {
     
-  NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"bell" ofType:@"mp3"];
+  NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"bell" ofType:@"wav"];
     
     
     NSData *fileData = [NSData dataWithContentsOfFile:soundPath];

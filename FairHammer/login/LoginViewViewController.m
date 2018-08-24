@@ -104,6 +104,7 @@
 
 -(void)updateUserStats:(Session*)asession
 {
+    
        [userStatsViewController updateUserStats:asession];
 }
 @end

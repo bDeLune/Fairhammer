@@ -15,11 +15,9 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate,UITabBarControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 @property (strong,nonatomic) FirstViewController *viewController;
 @property (strong,nonatomic) SecondViewController*viewController2;
 @property (strong,nonatomic) AllUsersViewController*allusersViewController;
-
 @property (strong, nonatomic) UITabBarController *tabBarController;
 
 @end

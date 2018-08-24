@@ -28,5 +28,6 @@
 -(void)blowingEnded;
 -(void)setArrowPos:(float)pforce;
 -(void)setMass:(float)value;
+-(void)setBreathToggleAsExhale:(bool)value isExhaling: (bool)value2;
 -(void)setBestDistanceWithY:(float)yValue;
 @end

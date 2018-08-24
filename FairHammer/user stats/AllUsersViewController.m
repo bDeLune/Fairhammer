@@ -51,10 +51,10 @@
 }
 -(void)viewWillAppear:(BOOL)animated
 {
-
+ //NSLog(@"ALL USER STATS ABOUT TO APPEAR");
     NSDictionary  *dict=[[NSUserDefaults standardUserDefaults]objectForKey:@"users"];
     
-   // if ([dict count]>[allUsers count]) {
+   //// if ([dict count]>[allUsers count]) {
         
         [allUsers removeAllObjects];
         allUsers=[NSMutableArray arrayWithArray:[dict allKeys]];
@@ -62,8 +62,10 @@
         [allUsersDetails removeAllObjects];
         allUsersDetails=[NSMutableArray arrayWithArray:[dict allValues]];
         
-        [self.tableView reloadData];
-   // }
+    //    [self.tableView reloadData];
+    
+ ///    NSLog(@"ALL USER STATS FINISHED");
+   //  }
 }
 
 - (void)didReceiveMemoryWarning
@@ -123,6 +125,8 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+    NSLog(@"INITING WITH NIB NAME");
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Users";
@@ -140,6 +144,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    NSLog(@"SELECTED ROW AT PATH");
+
     // Navigation logic may go here. Create and push another view controller.
     NSDictionary *dict= [self getUserForUsername:[allUsers objectAtIndex:indexPath.row]];
      UserDetailViewController *detailViewController = [[UserDetailViewController alloc] initWithNibName:@"UserDetailViewController" bundle:nil];
@@ -155,24 +162,19 @@
 {
     
     NSString  *name=[allUsers objectAtIndex:indexPath.row];
-    
-    // Remove the row from data model
-    
     NSDictionary  *dict=[[NSUserDefaults standardUserDefaults]objectForKey:@"users"];
     NSMutableDictionary  *mdict=[dict mutableCopy];
     [mdict removeObjectForKey:name];
     [[NSUserDefaults standardUserDefaults]setObject:mdict forKey:@"users"];
     [[NSUserDefaults standardUserDefaults]synchronize];
     
+    [allUsers removeAllObjects];
+    allUsers=[NSMutableArray arrayWithArray:[mdict allKeys]];
         
-        [allUsers removeAllObjects];
-        allUsers=[NSMutableArray arrayWithArray:[mdict allKeys]];
+    [allUsersDetails removeAllObjects];
+    allUsersDetails=[NSMutableArray arrayWithArray:[mdict allValues]];
         
-        [allUsersDetails removeAllObjects];
-        allUsersDetails=[NSMutableArray arrayWithArray:[mdict allValues]];
-        
-        [tableView reloadData];
-    }
-
+    //[tableView reloadData];
+}
     
 @end

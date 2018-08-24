@@ -32,12 +32,16 @@
     float anim_delay;
     float weight;
     float bestDistance;
+    bool setToInhale;
+    bool currentlyExhaling;
     
-
+    bool userBreathingCorrectly;
 }
 
 @end
 @implementation Gauge
+
+
 -(void)setMass:(float)value
 {
     mass=value;
@@ -95,24 +99,61 @@
     
     NSLog(@"new dist == %f",bestDistance);
 }
+
+-(void)setBreathToggleAsExhale:(bool)value isExhaling: (bool)value2;{
+
+    currentlyExhaling = value2;
+    setToInhale = value;
+   // NSLog(@"GAUGE: setToInhale == 0 / currentlyExhaling == 1");
+    //NSLog(@"GAUGE: set - %d currentlyExhaling - %d", value2, value);
+    
+    if ((currentlyExhaling == 1 && setToInhale == 0) || (currentlyExhaling == 0 && setToInhale == 1)){
+       // NSLog(@"CORRECT");
+        userBreathingCorrectly = true;
+      //   isaccelerating=YES;
+    }else{
+        userBreathingCorrectly = false;
+         isaccelerating=NO;
+    }
+    
+}
+
+
 -(void)setForce:(float)pforce
 {
+    //NSLog(@"distancE %f - GUAGE_HEIGHT %d", distance, GUAGE_HEIGHT);
+   // if (userBreathingCorrectly == true || distance > 525){
     force=(pforce/mass);
   //  hm++;
+   // }
+    
+    ///NSLog(@"SET FORCE %f", pforce);
+    
 }
 -(void)blowingBegan
 {
+   // NSLog(@"BLOW BEGAN isaccelerating %hhd", isaccelerating);
     isaccelerating=YES;
 }
 -(void)blowingEnded
 {
+   /// NSLog(@"BLOW ENDED isaccelerating %hhd", isaccelerating);
+
     isaccelerating=NO;
 
 }
 -(void)animate
 {
    // [self setForce:_midiSource.velocity*100];
-      
+    
+    ///NSLog(@"ANIMATING 1");
+
+  //  if (userBreathingCorrectly == false){
+   //    [self fallQuickly];
+   //     return;
+    
+   // }
+    
     if (isaccelerating) {
        // force+=500;
         
@@ -120,7 +161,8 @@
     {
         force-=force*0.03;
         acceleration-=acceleration*0.03;
-
+        
+//NSLog(@"Deccelerating %f ", acceleration);
         
     }
     
@@ -153,14 +195,23 @@
               bestDistance=distance;
 
           }
-                  
-        [animationObject setFrame:frame];
+      
+          
+        //  if (userBreathingCorrectly == false){
+          // [self fallQuickly];
+        //      return;
+        ///  }else{
+              
+              [animationObject setFrame:frame];
+          
+         // }
+          
     }else
     {
         distance=GUAGE_HEIGHT;
         [self stop];
         [self fallQuickly];
-
+        NSLog(@"MEANT TO FALL QUICKLY");
         [_gaugedelegate maxDistanceReached];
 
     }
@@ -173,6 +224,8 @@
 {
     force=(pforce/mass);
     
+    
+    NSLog(@"SETTING PFORCE %f", pforce);
     
    // acceleration= acceleration +( force/mass);
    // velocity = distance / time;
@@ -205,6 +258,9 @@
 -(void)start
 {
   //  [self stop];
+    
+    NSLog(@"STARTING ANIMATION");
+    
     [self setDefaults];
     if (!_animationRunning)
     {
@@ -215,9 +271,9 @@
     }
 }
 -(void)fallQuickly
-
 {
-
+    NSLog(@"FALLING QUICKLY!");
+    
     [UIView animateWithDuration:0.5
                      animations:^{
                          CGRect frame=animationObject.frame;

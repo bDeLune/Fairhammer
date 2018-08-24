@@ -24,8 +24,6 @@ void MyMIDINotifyProc (const MIDINotification  *message, void *refCon);
 {
     int inorout;
     
-    
-    
     MIDIPortRef inPort ;
     MIDIPortRef outPort ;
     

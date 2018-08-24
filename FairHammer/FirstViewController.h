@@ -25,7 +25,7 @@
 
 //Mass  * acceleration
 
-
+extern bool myGlobalBreathSettingInhale;
 //VELOCITY
 //velocity = accceleration by time
 
@@ -36,7 +36,8 @@
 -(void)sendValue:(int)note onoff:(int)onoff;
 -(void)setResitance:(int)pvalue;
 -(void)setThreshold:(int)pvalue;
-
+-(void)setBTTreshold:(float)value;
+-(void)setBTBoost:(float)value;
 //-(void)setFilter:(int)index;
 //-(void)setRate:(float)value;
 @end

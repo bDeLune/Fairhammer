@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+     [self.addNoteButton setBackgroundImage:nil forState:UIControlStateNormal];
+    [self.addNoteButton setTitle:@"Note" forState:UIControlStateNormal];
+    [UIButton buttonWithType:UIButtonTypeSystem];
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,6 +37,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 -(IBAction)addNote:(id)sender
 {
 

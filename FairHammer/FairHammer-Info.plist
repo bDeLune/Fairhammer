@@ -8,27 +8,12 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIcons</key>
+	<dict/>
 	<key>CFBundleIcons~ipad</key>
-	<dict>
-		<key>CFBundlePrimaryIcon</key>
-		<dict>
-			<key>CFBundleIconFiles</key>
-			<array>
-				<string>FairHammerAppIcon58x58</string>
-				<string>FairHammerAppIcon29x29</string>
-				<string>FairHammerAppIcon80x80</string>
-				<string>FairHammerAppIcon40x40</string>
-				<string>FairHammerAppIcon100x100</string>
-				<string>FairHammerAppIcon50x50</string>
-				<string>FairHammerAppIcon76x76</string>
-				<string>FairHammerAppIcon152x152</string>
-				<string>FairHammerAppIcon144x144</string>
-				<string>FairHammerAppIcon72x72</string>
-			</array>
-		</dict>
-	</dict>
+	<dict/>
 	<key>CFBundleIdentifier</key>
-	<string>com.rocudo.$(PRODUCT_NAME:rfc1034identifier)</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -36,19 +21,23 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2</string>
+	<string>4.31</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.2</string>
+	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>UILaunchImageFile~ipad</key>
-	<string>Default</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>FairHammer would like to make data available to nearby bluetooth devices</string>
+	<key>UILaunchStoryboardName</key>
+	<string>Launch</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

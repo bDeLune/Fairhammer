@@ -16,6 +16,20 @@
 
 @implementation SecondViewController
 @synthesize settinngsDelegate;
+-(IBAction)changeBTTreshold:(id)sender
+{
+    [self.settinngsDelegate setBTTreshold:btThresholdSlider.value];
+    
+    [btTresholdLabel setText:[NSString stringWithFormat:@"%f",btThresholdSlider.value]];
+
+}
+-(IBAction)changeBTBoostValue:(id)sender
+{
+    [self.settinngsDelegate setBTBoost:btBoostSlider.value];
+    [btrangeBoost setText:[NSString stringWithFormat:@"%f",btBoostSlider.value]];
+    
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -54,8 +68,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 #pragma mark -
 #pragma mark Picker View Methods
@@ -154,25 +166,23 @@
     }
     
     if (thePickerView==filterPicker) {
-        NSLog(@"Selected : %@. Index of selected color: %i", [filterArray objectAtIndex:row], row);
+        NSLog(@"SelectedfilterPicker : %@. Index of selected color: %i", [filterArray objectAtIndex:row], row);
         //[self.settinngsDelegate setFilter:row];
-        
-        
     }
     
     if (thePickerView==pickerViewA) {
-        NSLog(@"Selected : %@. Index of selected color: %i", [arrayA objectAtIndex:row], row);
+        NSLog(@"SelectedA : %@. Index of selected color: %i", [arrayA objectAtIndex:row], row);
         
         [self valueASend:row];
     }
     if (thePickerView==pickerViewB) {
-        NSLog(@"Selected : %@. Index of selected color: %i", [arrayB objectAtIndex:row], row);
+        NSLog(@"SelectedB : %@. Index of selected color: %i", [arrayB objectAtIndex:row], row);
         [self valueBSend:row];
         
         
     }
     if (thePickerView==pickerResistance) {
-        NSLog(@"Selected : %@. Index of selected color: %i", [arrayResistance objectAtIndex:row], row);
+        NSLog(@"SelectedpickerResistance : %@. Index of selected color: %i", [arrayResistance objectAtIndex:row], row);
         [self.settinngsDelegate setResitance:row];
         
         
@@ -185,12 +195,7 @@
         [[NSUserDefaults standardUserDefaults]synchronize];
         [self.settinngsDelegate setThreshold:row];
         [self.settinngsDelegate setResitance:row];
-
-        
-        
     }
-
-
 }
 
 -(IBAction)changeRate:(id)sender

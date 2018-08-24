@@ -19,22 +19,21 @@
 	NSMutableArray *arrayA;
     NSMutableArray *arrayB;
     NSMutableArray *arrayC;
-    
     NSMutableArray *filterArray;
-    
     
     id<SETTINGS_DELEGATE> __unsafe_unretained settinngsDelegate;
     
-    
     IBOutlet UIPickerView *pickerResistance;
     IBOutlet UIPickerView *pickerThreshold;
-   NSArray *arrayResistance;
+    NSArray *arrayResistance;
     NSArray *arrayThreshold;
-    
-    
+    IBOutlet UILabel   *btTresholdLabel;
+    IBOutlet UILabel   *btrangeBoost;
+    IBOutlet UISlider  *btThresholdSlider;
+    IBOutlet UISlider  *btBoostSlider;
 }
-
 
 @property (unsafe_unretained) id<SETTINGS_DELEGATE> settinngsDelegate;
 -(IBAction)changeRate:(id)sender;
+
 @end

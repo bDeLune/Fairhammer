@@ -17,7 +17,8 @@
     float acceleration;// force/ mass
     BOOL  isaccelerating;
     float force;
-    float mass;
+    float mass;///
+    float temp;
     
     CADisplayLink *displayLink;
     

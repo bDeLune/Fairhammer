@@ -44,6 +44,8 @@ typedef void(^RunTimer)(void);
     AVAudioPlayer *audioPlayer;
     
     float rangeReduction;
+    double rangeReductionAsDouble;
+    
     float currHighestStrength;
     double currHighestDuration;
     
@@ -57,6 +59,7 @@ typedef void(^RunTimer)(void);
     bool currentlyExhaling;
     bool currentlyInhaling;
     
+    BOOL allowResetHighScore;
 }
 
 @property(nonatomic,strong)IBOutlet UIImageView  *btOnOfImageView;
@@ -74,6 +77,7 @@ typedef void(^RunTimer)(void);
 {
     [self.btleManager setRangeReduction:value];
     rangeReduction = value;
+    rangeReductionAsDouble = (double)value;
 }
 
 -(void)btleManagerConnected:(BTLEManager *)manager
@@ -108,12 +112,12 @@ typedef void(^RunTimer)(void);
             
             break;
         case 2:
-            [gaugeView setMass:2.5];
+            [gaugeView setMass:2.2];
             
             break;
             
         case 3:
-            [gaugeView setMass:3];
+            [gaugeView setMass:2.5];
             
             break;
             
@@ -143,7 +147,7 @@ typedef void(^RunTimer)(void);
             break;
             
         case 3:
-            threshold=50;
+            threshold=30;
             NSLog(@"Setting inner threshold to 50");
             break;
             
@@ -159,6 +163,8 @@ typedef void(^RunTimer)(void);
     
     currHighestStrength = 0;
     currHighestDuration = 0; //ADDED
+    rangeReductionAsDouble = 1.0;
+    rangeReduction = 1;
     
     bg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainBackground"]];
     [self.view insertSubview:bg atIndex:0];
@@ -177,7 +183,25 @@ typedef void(^RunTimer)(void);
     [self.btleManager startWithDeviceName:@"GroovTube" andPollInterval:0.1];
     [self.btleManager setTreshold:60];
     [self.btOnOfImageView setImage:[UIImage imageNamed:@"Bluetooth-DISCONNECTED"]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(resetNotification:)
+                                                 name:@"resetNotification"
+                                               object:nil];
 
+}
+
+- (void) resetNotification:(NSNotification *) notification
+{
+    // [notification name] should always be @"TestNotification"
+    // unless you use this method for observation of other notifications
+    // as well.
+    
+     currHighestStrength = 0;
+     currHighestDuration = 0;
+    
+    if ([[notification name] isEqualToString:@"resetNotification"])
+        NSLog (@"Successfully received the resetNotification!");
 }
 
 -(void)btleManagerBreathBegan:(BTLEManager*)manager{
@@ -189,12 +213,16 @@ typedef void(^RunTimer)(void);
   //  if ((currentlyExhaling == true && midiController.toggleIsON )|| (currentlyInhaling == true && midiController.toggleIsON == false)){
     
         [self midiNoteBegan:nil];
-        
-  //  }else{
     
-    
-   // }
+    if (allowResetHighScore == YES){
+        allowResetHighScore = NO;
+        currHighestStrength = 0;
+        currHighestDuration = 0; //ADDED
+        [highScoreViewController updateWithCurrentSession:currentSession];
+    }
 }
+
+
 -(void)btleManagerBreathStopped:(BTLEManager*)manager{
     [self midiNoteStopped:nil];
 }
@@ -211,13 +239,18 @@ typedef void(^RunTimer)(void);
     }
     
     float  vel=127.0*percentOfmax;;
+    float withoutRangeReduction = percentOfmax/rangeReductionAsDouble;
+    float withoutRangeReductionScaled = withoutRangeReduction*127;
     
     if (vel<threshold) {
         return;
     }
-    if (vel==127) {
-        return;
-    }
+   // if (vel==127) {
+    //    return;
+    //}
+    
+    [gaugeView blowingBegan];
+    
     float scale=50.0f;
     float value=vel*scale;
     [gaugeView setForce:(value)];
@@ -233,8 +266,8 @@ typedef void(^RunTimer)(void);
     NSString  *durationtext=[NSString stringWithFormat:@"%0.0f",duration];
     dispatch_async(dispatch_get_main_queue(), ^{
         scoreViewController.durationValueLabel.text=durationtext;
-        [scoreViewController setStrength:vel/rangeReduction];
-        [self updateHighScore: vel/rangeReduction withDuration: duration];
+        [scoreViewController setStrength:withoutRangeReductionScaled];
+        [self updateHighScore: withoutRangeReductionScaled withDuration: duration];
         // [self sendLogToOutput:@"conti"];
     });
 }
@@ -251,15 +284,22 @@ typedef void(^RunTimer)(void);
         return;
     }
     
-    float  vel=127.0*percentOfmax;;
+    float vel=127.0*percentOfmax;;
+    float withoutRangeReduction = percentOfmax/rangeReductionAsDouble;
+    float withoutRangeReductionScaled = withoutRangeReduction*127;
+    
+    NSLog(@"withoutRangeReduction %f", withoutRangeReduction);
+    NSLog(@"withoutRangeReductionScaled %f", withoutRangeReductionScaled);
     
     if (vel<threshold) {
         return;
     }
-    if (vel==127) {
-        return;
-    }
     
+    //if (vel==127) {
+    //    return;
+    //}
+    
+    [gaugeView blowingBegan];
     ///NSLog(@"VEL IS %f", vel);
     
     float scale=50.0f;
@@ -272,24 +312,20 @@ typedef void(^RunTimer)(void);
         // [gaugeView setArrowPos:0];
     }
     
-    
-    
     double  duration=[date timeIntervalSinceDate:self.date];
     currentSession.sessionDuration=[NSNumber numberWithDouble:duration];
     NSString  *durationtext=[NSString stringWithFormat:@"%0.0f",duration];
     dispatch_async(dispatch_get_main_queue(), ^{
         scoreViewController.durationValueLabel.text=durationtext;
-        [scoreViewController setStrength:vel/rangeReduction];
-        [self updateHighScore: vel/rangeReduction withDuration: duration];
-
-        
+        [scoreViewController setStrength:withoutRangeReductionScaled];
+        [self updateHighScore: withoutRangeReductionScaled withDuration: duration];
     });
 }
 
 -(void)updateHighScore: (float)strength withDuration: (double)duration{
     
-    NSLog(@"HS strength %f / HIGH: %f", strength, currHighestStrength);
-    NSLog(@"HS duration %f / HIGH: %f", duration, currHighestDuration);
+    //NSLog(@"HS strength %f / HIGH: %f", strength, currHighestStrength);
+   /// NSLog(@"HS duration %f / HIGH: %f", duration, currHighestDuration);
     
     int strengthRounded = (int)roundf(strength);
     int durationRounded = (int)roundf(duration);
@@ -633,6 +669,8 @@ typedef void(^RunTimer)(void);
     
     //
     [highScoreViewController updateWithCurrentSession:currentSession];
+    
+    allowResetHighScore = YES;
 }
 
 -(void)killSparks
@@ -684,7 +722,6 @@ typedef void(^RunTimer)(void);
      [NSThread sleepForTimeInterval:0.1];**/
     // [self sendBytes:noteOff size:sizeof(noteOff)];
     [midiController sendValue:note onoff:onoff];
-    
-    
+
 }
 @end

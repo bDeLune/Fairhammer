@@ -26,7 +26,10 @@
 -(IBAction)changeBTBoostValue:(id)sender
 {
     [self.settinngsDelegate setBTBoost:btBoostSlider.value];
-    [btrangeBoost setText:[NSString stringWithFormat:@"%f",btBoostSlider.value]];
+    
+    int btRangeInt = (int)btBoostSlider.value;
+    
+    [btrangeBoost setText:[NSString stringWithFormat:@"%d",btRangeInt]];
     
 }
 
@@ -38,7 +41,7 @@
         self.tabBarItem.image = [UIImage imageNamed:@"Menu-Settings"];
         
         arrayA=[NSMutableArray arrayWithObjects:@"Small",@"Normal",@"Big",@"Very Big", nil];
-       arrayB=[NSMutableArray arrayWithObjects:@"Low",@"Normal",@"High",@"Very High", nil];
+        arrayB=[NSMutableArray arrayWithObjects:@"Low",@"Normal",@"High",@"Very High", nil];
 
         arrayC=[NSMutableArray arrayWithObjects:@"10",@"50",@"100",@"200", nil];
         

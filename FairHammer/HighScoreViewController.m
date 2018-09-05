@@ -143,5 +143,10 @@
     self.strengthValueLabel.text=[NSString stringWithFormat:@"0"];
     self.durationValueLabel.text=[NSString stringWithFormat:@"0"];
     
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"resetNotification"
+     object:self];
+    
+    
 }
 @end

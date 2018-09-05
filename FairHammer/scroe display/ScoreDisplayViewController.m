@@ -23,7 +23,7 @@
 {
     NSLog(@"VIEWFORHEADERINSECTION ABOUT TO APPEAR");
     [super viewDidLoad];
-    maxStrength=130;
+    maxStrength=100;
     _strenthProgress.progress=0;
     self.view.backgroundColor=[UIColor clearColor];
     // Do any additional setup after loading the view from its nib.
@@ -45,9 +45,12 @@
     if (pStrength>maxStrength) {
         pStrength=maxStrength;
     }
+    
     float pct=pStrength/maxStrength;
     _strenthProgress.progress=pct;
+
+    NSLog(@"displaying strenght score %d", (int)pStrength);
     
-    [_strengthValueLabel setText:[NSString stringWithFormat:@"%0.0f",pStrength]];
+    [_strengthValueLabel setText:[NSString stringWithFormat:@"%0.0d", (int)pStrength]];
 }
 @end

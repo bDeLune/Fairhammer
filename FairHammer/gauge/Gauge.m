@@ -84,7 +84,7 @@
     time=0.1;
     acceleration=0.1;
    // mass=1;
-//force=15;
+    force=15;
     
     h=0;
     hm=0;

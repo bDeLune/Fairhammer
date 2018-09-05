@@ -42,7 +42,7 @@
     BOOL  validFields=[self validFields];
     
     if (!validFields) {
-        [self.view makeToast:@"Username OR Password Too Short"];
+        [self.view makeToast:@"Username too Short"];
         
         return;
         
@@ -58,7 +58,7 @@
     BOOL  validFields=[self validFields];
     
     if (!validFields) {
-        [self.view makeToast:@"Username OR Password Too Short"];
+        [self.view makeToast:@"Username too Short"];
         
         return;
         
@@ -75,9 +75,9 @@
         result=NO;
     }
     
-    if ([self.passwordTextField.text length]<1) {
-        result=NO;
-    }
+   /// if ([self.passwordTextField.text length]<1) {
+  //      result=NO;
+   /// }
     
     
     return result;
@@ -139,12 +139,12 @@
         return;
     }
     
-    NSString  *dictpassword=[dictionarycheck valueForKey:@"password"];
-    if (![dictpassword isEqualToString:password]) {
-        [self.view makeToast:@"Incorrect Password"];
-        return;
-
-    }
+   // NSString  *dictpassword=[dictionarycheck valueForKey:@"password"];
+   // if (![dictpassword isEqualToString:password]) {
+  ///      [self.view makeToast:@"Incorrect Password"];
+  ///      return;
+//
+  ///  }
     
     NSMutableDictionary   *addDateDictionary=[dict mutableCopy];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];

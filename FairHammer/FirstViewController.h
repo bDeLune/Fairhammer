@@ -51,4 +51,5 @@ extern bool myGlobalBreathSettingInhale;
 -(IBAction)endCurrentSessionTest:(id)sender;
 -(IBAction)touchAccelerateUp:(id)sender;
 -(IBAction)touchAccelerateDown:(id)sender;
+-(void) resetNotification:(NSNotification *) notification;
 @end

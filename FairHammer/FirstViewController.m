@@ -108,16 +108,16 @@ typedef void(^RunTimer)(void);
             break;
             
         case 1:
-            [gaugeView setMass:2];
+            [gaugeView setMass:1.8];
             
             break;
         case 2:
-            [gaugeView setMass:2.2];
+            [gaugeView setMass:2.1];
             
             break;
             
         case 3:
-            [gaugeView setMass:2.5];
+            [gaugeView setMass:2.4];
             
             break;
             
@@ -138,16 +138,16 @@ typedef void(^RunTimer)(void);
         case 1:
             //threshold=20; //changed values by request 1/2/2017 - b
             //threshold 15
-            threshold=12;
+            threshold=11;
             break;
         case 2:
             //threshold=30;
             //threshold=30;
-            threshold=18;
+            threshold=16;
             break;
             
         case 3:
-            threshold=30;
+            threshold=20;
             NSLog(@"Setting inner threshold to 50");
             break;
             
@@ -219,6 +219,11 @@ typedef void(^RunTimer)(void);
         currHighestStrength = 0;
         currHighestDuration = 0; //ADDED
         [highScoreViewController updateWithCurrentSession:currentSession];
+        
+       // float reset = 0.0f;
+        
+        scoreViewController.durationValueLabel.text= @"0";
+        ///[scoreViewController setStrength: reset];
     }
 }
 
@@ -288,8 +293,8 @@ typedef void(^RunTimer)(void);
     float withoutRangeReduction = percentOfmax/rangeReductionAsDouble;
     float withoutRangeReductionScaled = withoutRangeReduction*127;
     
-    NSLog(@"withoutRangeReduction %f", withoutRangeReduction);
-    NSLog(@"withoutRangeReductionScaled %f", withoutRangeReductionScaled);
+    //NSLog(@"withoutRangeReduction %f", withoutRangeReduction);
+    ///NSLog(@"withoutRangeReductionScaled %f", withoutRangeReductionScaled);
     
     if (vel<threshold) {
         return;
@@ -671,6 +676,7 @@ typedef void(^RunTimer)(void);
     [highScoreViewController updateWithCurrentSession:currentSession];
     
     allowResetHighScore = YES;
+
 }
 
 -(void)killSparks

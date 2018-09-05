@@ -49,8 +49,10 @@
     float pct=pStrength/maxStrength;
     _strenthProgress.progress=pct;
 
+    int strength = (int)pStrength;
+    
     NSLog(@"displaying strenght score %d", (int)pStrength);
     
-    [_strengthValueLabel setText:[NSString stringWithFormat:@"%0.0d", (int)pStrength]];
+    [_strengthValueLabel setText:[NSString stringWithFormat:@"%0.0d", strength]];
 }
 @end

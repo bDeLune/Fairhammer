@@ -112,12 +112,12 @@ typedef void(^RunTimer)(void);
             
             break;
         case 2:
-            [gaugeView setMass:2.1];
+            [gaugeView setMass:2.4];
             
             break;
             
         case 3:
-            [gaugeView setMass:2.4];
+            [gaugeView setMass:3.4];
             
             break;
             
@@ -229,6 +229,7 @@ typedef void(^RunTimer)(void);
 
 
 -(void)btleManagerBreathStopped:(BTLEManager*)manager{
+    [gaugeView blowingEnded];
     [self midiNoteStopped:nil];
 }
 

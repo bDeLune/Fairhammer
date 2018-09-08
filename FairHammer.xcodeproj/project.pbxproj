@@ -12,9 +12,6 @@
 		0B10E890179421370040A5FC /* Mercury-Vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E883179421370040A5FC /* Mercury-Vertical.png */; };
 		0B10E891179421370040A5FC /* PeakHoldArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E884179421370040A5FC /* PeakHoldArrow.png */; };
 		0B10E893179421370040A5FC /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 0B10E886179421370040A5FC /* Thumbs.db */; };
-		0B1156501862008E0079ECC1 /* FairHammerAppIcon100x100.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1156411862008E0079ECC1 /* FairHammerAppIcon100x100.png */; };
-		0B1156511862008E0079ECC1 /* FairHammerAppIcon114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1156421862008E0079ECC1 /* FairHammerAppIcon114x114.png */; };
-		0B1156541862008E0079ECC1 /* FairHammerAppIcon152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1156451862008E0079ECC1 /* FairHammerAppIcon152x152.png */; };
 		0B1156561862008E0079ECC1 /* FairHammerAppIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1156471862008E0079ECC1 /* FairHammerAppIcon40x40.png */; };
 		0B1156571862008E0079ECC1 /* FairHammerAppIcon50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1156481862008E0079ECC1 /* FairHammerAppIcon50x50.png */; };
 		0B1156581862008E0079ECC1 /* FairHammerAppIcon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1156491862008E0079ECC1 /* FairHammerAppIcon57x57.png */; };
@@ -22,7 +19,6 @@
 		0B11565A1862008E0079ECC1 /* FairHammerAppIcon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B11564B1862008E0079ECC1 /* FairHammerAppIcon72x72.png */; };
 		0B11565B1862008E0079ECC1 /* FairHammerAppIcon76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B11564C1862008E0079ECC1 /* FairHammerAppIcon76x76.png */; };
 		0B11565C1862008E0079ECC1 /* FairHammerAppIcon80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B11564D1862008E0079ECC1 /* FairHammerAppIcon80x80.png */; };
-		0B14B1A417E6F7BE00F3B749 /* BreathDirection_REVERSE.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B14B1A317E6F7BE00F3B749 /* BreathDirection_REVERSE.png */; };
 		0B172BE41BE3BDFB006ACA0F /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B172BE31BE3BDFB006ACA0F /* Launch.xib */; };
 		0B1B800D178BFDCF00526074 /* Gauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B800C178BFDCF00526074 /* Gauge.m */; };
 		0B1B8012178BFF1D00526074 /* LoginViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B8010178BFF1D00526074 /* LoginViewViewController.m */; };
@@ -697,7 +693,6 @@
 				0BCA9546178AFDBC006547C3 /* FirstViewController.xib in Resources */,
 				0B1B8013178BFF1D00526074 /* LoginViewViewController.xib in Resources */,
 				0B1B8041178C069C00526074 /* SignUpViewController.xib in Resources */,
-				0B1156511862008E0079ECC1 /* FairHammerAppIcon114x114.png in Resources */,
 				0B1B8058178C196500526074 /* HighScoreViewController.xib in Resources */,
 				0B7F92D8178EE3570061E9A1 /* ScoreDisplayViewController.xib in Resources */,
 				0BADD64B1BE3AA62000BFFCE /* Bluetooth-CONNECTED.png in Resources */,
@@ -707,7 +702,6 @@
 				0BB70CB11790530F00B91CE8 /* bell_1.png in Resources */,
 				0BB70CB21790530F00B91CE8 /* bell_2.png in Resources */,
 				0B2B4CB91952FE6A00000F4A /* Default.png in Resources */,
-				0B1156501862008E0079ECC1 /* FairHammerAppIcon100x100.png in Resources */,
 				0B2B4CC01952FEC800000F4A /* Logo-Middle.png in Resources */,
 				0B99FC8E18CA1EF600FD4C20 /* bell.wav in Resources */,
 				0BB70CB31790530F00B91CE8 /* bell_3.png in Resources */,
@@ -760,12 +754,10 @@
 				0BDFF39218BE494C00CF1B1C /* SettingsScreenBackground.png in Resources */,
 				0B45EE4A17E1F80B001E25FC /* SessionNoteViewController.xib in Resources */,
 				71AC2D611D81695C009B193D /* FairHammerAppIcon120x120.png in Resources */,
-				0B14B1A417E6F7BE00F3B749 /* BreathDirection_REVERSE.png in Resources */,
 				0BADD65B1BE3B265000BFFCE /* FairHammerAppIcon114x114.png in Resources */,
 				0BB046C517E74AEB0071B6E1 /* FairhammerSplash.png in Resources */,
 				0BDFF38018BDF88800CF1B1C /* AllTimesForDateViewController.xib in Resources */,
 				0BB046DD17E9DDDB0071B6E1 /* BreathDirection_EXHALE.png in Resources */,
-				0B1156541862008E0079ECC1 /* FairHammerAppIcon152x152.png in Resources */,
 				0BB046DE17E9DDDB0071B6E1 /* BreathDirection_INHALE.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Session.h"
 
-
-
 @interface UserStatsViewController : UIViewController
 @property(nonatomic,strong)IBOutlet UILabel  *usernameLabel;
 @property(nonatomic,strong)IBOutlet UILabel  *durationLabel;

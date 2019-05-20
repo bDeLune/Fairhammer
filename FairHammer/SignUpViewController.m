@@ -27,14 +27,8 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor clearColor];
-    // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 -(IBAction)doLogin:(id)sender
 {
     NSLog(@"Do Login");
@@ -43,25 +37,19 @@
     
     if (!validFields) {
         [self.view makeToast:@"Username OR Password Too Short"];
-        
         return;
-        
     }
     
     [self loginUser];
-    
-    
-
 }
+
 -(IBAction)doSignup:(id)sender
 {
     BOOL  validFields=[self validFields];
     
     if (!validFields) {
         [self.view makeToast:@"Username OR Password Too Short"];
-        
         return;
-        
     }
     
     [self makeUser];
@@ -78,10 +66,8 @@
     if ([self.passwordTextField.text length]<1) {
         result=NO;
     }
-    
-    
-    return result;
 
+    return result;
 }
 
 -(void)makeUser
@@ -120,22 +106,17 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
     [_delegate userCreated:dictionary];
 }
-//
+
 -(void)loginUser
 {
     NSString  *username=self.usernameTextField.text;
     NSString  *password=self.passwordTextField.text;
-    
-    
     NSDictionary  *dict=[[NSUserDefaults standardUserDefaults]objectForKey:@"users"];
     NSMutableDictionary  *mDict=[dict mutableCopy];
-
-    
     NSDictionary  *dictionarycheck=[mDict valueForKey:username];
     
     if (!dictionarycheck) {
         [self.view makeToast:@"That User Doesnt Exist"];
-        
         return;
     }
     
@@ -143,7 +124,6 @@
     if (![dictpassword isEqualToString:password]) {
         [self.view makeToast:@"Incorrect Password"];
         return;
-
     }
     
     NSMutableDictionary   *addDateDictionary=[dict mutableCopy];
@@ -151,12 +131,8 @@
     NSDate  *date=[NSDate date];
     [dateFormat setDateFormat:@"d MMM y H:m:s"];
     NSString *dateString = [dateFormat stringFromDate:date];
-    
     NSLog(@"date: %@", dateString);
-    
     [addDateDictionary setValue:dateString forKey:@"lastlogin"];
-    
-    
     [mDict setValue:addDateDictionary forKey:username];
     [self.navigationController popToRootViewControllerAnimated:YES];
 

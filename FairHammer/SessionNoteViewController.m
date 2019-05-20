@@ -8,7 +8,6 @@
 
 #import "SessionNoteViewController.h"
 
-
 @implementation SessionNoteViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -39,17 +38,9 @@
     NSString  *note=[sessiondict objectForKey:@"note"];
     if (note) {
         [_textView setText:note];
-
     }
-    // Do any additional setup after loading the view from its nib.
-    NSLog(@"VIEWFORHEADERINSECTION ABOUT TO FINISH");
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 -(IBAction)doneButtonHit:(id)sender
 {
     

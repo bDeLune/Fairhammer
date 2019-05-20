@@ -38,8 +38,6 @@
 -(void)startAnimating
 {
     _full.alpha=0.0;
-
-    
     [UIView animateWithDuration:0.8 delay:0.0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse animations:^{
         //
         _top.alpha=0.0;

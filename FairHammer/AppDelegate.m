@@ -62,15 +62,12 @@
     [startupTimer invalidate];
     startupTimer=nil;
     
-    
     [UIView animateWithDuration:2.0 animations:^{
         startupImageView.alpha=0.0;
     } completion:^(BOOL finished){
         [startupImageView removeFromSuperview];
         startupImageView=nil;
     }];
-    
-    
 }
 
 @end

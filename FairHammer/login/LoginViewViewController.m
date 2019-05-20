@@ -36,9 +36,6 @@
     self.view.backgroundColor=[UIColor clearColor];
     self.navigationItem.title=@"Login";
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-
-    
-    
 }
 
 -(IBAction)loginButtonPressed:(id)sender
@@ -58,7 +55,6 @@
 {
     if (currentUserData)
     {
-     
         [self showUserStats];
     }else
     {
@@ -87,19 +83,14 @@
     [[NSUserDefaults standardUserDefaults]synchronize];
     [_delegate loginSuccess];
 }
+
 -(void)userSignedIn:(NSDictionary*)dict
 {
-   
-
     currentUserData=dict;
     self.navigationItem.title=[currentUserData valueForKey:@"username"];
     [[NSUserDefaults standardUserDefaults]setObject:[currentUserData valueForKey:@"username"] forKey:@"currentusername"];
     [[NSUserDefaults standardUserDefaults]synchronize];
-
     [_delegate loginSuccess];
-
-
-
 }
 
 -(void)updateUserStats:(Session*)asession

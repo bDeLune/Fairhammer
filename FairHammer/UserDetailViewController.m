@@ -95,18 +95,11 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-   // NSDictionary  *dict=[_userData objectForKey:@"allscores"];
-   // NSArray  *keys=[dict allKeys];
-    //return [keys count];
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//#warning Incomplete method implementation.
-    // Return the number of rows in the section.
     return [sortedDateKeysNoTime count];
 }
 
@@ -126,9 +119,6 @@
     
     NSString *attemptDateString = [dateFormat stringFromDate:date];
     cell.textLabel.text=[NSString stringWithFormat:@"%@",attemptDateString];
-
-    // Configure the cell...
-    
     return cell;
 }
 
@@ -137,29 +127,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[DetailViewController alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    
-    NSLog(@"DID SELECT USER DETAIL ROW AT PATH");
-
-    
     NSDate  *date=[sortedDateKeysNoTime objectAtIndex:indexPath.row];
     AllTimesForDateViewController  *detailViewController=[[AllTimesForDateViewController alloc]initWithNibName:@"AllTimesForDateViewController" bundle:nil];
     
     [detailViewController setUSerData:_userData forDate:date];
     [self.navigationController pushViewController:detailViewController animated:YES];
-
-    
 }
 
 -(void)addShowNoteForSection:(id)sender
 {
-    
     if ([sortedDateKeys count]==0) {
         return;
     }
@@ -176,33 +152,18 @@
     notecontroller.textView.editable=YES;
     
     [self resignFirstResponder];
-  
     [self presentViewController:notecontroller animated:YES completion:nil];
 
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    
-     NSLog(@"VIEWFORHEADERINSECTION ABOUT TO APPEAR");
-    
     UIView  *view=[[UIView alloc]initWithFrame:CGRectMake(5, 0, tableView.frame.size.width,60 )];
     [view setBackgroundColor:[UIColor blackColor]];
     UILabel  *label=[[UILabel alloc]initWithFrame:CGRectMake(10, 0, 330,60 )];
    // UIButton  *notebutton=[UIButton buttonWithType:UIButtonTypeContactAdd];
     UIButton *notebutton = [UIButton buttonWithType:UIButtonTypeCustom];
     notebutton.frame=CGRectMake(500, 16, 60, 30);
-    //[notebutton setBackgroundImage:[UIImage imageNamed:@"fav_blank.png"]
-                //      forState:UIControlStateNormal];
- 
     [notebutton setTitle:@"Note" forState:UIControlStateNormal];
-   // [notebutton setFrame:frameBtn];
-    
-  /**  NSDate  *date=[sortedDateKeys objectAtIndex:section];
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"d MMM y"];
-    NSString *attemptDateString = [dateFormat stringFromDate:date];**/
-    
-    
     NSString  *username=[_userData objectForKey:@"username"];
     [label setText:username];
     [view addSubview:label];
@@ -214,7 +175,5 @@
     [label setFont:[UIFont boldSystemFontOfSize:30.0]];
     [label setTextColor:[UIColor lightTextColor]];
     return view;
-
-    NSLog(@"VIEWFORHEADERINSECTION FINISHED");
 }
 @end

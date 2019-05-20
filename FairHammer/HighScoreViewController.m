@@ -52,9 +52,7 @@
     NSLog(@"object %@", object);
     NSLog(@"object.strength %@", object.strength);
     NSLog(@"object.duration %@", object.duration);
-    //self.strengthValueLabel.text=[NSString stringWithFormat:@"%0.0f",[object.strength floatValue]];
-    //self.durationValueLabel.text=[NSString stringWithFormat:@"%0.0f",[object.duration floatValue]];
-    
+
     if (!object) {
         [self setHighScore:session];
     }else
@@ -111,11 +109,6 @@
         return;
     }
     HighScoreObject *object = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-       // self.strengthValueLabel.text=[NSString stringWithFormat:@"%0.0f",[object.strength floatValue]];
-       // self.durationValueLabel.text=[NSString stringWithFormat:@"%0.0f",[object.duration floatValue]]
-    });
 }
 
 -(void)setStrengthLabel: (NSString*) val{
@@ -138,8 +131,7 @@
     [[NSUserDefaults standardUserDefaults]setObject:data forKey:@"highscore"];
     [[NSUserDefaults standardUserDefaults]synchronize];
     [[NSNotificationCenter defaultCenter]postNotificationName:NEW_HIGH_SCORE_NOTIFICATION object:nil userInfo:nil];
-    
-    //ADDED
+
     self.strengthValueLabel.text=[NSString stringWithFormat:@"0"];
     self.durationValueLabel.text=[NSString stringWithFormat:@"0"];
     

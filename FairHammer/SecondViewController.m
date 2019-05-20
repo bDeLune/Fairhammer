@@ -38,17 +38,11 @@
         self.tabBarItem.image = [UIImage imageNamed:@"Menu-Settings"];
         
         arrayA=[NSMutableArray arrayWithObjects:@"Small",@"Normal",@"Big",@"Very Big", nil];
-       arrayB=[NSMutableArray arrayWithObjects:@"Low",@"Normal",@"High",@"Very High", nil];
-
+        arrayB=[NSMutableArray arrayWithObjects:@"Low",@"Normal",@"High",@"Very High", nil];
         arrayC=[NSMutableArray arrayWithObjects:@"10",@"50",@"100",@"200", nil];
-        
         filterArray=[NSMutableArray arrayWithObjects:@"Bulge",@"Swirl",@"Blur", nil];
-        
         arrayResistance=@[@"Low",@"Medium",@"High"];
         arrayThreshold=@[@"Low",@"Medium",@"High",@"Very High"];
-
-      //  bgimage=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"SettingsScreenBackground"]];
-       // [self.view insertSubview:bgimage atIndex:0];
 
     }
     return self;
@@ -57,16 +51,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     self.navigationItem.title=@"Settings";
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark -
@@ -143,10 +134,8 @@
 	return thetitle;
 }
 
-- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-	
-    
-    
+- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+
     if (thePickerView==pickerViewA) {
         NSLog(@"Selected : %@. Index of selected color: %i", [arrayA objectAtIndex:row], row);
         
@@ -161,13 +150,10 @@
     if (thePickerView==pickerViewC) {
         NSLog(@"Selected : %@. Index of selected color: %i", [arrayC objectAtIndex:row], row);
         [self valueCSend:row];
-
-        
     }
     
     if (thePickerView==filterPicker) {
         NSLog(@"SelectedfilterPicker : %@. Index of selected color: %i", [filterArray objectAtIndex:row], row);
-        //[self.settinngsDelegate setFilter:row];
     }
     
     if (thePickerView==pickerViewA) {
@@ -184,8 +170,6 @@
     if (thePickerView==pickerResistance) {
         NSLog(@"SelectedpickerResistance : %@. Index of selected color: %i", [arrayResistance objectAtIndex:row], row);
         [self.settinngsDelegate setResitance:row];
-        
-        
     }
     
     if (thePickerView==pickerThreshold) {
@@ -199,35 +183,12 @@
 }
 
 -(IBAction)changeRate:(id)sender
-
 {
-  //  UISlider  *slider=(UISlider*)sender;
-    //[self.settinngsDelegate setRate:slider.value];
 
 }
 
-/**
- 
- C1  12
- C2  24
- C3  36
- C4  48
- D1  14
- D2  26
- D3  38
- D4  50
- E1  16
- E2  28
- E3  40
- E4  52
- F1  17
- F2  29
- F3  41
- F4  53
- **/
 -(void)valueASend:(NSInteger)index
 {
-    
     int note =0;
     switch (index) {
         case 0:
@@ -246,9 +207,9 @@
             break;
     }
     
-    
     [settinngsDelegate sendValue:note onoff:0];
 }
+
 -(void)valueBSend:(NSInteger)index
 {
     int note =0;
@@ -272,10 +233,9 @@
         default:
             break;
     }
-    
-    
     [settinngsDelegate sendValue:note onoff:0];
 }
+
 -(void)valueCSend:(NSInteger)index
 {
     int note =0;
@@ -285,22 +245,17 @@
             break;
         case 1:
             note=38;
-            
             break;
         case 2:
             note=40;
-            
             break;
         case 3:
             note=41;
-            
             break;
-            
         default:
             break;
     }
-    
-    
+
     [settinngsDelegate sendValue:note onoff:0];
 }
 

@@ -16,7 +16,6 @@
     [encoder encodeObject:_duration forKey:@"duration"];
     [encoder encodeObject:_strength forKey:@"strength"];
     [encoder encodeObject:_username forKey:@"username"];
-
 }
 
 -(id)initWithCoder:(NSCoder *)decoder

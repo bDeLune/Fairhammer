@@ -30,33 +30,25 @@ typedef void(^RunTimer)(void);
     NSTimer  *timer;
     BOOL  sessionRunning;
     Session  *currentSession;
-    
     UIEffectDesignerView  *particleEffect;
-    
     NSTimer  *effecttimer;
     UIImageView  *bellImageView;
     UIImageView  *bg;
     Draggable  *peakholdImageView;
-    
     LogoViewController  *logoviewcontroller;
     int threshold;
-    
     AVAudioPlayer *audioPlayer;
-    
     float rangeReduction;
     float currHighestStrength;
     double currHighestDuration;
-    
     UIButton  *togglebutton;
     BOOL   toggleIsON;
-    
     int midiinhale;
     int midiexhale;
     int currentdirection;
     int inorout;
     bool currentlyExhaling;
     bool currentlyInhaling;
-    
 }
 
 @property(nonatomic,strong)IBOutlet UIImageView  *btOnOfImageView;
@@ -130,15 +122,10 @@ typedef void(^RunTimer)(void);
         case 0:
             threshold=10;
             break;
-            
         case 1:
-            //threshold=20; //changed values by request 1/2/2017 - b
-            //threshold 15
             threshold=12;
             break;
         case 2:
-            //threshold=30;
-            //threshold=30;
             threshold=18;
             break;
             
@@ -150,7 +137,6 @@ typedef void(^RunTimer)(void);
         default:
             break;
     }
-    
 }
 
 - (void)viewDidLoad
@@ -159,7 +145,6 @@ typedef void(^RunTimer)(void);
     
     currHighestStrength = 0;
     currHighestDuration = 0; //ADDED
-    
     bg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainBackground"]];
     [self.view insertSubview:bg atIndex:0];
     self.tabBarItem.image = [UIImage imageNamed:@"Menu-Main"];
@@ -167,8 +152,6 @@ typedef void(^RunTimer)(void);
     midiinhale=61;
     midiexhale=73;
     threshold=10;
-    // drawDuration = 3.0;
-    // Do any additional setup after loading the view, typically from a nib.
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(updateLogNotification:) name:SEND_MSG_TO_LOG_NOTIFY object:nil];
     [self setupLogin];
     
@@ -182,19 +165,9 @@ typedef void(^RunTimer)(void);
 
 -(void)btleManagerBreathBegan:(BTLEManager*)manager{
     self.date=[NSDate date];
-    
-  //  NSLog(@"MIDINOTEBGAN currentlyexhaling == %d", currentlyExhaling);
-  //  NSLog(@"MIDINOTEBGAN currentlyInhaling == %d", currentlyInhaling);
-    
-  //  if ((currentlyExhaling == true && midiController.toggleIsON )|| (currentlyInhaling == true && midiController.toggleIsON == false)){
-    
-        [self midiNoteBegan:nil];
-        
-  //  }else{
-    
-    
-   // }
+    [self midiNoteBegan:nil];
 }
+
 -(void)btleManagerBreathStopped:(BTLEManager*)manager{
     [self midiNoteStopped:nil];
 }
@@ -225,7 +198,6 @@ typedef void(^RunTimer)(void);
     
     if (vel>[currentSession.sessionStrength intValue]) {
         currentSession.sessionStrength=[NSNumber numberWithInt:vel];
-        // [gaugeView setArrowPos:0];
     }
     
     double  duration=[date timeIntervalSinceDate:self.date];
@@ -235,7 +207,6 @@ typedef void(^RunTimer)(void);
         scoreViewController.durationValueLabel.text=durationtext;
         [scoreViewController setStrength:vel/rangeReduction];
         [self updateHighScore: vel/rangeReduction withDuration: duration];
-        // [self sendLogToOutput:@"conti"];
     });
 }
 
@@ -243,8 +214,6 @@ typedef void(^RunTimer)(void);
     
     currentlyExhaling = true;
     currentlyInhaling = false;
-    
-    //-(void)setBreathToggleAsExhale:(bool)value isExhaling: (bool)value2;
     [gaugeView setBreathToggleAsExhale:currentlyExhaling isExhaling: midiController.toggleIsON];
     
     if (midiController.toggleIsON) {
@@ -259,9 +228,7 @@ typedef void(^RunTimer)(void);
     if (vel==127) {
         return;
     }
-    
-    ///NSLog(@"VEL IS %f", vel);
-    
+
     float scale=50.0f;
     float value=vel*scale;
     [gaugeView setForce:(value)];
@@ -269,11 +236,8 @@ typedef void(^RunTimer)(void);
     
     if (vel>[currentSession.sessionStrength intValue]) {
         currentSession.sessionStrength=[NSNumber numberWithInt:vel];
-        // [gaugeView setArrowPos:0];
     }
-    
-    
-    
+
     double  duration=[date timeIntervalSinceDate:self.date];
     currentSession.sessionDuration=[NSNumber numberWithDouble:duration];
     NSString  *durationtext=[NSString stringWithFormat:@"%0.0f",duration];
@@ -281,8 +245,6 @@ typedef void(^RunTimer)(void);
         scoreViewController.durationValueLabel.text=durationtext;
         [scoreViewController setStrength:vel/rangeReduction];
         [self updateHighScore: vel/rangeReduction withDuration: duration];
-
-        
     });
 }
 
@@ -343,10 +305,6 @@ typedef void(^RunTimer)(void);
     
     [self.view addSubview:scoreViewController.view];
     [self.view addSubview:gaugeView];
-    // midiController=[[MidiController alloc]init];
-    //  midiController.delegate=self;
-    //  [midiController setup];
-    
     NSArray *imageNames = @[@"bell_1.png", @"bell_2.png", @"bell_3.png", @"bell_2.png",@"bell_1.png"];
     
     NSMutableArray *images = [[NSMutableArray alloc] init];
@@ -368,19 +326,12 @@ typedef void(^RunTimer)(void);
     
     [peakholdImageView setFrame:peakframe];
     peakholdImageView.delegate=self;
-    // [gaugeView addSubview:peakholdImageView];
-    //  self.view.userInteractionEnabled=NO;
     [self.view addSubview:peakholdImageView];
     gaugeView.arrow=peakholdImageView;
-    // [gaugeView addSubview:peakholdImageView];
-    // gaugeView.arrow.userInteractionEnabled=YES;
-    // [bellImageView startAnimating];
     
     logoviewcontroller=[[LogoViewController alloc]init];
     [logoviewcontroller.view setFrame:CGRectMake(gaugeView.frame.origin.x-90,20,174,174)];
-    
     [self.view addSubview:logoviewcontroller.view];
-    
     
     togglebutton=[UIButton buttonWithType:UIButtonTypeCustom];
     togglebutton.frame=CGRectMake(110, self.view.frame.size.height-120, 108, 58);
@@ -392,23 +343,16 @@ typedef void(^RunTimer)(void);
     
     [[NSUserDefaults standardUserDefaults]setObject:@"exhale" forKey:@"direction"];
   
-    
     currentlyExhaling = false;
      [gaugeView setBreathToggleAsExhale:currentlyExhaling isExhaling: midiController.toggleIsON];
-    
-    
 }
+
 -(void)draggable:(Draggable *)didDrag
 {
-    
-    //900-330
     CGRect  frame=didDrag.frame;
-    
     [gaugeView setBestDistanceWithY:900-frame.origin.y];
-    
-    // CGRect  newframe=[self.view convertRect:frame toView:gaugeView];
-    
 }
+
 - (IBAction)toggleDirection:(id)sender
 {
     if (!midiController) {
@@ -417,22 +361,14 @@ typedef void(^RunTimer)(void);
     switch (midiController.toggleIsON) {
         case 0:
             midiController.toggleIsON=YES;
-            //  midiController.currentdirection=midiinhale;
             [togglebutton setBackgroundImage:[UIImage imageNamed:@"BreathDirection_INHALE.png"] forState:UIControlStateNormal];
             [[NSUserDefaults standardUserDefaults]setObject:@"inhale" forKey:@"direction"];
-           // currentlyExhaling = false;
             break;
         case 1:
             midiController.toggleIsON=NO;
-            
             [togglebutton setBackgroundImage:[UIImage imageNamed:@"BreathDirection_EXHALE.png"] forState:UIControlStateNormal];
             [[NSUserDefaults standardUserDefaults]setObject:@"exhale" forKey:@"direction"];
-            //currentlyExhaling = true;
-            //  midiController.currentdirection=midiexhale;
-            
-            
             break;
-            
         default:
             break;
     }
@@ -447,19 +383,18 @@ typedef void(^RunTimer)(void);
     [self endCurrentSession];
     [timer invalidate];
 }
+
 -(IBAction)touchAccelerateDown:(id)sender
 {
     [self beginNewSession];
-    
     [gaugeView blowingBegan];
     timer=[NSTimer timerWithTimeInterval:0.1 target:self selector:@selector(simulateBlow) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
 }
+
 -(void)simulateBlow
 {
     NSLog(@"Simulating blow");
-    
-    
     float  vel=[_inputtext.text floatValue];
     if (vel==127) {
         return;
@@ -479,85 +414,70 @@ typedef void(^RunTimer)(void);
     dispatch_async(dispatch_get_main_queue(), ^{
         scoreViewController.durationValueLabel.text=durationtext;
         [scoreViewController setStrength:vel/rangeReduction];   //added
-        
     });
-    
-    
 }
+
 #pragma mark -
 #pragma mark - Midi Delegate
 
 -(void)midiNoteBegan:(MidiController*)midi
 {
-    //if (currentlyExhaling == true && midiController.toggleIsON || currentlyInhaling == true && midiController.toggleIsON == false){
-    NSLog(@"MIDINOTEBEGAN");
-    
-  //  if ((currentlyExhaling == true && midiController.toggleIsON) || (currentlyInhaling == true && midiController.toggleIsON == false)){
+    if (gaugeView.animationRunning) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_debugTextField setText:@"\nMidi Began"];
         
-        if (gaugeView.animationRunning) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [_debugTextField setText:@"\nMidi Began"];
-            
-            });
-            [self beginNewSession];
-            [gaugeView blowingBegan];
-        }
-        
-  //  }else{
-    
-    //    NSLog(@"DISALLOWED as blowing in wrong mode");
-   // }
-
+        });
+        [self beginNewSession];
+        [gaugeView blowingBegan];
+    }
 }
+
 -(void)midiNoteStopped:(MidiController*)midi
 {
-    
     if (gaugeView.animationRunning) {
         [self sendLogToOutput:@"\nMidi Stop"];
         [gaugeView blowingEnded];
         [self endCurrentSession];
-        
     }
-    
 }
+
 -(void)midiNoteContinuing:(MidiController*)midi
 {
     NSLog(@"midiNoteContinuing currentlyExhaling %d", currentlyExhaling);
     NSLog(@"midiNoteContinuing currentlyInhaling %d", currentlyInhaling);
     
-     if ((currentlyExhaling == true && midiController.toggleIsON) || (currentlyInhaling == true && midiController.toggleIsON == false)){
+    if ((currentlyExhaling == true && midiController.toggleIsON) || (currentlyInhaling == true && midiController.toggleIsON == false)){
     
-    float  vel=midiController.velocity;
-    
-    if (vel<threshold) {
-        return;
-    }
-    if (vel==127) {
-        return;
-    }
-    float scale=50.0f;
-    float value=vel*scale;
-    [gaugeView setForce:(value)];
-    NSDate  *date=[NSDate date];
-    
-    if (vel>[currentSession.sessionStrength intValue]) {
-        currentSession.sessionStrength=[NSNumber numberWithInt:vel];
-        // [gaugeView setArrowPos:0];
-    }
-    
-    double  duration=[date timeIntervalSinceDate:self.date];
-    currentSession.sessionDuration=[NSNumber numberWithDouble:duration];
-    NSString  *durationtext=[NSString stringWithFormat:@"%0.0f",duration];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        scoreViewController.durationValueLabel.text=durationtext;
-        [scoreViewController setStrength:vel/rangeReduction];
-        // [self sendLogToOutput:@"conti"];
-    });
+        float  vel=midiController.velocity;
+        
+        if (vel<threshold) {
+            return;
+        }
+        
+        if (vel==127) {
+            return;
+        }
+        
+        float scale=50.0f;
+        float value=vel*scale;
+        [gaugeView setForce:(value)];
+        NSDate  *date=[NSDate date];
+        
+        if (vel>[currentSession.sessionStrength intValue]) {
+            currentSession.sessionStrength=[NSNumber numberWithInt:vel];
+        }
+        
+        double  duration=[date timeIntervalSinceDate:self.date];
+        currentSession.sessionDuration=[NSNumber numberWithDouble:duration];
+        NSString  *durationtext=[NSString stringWithFormat:@"%0.0f",duration];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            scoreViewController.durationValueLabel.text=durationtext;
+            [scoreViewController setStrength:vel/rangeReduction];
+        });
          
      }else{
          NSLog(@"Disallowing");
      }
-    
 }
 -(void)sendLogToOutput:(NSString*)log
 {
@@ -565,10 +485,7 @@ typedef void(^RunTimer)(void);
         
         NSString  *string=[NSString stringWithFormat:@"\n %@",log];
         _debugTextField.text =[_debugTextField.text stringByAppendingString:string];
-        
     });
-    
-    
 }
 
 #pragma mark -
@@ -584,25 +501,19 @@ typedef void(^RunTimer)(void);
     }
     
 }
+
 -(void)endCurrentSessionTest
 {
     
 }
+
 -(void)endCurrentSession
 {
     if (sessionRunning) {
         sessionRunning=NO;
     }
-    // dispatch_async(dispatch_get_main_queue(), ^{
-    //  scoreViewController.durationValueLabel.text=@"";
-    // scoreViewController.strengthValueLabel.text=@"";
-    
-    // });
-    
-    [loginViewController updateUserStats:currentSession];
-   // [highScoreViewController updateWithCurrentSession:currentSession];    //added removed this line
-    
 
+    [loginViewController updateUserStats:currentSession];
 }
 
 #pragma mark -
@@ -627,11 +538,7 @@ typedef void(^RunTimer)(void);
     effecttimer=[NSTimer timerWithTimeInterval:4 target:self selector:@selector(killSparks) userInfo:nil repeats:NO];
     [[NSRunLoop mainRunLoop] addTimer:effecttimer forMode:NSDefaultRunLoopMode];
     [self playSound];
-    //[bellImageView startAnimating];
     [logoviewcontroller startAnimating];
-    // [loginViewController updateUserStats:currentSession];
-    
-    //
     [highScoreViewController updateWithCurrentSession:currentSession];
 }
 
@@ -645,46 +552,28 @@ typedef void(^RunTimer)(void);
     [self midiNoteStopped:midiController];
     [effecttimer invalidate];
     effecttimer=nil;
-    
-    
     [gaugeView start];
-    //[bellImageView stopAnimating];
     [logoviewcontroller stopAnimating];
-    
 }
+
 -(void) playSound {
     
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"bell" ofType:@"wav"];
-    
-    
     NSData *fileData = [NSData dataWithContentsOfFile:soundPath];
-    
     NSError *error = nil;
-    
     audioPlayer = [[AVAudioPlayer alloc] initWithData:fileData
                                                 error:&error];
     [audioPlayer prepareToPlay];
     [audioPlayer play];
-    
-    //[soundPath release];
-    // NSLog(@"soundpath retain count: %d", [soundPath retainCount]);
 }
 
 -(void)setRate:(float)value
 {
-    // self.animationrate=value;
+
 }
 
 -(void)sendValue:(int)note onoff:(int)onoff
 {
-    /** const UInt8 noteOn[]  = { 0x90, note, 127 };
-     // const UInt8 noteOff[] = { 0x80, note, 0   };
-     [_delegate sendLogToOutput:@"got this 127"];
-     [self sendBytes:noteOn size:sizeof(noteOn)];
-     [NSThread sleepForTimeInterval:0.1];**/
-    // [self sendBytes:noteOff size:sizeof(noteOff)];
     [midiController sendValue:note onoff:onoff];
-    
-    
 }
 @end

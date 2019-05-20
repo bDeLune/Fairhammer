@@ -616,9 +616,9 @@
 		0BE8B7761795517D007AA2B0 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				0BE8B7771795518D007AA2B0 /* SecondViewController.h */,
 				0BE8B77A17955351007AA2B0 /* SecondViewController_iPhone.xib */,
 				0BE8B77B17955351007AA2B0 /* SecondViewController_iPad.xib */,
+				0BE8B7771795518D007AA2B0 /* SecondViewController.h */,
 				0BE8B7781795518D007AA2B0 /* SecondViewController.m */,
 			);
 			name = Settings;
@@ -675,6 +675,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 0BCA951D178AFDBC006547C3;

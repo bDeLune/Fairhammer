@@ -25,35 +25,17 @@
 -(void)writeStatsToLabels
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-    
-        
-   //     NSLog(@"USER STATS ABOUT TO APPEAR");
-        
+
         NSString  *username=[[NSUserDefaults standardUserDefaults]valueForKey:@"currentusername"];
-        
         NSDictionary  *userdict=[[NSUserDefaults standardUserDefaults]objectForKey:@"users"];
         NSMutableDictionary  *mDict=[userdict mutableCopy];
-        
         NSMutableDictionary  *dict=[mDict objectForKey:username];
         
         NSNumber  *usersBestDuration=[dict valueForKey:@"bestduration"];
         NSNumber  *usersBestStrength=[dict valueForKey:@"beststrength"];
         self.usernameLabel.text=username;
-        
-     //   NSLog(@"WRITING TO LABEL DURATION %@",usersBestDuration);
-    //     NSLog(@"WRITING TO LABEL sTRENGTH %@",usersBestStrength);
-     ////
         self.durationLabel.text=[NSString stringWithFormat:@"%0.1f",[usersBestDuration floatValue]];
         self.strengthLabel.text=[NSString stringWithFormat:@"%0.1f",[usersBestStrength floatValue]];
-        
-       // self.durationLabel.text=[NSString stringWithFormat:@"%@", usersBestDuration];
-        //self.strengthLabel.text=[NSString stringWithFormat:@"%@", usersBestStrength];
-        
-    //     NSLog(@"USER STATS ABOUT TO APPEAR");
-        
-    //    NSLog(@"DURATION %@",self.durationLabel.text);
-    //    NSLog(@"sTRENGTH %@", self.strengthLabel.text);
-
     });
   
 }
@@ -62,8 +44,6 @@
 }
 -(void)updateUserStats:(Session*)session
 {
-   // NSLog(@"UPDATE USER STATS - START");
-    
     NSDictionary  *userdict=[[NSUserDefaults standardUserDefaults]objectForKey:@"users"];
     NSMutableDictionary  *mDict=[userdict mutableCopy];
     
@@ -73,7 +53,6 @@
     NSMutableDictionary *mutableDict = [dict mutableCopy];
     NSNumber  *usersBestDuration=[dict valueForKey:@"bestduration"];
     NSNumber  *usersBestStrength=[dict valueForKey:@"beststrength"];
-    
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     NSDate  *date=[NSDate date];
@@ -95,36 +74,26 @@
     
     [allScoresMutatable  setValue:durationAndStrenghtDict forKey:attemptDateString];
     [mutableDict setObject:allScoresMutatable forKey:@"allscores"];
+
+    if (!session) {
+        return ;
+    }
+    if (!session.sessionDuration) {
+        return;
+    }
     
+    if ([session.sessionDuration floatValue]>[usersBestDuration floatValue]) {
+        [mutableDict setObject:session.sessionDuration forKey:@"bestduration"];
+    }
+    if ([session.sessionStrength floatValue]>[usersBestStrength floatValue]) {
+        [mutableDict setObject:session.sessionStrength forKey:@"beststrength"];
+    }
+
+   [mDict setValue:mutableDict forKey:username];
     
-  //  NSLog(@"BEST DURATION %@", session.sessionDuration);
-  //  NSLog(@"BEST STRENGTH %@", session.sessionStrength);
-    
-        if (!session) {
-            return ;
-        }
-        if (!session.sessionDuration) {
-            return;
-        }
-        
-        if ([session.sessionDuration floatValue]>[usersBestDuration floatValue]) {
-            [mutableDict setObject:session.sessionDuration forKey:@"bestduration"];
-        }
-        if ([session.sessionStrength floatValue]>[usersBestStrength floatValue]) {
-            [mutableDict setObject:session.sessionStrength forKey:@"beststrength"];
-        }
-    
-       [mDict setValue:mutableDict forKey:username];
-        
-        [[NSUserDefaults standardUserDefaults]setValue:mDict forKey:@"users"];
-        [[NSUserDefaults standardUserDefaults]synchronize];
-    
-    
-    //    [[NSNotificationCenter  defaultCenter]postNotification:[NSNotification notificationWithName:SESSION_NOTE_ADDED_NOTIFY object:nil]];
-        //ADDED - THIS LINE WAS REMOVED TO PREVENT THE TABLEVIEW FROM DISAPPEARING
-  //  });
-   
-    
+    [[NSUserDefaults standardUserDefaults]setValue:mDict forKey:@"users"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+
     [self writeStatsToLabels];
 }
 @end

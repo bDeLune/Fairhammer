@@ -18,7 +18,6 @@
         _sessionDate=[NSDate date];
         _sessionStrength=[NSNumber numberWithFloat:0.0];
         _sessionDuration=[NSNumber numberWithFloat:0.0];
-        
     }
     
     return self;
@@ -26,7 +25,6 @@
 
 -(void)updateStrength:(float)pvalue
 {
-
     if (pvalue>[_sessionStrength floatValue]) {
         _sessionStrength=[NSNumber numberWithFloat:pvalue];
     }
@@ -38,7 +36,6 @@
     [encoder encodeObject:_sessionDuration forKey:@"sessionDuration"];
     [encoder encodeObject:_sessionStrength forKey:@"sessionStrength"];
     [encoder encodeObject:_username forKey:@"username"];
-
 }
 
 -(id)initWithCoder:(NSCoder *)decoder
@@ -47,8 +44,6 @@
     self.sessionStrength = [decoder decodeObjectForKey:@"sessionStrength"];
     self.username = [decoder decodeObjectForKey:@"username"];
     self.sessionDuration = [decoder decodeObjectForKey:@"sessionDuration"];
-
-    
     return self;
 }
 

@@ -103,13 +103,13 @@
     
     __unsafe_unretained BTLEManager *weakSelf = self;
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), _queue, ^{
+    //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), _queue, ^{
         if (weakSelf) {
             [weakSelf startScanning];
             
         }
         
-    });
+    //});
     
     //self.pollTimer=[NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(requestBTData:) userInfo:nil repeats:YES];
     [self startTimerWithInterval:interval];
@@ -213,10 +213,10 @@
     
     self.melody = [MelodyManager foundDeviceAtIndex:0];
     self.melody.delegate = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), _queue, ^{
+    //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), _queue, ^{
         
         [self.melody connect];
-    });
+    //});
     
     
     

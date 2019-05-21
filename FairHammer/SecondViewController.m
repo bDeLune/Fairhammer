@@ -55,22 +55,29 @@
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
 #pragma mark -
 #pragma mark Picker View Methods
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
-	
 	return 1;
 }
 
-- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
-	
-    
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    UILabel *tView = (UILabel*)view;
+    if (!tView)
+    {
+        tView = [[UILabel alloc] init];
+        [tView setTextColor:[UIColor whiteColor]];
+        [tView setFont:[UIFont fontWithName:@"font-name-here" size:15]];
+        [tView setTextAlignment:NSTextAlignmentCenter];
+    }
+    // Fill the label text here
+    return tView;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component
+{
     int amount;
     
     if (thePickerView==pickerViewA) {
@@ -78,32 +85,26 @@
     }
     if (thePickerView==pickerViewB) {
         amount=[arrayB count];
-
     }
     if (thePickerView==pickerViewC) {
         amount=[arrayC count];
-
     }
     if (thePickerView==filterPicker) {
         amount=[filterArray count];
-        
     }
     
     if (thePickerView==pickerResistance) {
         amount=[arrayResistance count];
-        
     }
     
     if (thePickerView==pickerThreshold) {
         amount=[arrayThreshold count];
-        
     }
 	return amount;
 }
 
 - (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-	
-    
+
     NSString *thetitle;
     
     if (thePickerView==pickerViewA) {
@@ -111,25 +112,20 @@
     }
     if (thePickerView==pickerViewB) {
         thetitle=[arrayB objectAtIndex:row];
-        
     }
     if (thePickerView==pickerViewC) {
         thetitle=[arrayC objectAtIndex:row];
-        
     }
     if (thePickerView==filterPicker) {
         thetitle=[filterArray objectAtIndex:row];
-        
     }
     
     if (thePickerView==pickerResistance) {
         thetitle=[arrayResistance objectAtIndex:row];
-        
     }
     
     if (thePickerView==pickerThreshold) {
         thetitle=[arrayThreshold objectAtIndex:row];
-        
     }
 	return thetitle;
 }
@@ -138,15 +134,14 @@
 
     if (thePickerView==pickerViewA) {
         NSLog(@"Selected : %@. Index of selected color: %i", [arrayA objectAtIndex:row], row);
-        
         [self valueASend:row];
     }
+    
     if (thePickerView==pickerViewB) {
         NSLog(@"Selected : %@. Index of selected color: %i", [arrayB objectAtIndex:row], row);
         [self valueBSend:row];
-
-        
     }
+    
     if (thePickerView==pickerViewC) {
         NSLog(@"Selected : %@. Index of selected color: %i", [arrayC objectAtIndex:row], row);
         [self valueCSend:row];
@@ -158,15 +153,13 @@
     
     if (thePickerView==pickerViewA) {
         NSLog(@"SelectedA : %@. Index of selected color: %i", [arrayA objectAtIndex:row], row);
-        
         [self valueASend:row];
     }
     if (thePickerView==pickerViewB) {
         NSLog(@"SelectedB : %@. Index of selected color: %i", [arrayB objectAtIndex:row], row);
         [self valueBSend:row];
-        
-        
     }
+    
     if (thePickerView==pickerResistance) {
         NSLog(@"SelectedpickerResistance : %@. Index of selected color: %i", [arrayResistance objectAtIndex:row], row);
         [self.settinngsDelegate setResitance:row];
@@ -196,13 +189,10 @@
             break;
         case 1:
             note=14;
-
             break;
         case 2:
             note=16;
-
             break;
-            
         default:
             break;
     }
@@ -219,17 +209,13 @@
             break;
         case 1:
             note=26;
-            
             break;
         case 2:
             note=28;
-            
             break;
         case 3:
             note=29;
-            
             break;
-            
         default:
             break;
     }
@@ -255,10 +241,7 @@
         default:
             break;
     }
-
     [settinngsDelegate sendValue:note onoff:0];
 }
-
-
 
 @end

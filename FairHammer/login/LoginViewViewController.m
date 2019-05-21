@@ -13,7 +13,6 @@
 {
     SignUpViewController  *signupViewController;
     UserStatsViewController *userStatsViewController;
-    
     NSDictionary  *currentUserData;
 }
 @end
@@ -33,8 +32,8 @@
 {
     [super viewDidLoad];
     userStatsViewController=[[UserStatsViewController alloc]init];
-    self.view.backgroundColor=[UIColor clearColor];
-    self.navigationItem.title=@"Login";
+    self.view.backgroundColor=[UIColor blackColor];
+    self.navigationItem.title=@"";
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
 }
 
@@ -46,7 +45,6 @@
         [self.navigationController pushViewController:signupViewController animated:YES];
     }else
     {
-       // NSArray  *vcs=self.navigationController.viewControllers;
         [self.navigationController pushViewController:signupViewController animated:YES];
     }
 
@@ -95,7 +93,6 @@
 
 -(void)updateUserStats:(Session*)asession
 {
-    
-       [userStatsViewController updateUserStats:asession];
+    [userStatsViewController updateUserStats:asession];
 }
 @end

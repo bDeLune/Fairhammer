@@ -94,21 +94,15 @@ typedef void(^RunTimer)(void);
         case 0:
             [gaugeView setMass:1];
             break;
-            
         case 1:
             [gaugeView setMass:2];
-            
             break;
         case 2:
             [gaugeView setMass:2.5];
-            
             break;
-            
         case 3:
             [gaugeView setMass:3];
-            
             break;
-            
         default:
             break;
     }
@@ -139,16 +133,22 @@ typedef void(^RunTimer)(void);
     }
 }
 
+-(void) viewWillLayoutSubviews{
+    //bg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainBackground"]];
+    bg = [[UIImageView alloc]initWithFrame:self.view.frame];
+    [bg setImage: [UIImage imageNamed:@"MainBackground"]];
+    [self.view insertSubview:bg atIndex:0];
+    self.tabBarItem.image = [UIImage imageNamed:@"Menu-Main"];
+    self.title = @"Main";
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     currHighestStrength = 0;
     currHighestDuration = 0; //ADDED
-    bg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainBackground"]];
-    [self.view insertSubview:bg atIndex:0];
-    self.tabBarItem.image = [UIImage imageNamed:@"Menu-Main"];
-    self.title = @"Main";
+
     midiinhale=61;
     midiexhale=73;
     threshold=10;

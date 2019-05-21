@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Bluetooth-DISCONNECTED.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fys-4a-aDg">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bluetooth-DISCONNECTED.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fys-4a-aDg">
                     <rect key="frame" x="30" y="194" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="KfV-Pu-ql5"/>
@@ -29,6 +29,10 @@
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Fys-4a-aDg" firstAttribute="top" secondItem="2" secondAttribute="top" constant="194" id="AGq-kn-7Jk"/>
+                <constraint firstItem="Fys-4a-aDg" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="30" id="apv-R9-9qD"/>
+            </constraints>
         </view>
     </objects>
     <resources>

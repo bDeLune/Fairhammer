@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
-    <device id="ipad9_7" orientation="portrait">
+    <device id="ipad10_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -17,7 +17,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="2">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bluetooth-DISCONNECTED.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fys-4a-aDg">

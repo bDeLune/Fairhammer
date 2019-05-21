@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" colorMatched="YES">
-    <device id="ipad9_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="ipad10_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,47 +19,55 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="High Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4">
-                    <rect key="frame" x="12" y="22" width="180" height="41"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="High Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4">
+                    <rect key="frame" x="58" y="37" width="180" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="180" id="aMW-iP-haM"/>
+                        <constraint firstAttribute="height" constant="41" id="xwN-Ef-PNT"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Duration " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9">
-                    <rect key="frame" x="12" y="82" width="69" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Duration " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9">
+                    <rect key="frame" x="58" y="97" width="69" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="69" id="SEd-nP-RMH"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Strength" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="12">
-                    <rect key="frame" x="12" y="111" width="75" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Strength" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12">
+                    <rect key="frame" x="58" y="126" width="75" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="15">
-                    <rect key="frame" x="122" y="82" width="84" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15">
+                    <rect key="frame" x="168" y="97" width="84" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="84" id="fNA-nc-hTG"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="19">
-                    <rect key="frame" x="122" y="111" width="84" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19">
+                    <rect key="frame" x="168" y="126" width="84" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="28">
-                    <rect key="frame" x="0.0" y="140" width="60" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28">
+                    <rect key="frame" x="46" y="155" width="60" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="BOR-7M-oga"/>
+                        <constraint firstAttribute="height" constant="44" id="l0b-nc-TU4"/>
+                    </constraints>
                     <state key="normal" title="reset">
                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
@@ -69,6 +77,22 @@
                 </button>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <constraints>
+                <constraint firstItem="4" firstAttribute="leading" secondItem="9" secondAttribute="leading" id="3SY-41-EGX"/>
+                <constraint firstItem="12" firstAttribute="top" secondItem="9" secondAttribute="bottom" constant="8" symbolic="YES" id="7kv-qN-1eu"/>
+                <constraint firstItem="12" firstAttribute="baseline" secondItem="19" secondAttribute="baseline" id="9Ap-LD-LT6"/>
+                <constraint firstItem="9" firstAttribute="top" secondItem="4" secondAttribute="bottom" constant="19" id="AhK-FW-SNf"/>
+                <constraint firstItem="4" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="58" id="DGA-yf-aID"/>
+                <constraint firstItem="19" firstAttribute="leading" secondItem="12" secondAttribute="trailing" constant="35" id="E18-mb-4Hj"/>
+                <constraint firstItem="15" firstAttribute="leading" secondItem="9" secondAttribute="trailing" constant="41" id="T3h-7p-U82"/>
+                <constraint firstItem="9" firstAttribute="baseline" secondItem="15" secondAttribute="baseline" id="bTM-YR-H67"/>
+                <constraint firstItem="28" firstAttribute="top" secondItem="12" secondAttribute="bottom" constant="8" symbolic="YES" id="crM-PY-L8j"/>
+                <constraint firstItem="4" firstAttribute="top" secondItem="2" secondAttribute="top" constant="37" id="rVM-Oy-jPH"/>
+                <constraint firstItem="9" firstAttribute="leading" secondItem="12" secondAttribute="leading" id="uMP-gH-yxr"/>
+                <constraint firstItem="15" firstAttribute="leading" secondItem="19" secondAttribute="leading" id="udK-zr-YGb"/>
+                <constraint firstItem="28" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="46" id="ure-14-wUv"/>
+                <constraint firstItem="15" firstAttribute="trailing" secondItem="19" secondAttribute="trailing" id="vPq-ZI-pLC"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
         </view>
     </objects>

@@ -146,7 +146,7 @@
 		0B1B800C178BFDCF00526074 /* Gauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Gauge.m; path = gauge/Gauge.m; sourceTree = "<group>"; };
 		0B1B800F178BFF1D00526074 /* LoginViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewViewController.h; path = login/LoginViewViewController.h; sourceTree = "<group>"; };
 		0B1B8010178BFF1D00526074 /* LoginViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewViewController.m; path = login/LoginViewViewController.m; sourceTree = "<group>"; };
-		0B1B8011178BFF1D00526074 /* LoginViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewViewController.xib; path = login/LoginViewViewController.xib; sourceTree = "<group>"; };
+		0B1B8011178BFF1D00526074 /* LoginViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewViewController.xib; sourceTree = "<group>"; };
 		0B1B803D178C069C00526074 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		0B1B803E178C069C00526074 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		0B1B803F178C069C00526074 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
@@ -175,11 +175,11 @@
 		0B45EE4717E1F80B001E25FC /* SessionNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionNoteViewController.m; sourceTree = "<group>"; };
 		0B45EE4817E1F80B001E25FC /* SessionNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionNoteViewController.xib; sourceTree = "<group>"; };
 		0B48DB9B19583B88006ED293 /* MainBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainBackground.png; sourceTree = "<group>"; };
-		0B7F92D0178EDDC20061E9A1 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Session.h; path = session/Session.h; sourceTree = "<group>"; };
-		0B7F92D1178EDDC20061E9A1 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Session.m; path = session/Session.m; sourceTree = "<group>"; };
+		0B7F92D0178EDDC20061E9A1 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		0B7F92D1178EDDC20061E9A1 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		0B7F92D4178EE3570061E9A1 /* ScoreDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreDisplayViewController.h; path = "scroe display/ScoreDisplayViewController.h"; sourceTree = "<group>"; };
 		0B7F92D5178EE3570061E9A1 /* ScoreDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScoreDisplayViewController.m; path = "scroe display/ScoreDisplayViewController.m"; sourceTree = "<group>"; };
-		0B7F92D6178EE3570061E9A1 /* ScoreDisplayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScoreDisplayViewController.xib; path = "scroe display/ScoreDisplayViewController.xib"; sourceTree = "<group>"; };
+		0B7F92D6178EE3570061E9A1 /* ScoreDisplayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreDisplayViewController.xib; sourceTree = "<group>"; };
 		0B7F92DA178EF93F0061E9A1 /* HighScoreObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreObject.h; sourceTree = "<group>"; };
 		0B7F92DB178EF93F0061E9A1 /* HighScoreObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreObject.m; sourceTree = "<group>"; };
 		0B99FC8D18CA1EF600FD4C20 /* bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bell.wav; sourceTree = "<group>"; };
@@ -356,10 +356,8 @@
 			children = (
 				0B1B800F178BFF1D00526074 /* LoginViewViewController.h */,
 				0B1B8010178BFF1D00526074 /* LoginViewViewController.m */,
-				0B1B8011178BFF1D00526074 /* LoginViewViewController.xib */,
 				0B1B803D178C069C00526074 /* SignUpViewController.h */,
 				0B1B803E178C069C00526074 /* SignUpViewController.m */,
-				0B1B803F178C069C00526074 /* SignUpViewController.xib */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -387,7 +385,6 @@
 			children = (
 				0B7F92D4178EE3570061E9A1 /* ScoreDisplayViewController.h */,
 				0B7F92D5178EE3570061E9A1 /* ScoreDisplayViewController.m */,
-				0B7F92D6178EE3570061E9A1 /* ScoreDisplayViewController.xib */,
 			);
 			name = "score display";
 			sourceTree = "<group>";
@@ -397,6 +394,7 @@
 			children = (
 				0B1B8054178C196500526074 /* HighScoreViewController.h */,
 				0B1B8055178C196500526074 /* HighScoreViewController.m */,
+				0BE8B78F17956135007AA2B0 /* AllUsersViewController.xib */,
 				0B1B8056178C196500526074 /* HighScoreViewController.xib */,
 				0B7F92DA178EF93F0061E9A1 /* HighScoreObject.h */,
 				0B7F92DB178EF93F0061E9A1 /* HighScoreObject.m */,
@@ -443,15 +441,15 @@
 				0BB0C8EE1790152000A056E5 /* UserStatsViewController.xib */,
 				0BE8B78617955B3D007AA2B0 /* AllUsersViewController.h */,
 				0BE8B78717955B3D007AA2B0 /* AllUsersViewController.m */,
-				0BE8B78F17956135007AA2B0 /* AllUsersViewController.xib */,
 				0BEE4C1C17E1D19D000BA8DE /* UserDetailViewController.h */,
 				0BEE4C1D17E1D19D000BA8DE /* UserDetailViewController.m */,
 				0BEE4C1E17E1D19D000BA8DE /* UserDetailViewController.xib */,
 				0B45EE4117E1F6AF001E25FC /* SessionHeaderViewController.h */,
 				0B45EE4217E1F6AF001E25FC /* SessionHeaderViewController.m */,
+				0B7F92D0178EDDC20061E9A1 /* Session.h */,
+				0B7F92D1178EDDC20061E9A1 /* Session.m */,
 				0B45EE4317E1F6AF001E25FC /* SessionHeaderViewController.xib */,
 				0B45EE4617E1F80B001E25FC /* SessionNoteViewController.h */,
-				0B45EE4717E1F80B001E25FC /* SessionNoteViewController.m */,
 				0B45EE4817E1F80B001E25FC /* SessionNoteViewController.xib */,
 			);
 			name = stats;
@@ -518,11 +516,14 @@
 				0BCA9538178AFDBC006547C3 /* AppDelegate.h */,
 				0BCA9539178AFDBC006547C3 /* AppDelegate.m */,
 				0BCA9541178AFDBC006547C3 /* FirstViewController.h */,
+				0B45EE4717E1F80B001E25FC /* SessionNoteViewController.m */,
 				0BCA9542178AFDBC006547C3 /* FirstViewController.m */,
+				0BE8B77B17955351007AA2B0 /* SecondViewController_iPad.xib */,
+				0B7F92D6178EE3570061E9A1 /* ScoreDisplayViewController.xib */,
+				0B1B8011178BFF1D00526074 /* LoginViewViewController.xib */,
+				0B1B803F178C069C00526074 /* SignUpViewController.xib */,
 				0BCA9544178AFDBC006547C3 /* FirstViewController.xib */,
 				0BCA9530178AFDBC006547C3 /* Supporting Files */,
-				0B7F92D0178EDDC20061E9A1 /* Session.h */,
-				0B7F92D1178EDDC20061E9A1 /* Session.m */,
 				0BADD6661BE3B288000BFFCE /* Images.xcassets */,
 			);
 			path = FairHammer;
@@ -617,7 +618,6 @@
 			isa = PBXGroup;
 			children = (
 				0BE8B77A17955351007AA2B0 /* SecondViewController_iPhone.xib */,
-				0BE8B77B17955351007AA2B0 /* SecondViewController_iPad.xib */,
 				0BE8B7771795518D007AA2B0 /* SecondViewController.h */,
 				0BE8B7781795518D007AA2B0 /* SecondViewController.m */,
 			);

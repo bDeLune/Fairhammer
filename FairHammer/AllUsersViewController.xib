@@ -20,8 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="UsersScreenBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="12">
-                    <rect key="frame" x="0.0" y="69" width="768" height="1004"/>
+                <imageView autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="UsersScreenBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="12">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4">
                     <rect key="frame" x="68" y="203" width="635" height="700"/>
@@ -37,19 +37,24 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="12" secondAttribute="bottom" constant="-69" id="00A-oM-ydz"/>
+                <constraint firstAttribute="bottom" secondItem="12" secondAttribute="bottom" id="00A-oM-ydz"/>
+                <constraint firstAttribute="trailing" secondItem="12" secondAttribute="trailing" id="37B-18-6n9"/>
                 <constraint firstAttribute="trailing" secondItem="12" secondAttribute="trailing" id="AES-rX-oEy"/>
                 <constraint firstAttribute="trailing" secondItem="4" secondAttribute="trailing" constant="65" id="IaT-Dd-gDg"/>
-                <constraint firstItem="12" firstAttribute="top" secondItem="2" secondAttribute="top" constant="69" id="NMv-Tg-kNq"/>
+                <constraint firstItem="12" firstAttribute="top" secondItem="2" secondAttribute="top" id="NMv-Tg-kNq"/>
+                <constraint firstItem="12" firstAttribute="top" secondItem="2" secondAttribute="top" id="OMb-mv-xf2"/>
                 <constraint firstItem="4" firstAttribute="top" secondItem="2" secondAttribute="top" constant="203" id="UPv-WJ-jnJ"/>
                 <constraint firstItem="4" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="68" id="W8E-05-zbt"/>
+                <constraint firstItem="12" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="d2q-ak-p9Y"/>
                 <constraint firstItem="12" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="f7g-wq-wpz"/>
-                <constraint firstItem="12" firstAttribute="top" secondItem="2" secondAttribute="top" constant="69" id="mhj-Wk-7yX"/>
+                <constraint firstAttribute="bottom" secondItem="12" secondAttribute="bottom" id="fI0-bM-db0"/>
+                <constraint firstItem="12" firstAttribute="top" secondItem="2" secondAttribute="top" id="mhj-Wk-7yX"/>
                 <constraint firstItem="12" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="rkx-SX-rhN"/>
-                <constraint firstAttribute="bottom" secondItem="12" secondAttribute="bottom" constant="-69" id="zaL-6z-tGB"/>
+                <constraint firstAttribute="bottom" secondItem="12" secondAttribute="bottom" id="zaL-6z-tGB"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="115.625" y="97.8515625"/>
         </view>
     </objects>
     <resources>

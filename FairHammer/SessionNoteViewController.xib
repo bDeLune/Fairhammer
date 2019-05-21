@@ -21,9 +21,8 @@
             <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15">
                     <rect key="frame" x="639" y="12" width="38" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Done">
                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -32,10 +31,13 @@
                         <action selector="doneButtonHit:" destination="-1" eventType="touchUpInside" id="17"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" text="notes" translatesAutoresizingMaskIntoConstraints="NO" id="19">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="notes" translatesAutoresizingMaskIntoConstraints="NO" id="19">
                     <rect key="frame" x="35" y="107" width="696" height="342"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="696" id="fyH-Gc-4Wm"/>
+                        <constraint firstAttribute="height" constant="342" id="wpu-M3-a5y"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <connections>
@@ -44,6 +46,12 @@
                 </textView>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="19" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="35" id="eoe-k6-pX7"/>
+                <constraint firstAttribute="trailing" secondItem="15" secondAttribute="trailing" constant="157" id="nuA-W7-1Yq"/>
+                <constraint firstItem="15" firstAttribute="top" secondItem="2" secondAttribute="top" constant="12" id="wmv-BE-egj"/>
+                <constraint firstItem="19" firstAttribute="top" secondItem="15" secondAttribute="bottom" constant="65" id="xwt-v5-Bye"/>
+            </constraints>
         </view>
     </objects>
 </document>

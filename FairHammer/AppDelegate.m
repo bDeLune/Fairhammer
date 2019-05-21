@@ -31,9 +31,7 @@
         [[NSUserDefaults standardUserDefaults]synchronize];
     }
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.viewController = [[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil];
-   // self.window.rootViewController = self.viewController;
     self.viewController2=[[SecondViewController alloc] initWithNibName:@"SecondViewController_iPad" bundle:nil];
     [self.viewController2 setSettinngsDelegate:self.viewController];
 
@@ -45,9 +43,11 @@
     [self.window makeKeyAndVisible];
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     [[NSUserDefaults standardUserDefaults]setObject:@"Low" forKey:@"difficulty"];
-
     
-    startupImageView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Default.png"]];
+    //startupImageView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Default.png"]];
+    startupImageView = [[UIImageView alloc]initWithFrame:self.window.frame];
+    [startupImageView setImage: [UIImage imageNamed:@"Default.png"]];
+    
     [self.window addSubview:startupImageView];
     startupTimer=[NSTimer scheduledTimerWithTimeInterval:5.0
                                                   target:self

@@ -134,6 +134,7 @@ typedef void(^RunTimer)(void);
 }
 
 -(void) viewWillLayoutSubviews{
+
     //bg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainBackground"]];
     bg = [[UIImageView alloc]initWithFrame:self.view.frame];
     [bg setImage: [UIImage imageNamed:@"MainBackground"]];

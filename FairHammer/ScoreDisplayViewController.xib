@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="ipad12_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScoreDisplayViewController">
+            <connections>
+                <outlet property="durationProgress" destination="12" id="52"/>
+                <outlet property="durationValueLabel" destination="9" id="51"/>
+                <outlet property="strengthValueLabel" destination="38" id="53"/>
+                <outlet property="strenthProgress" destination="43" id="54"/>
+                <outlet property="view" destination="2" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9">
+                    <rect key="frame" x="98" y="125" width="92" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="92" id="9pl-kc-QwW"/>
+                        <constraint firstAttribute="height" constant="21" id="Ofk-yr-C75"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38">
+                    <rect key="frame" x="98" y="291" width="92" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="bnK-wv-HjZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <progressView opaque="NO" alpha="0.0" contentMode="scaleToFill" progress="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="12">
+                    <rect key="frame" x="80" y="140" width="88" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="88" id="ECc-JB-nUW"/>
+                    </constraints>
+                </progressView>
+                <progressView opaque="NO" contentMode="scaleToFill" progress="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="43">
+                    <rect key="frame" x="68" y="330" width="88" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="88" id="nP6-BY-k2C"/>
+                    </constraints>
+                </progressView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Duration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55">
+                    <rect key="frame" x="66" y="80" width="128" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="128" id="Kbj-O7-u6y"/>
+                        <constraint firstAttribute="height" constant="36" id="czh-7j-5q3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Strength" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56">
+                    <rect key="frame" x="80" y="247" width="140" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="9yN-DD-DsV"/>
+                        <constraint firstAttribute="width" constant="140" id="QHF-lf-wxi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="43" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="68" id="5kB-Sf-JBj"/>
+                <constraint firstItem="12" firstAttribute="top" secondItem="55" secondAttribute="bottom" constant="24" id="7H7-Rq-aRm"/>
+                <constraint firstItem="55" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="66" id="8f4-Op-oJ7"/>
+                <constraint firstItem="9" firstAttribute="trailing" secondItem="38" secondAttribute="trailing" id="EKC-GB-srL"/>
+                <constraint firstItem="55" firstAttribute="top" secondItem="2" secondAttribute="top" constant="80" id="IRx-sb-Jn5"/>
+                <constraint firstItem="9" firstAttribute="leading" secondItem="38" secondAttribute="leading" id="Jem-gZ-vJG"/>
+                <constraint firstItem="38" firstAttribute="top" secondItem="56" secondAttribute="bottom" constant="8" id="SEI-hE-EOm"/>
+                <constraint firstItem="56" firstAttribute="top" secondItem="2" secondAttribute="top" constant="247" id="SgI-y7-ZnR"/>
+                <constraint firstItem="12" firstAttribute="leading" secondItem="2" secondAttribute="leadingMargin" constant="60" id="WdC-pc-bTI"/>
+                <constraint firstItem="9" firstAttribute="top" secondItem="55" secondAttribute="bottom" constant="9" id="mw2-hi-aFB"/>
+                <constraint firstItem="9" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="98" id="uy5-0x-flU"/>
+                <constraint firstItem="43" firstAttribute="top" secondItem="38" secondAttribute="bottom" constant="18" id="vRj-kp-WSR"/>
+                <constraint firstItem="55" firstAttribute="leading" secondItem="56" secondAttribute="leading" constant="-14" id="xSy-yK-crr"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
+        </view>
+    </objects>
+</document>

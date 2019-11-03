@@ -214,11 +214,13 @@
     self.melody.delegate = self;
 
     //IOS12
-    //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), _queue, ^{
+   // dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), _queue, ^{
         
-   //     [self.melody connect];
-   // });
+        [self.melody connect];
+    //});
 }
+
+
 #pragma mark -
 #pragma mark - LED ON OFF
 

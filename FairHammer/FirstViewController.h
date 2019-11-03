@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "LoginViewViewController.h"
+#import "LoginViewController.h"
 #import "HighScoreViewController.h"
 #import  "MidiController.h"
 #import "Gauge.h"
